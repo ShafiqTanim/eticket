@@ -37,8 +37,8 @@
                   </li> -->
                   <li><a><i class="fa fa-edit"></i>Customer <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">Add New</a></li>
-                      <li><a href="form_advanced.html">List</a></li>
+                      <li><a href="customer_add.php">Add New</a></li>
+                      <li><a href="customer_list.php">List</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
