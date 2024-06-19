@@ -6,6 +6,7 @@
     }else{
         header('location:login.php');
     }
+    $mysqli= new crud;
 ?>
 
 <?php $baseurl="http://localhost/eticket/"; ?>
@@ -51,3 +52,4 @@
             </div>
 
             <div class="clearfix"></div>
+
