@@ -1,65 +1,92 @@
-<?php include('include/header.php') ; ?>
-<link href="https://cdn.datatables.net/v/bs5/dt-2.0.8/datatables.min.css" rel="stylesheet">
- 
-<script src="https://cdn.datatables.net/v/bs5/dt-2.0.8/datatables.min.js"></script>
-    <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Customer /</span> List</h4>
+<?php include('include/header.php') ?>
+<?php include('include/sidebar.php') ?>
 
-        <!-- Basic Bootstrap Table -->
-        <div class="card">
-            <h5 class="card-header">Customer</h5>
-            <div class="table-responsive text-nowrap">
-                <table class="table">
-                <thead>
-                    <tr>
-                    <th>#SL</th>
-                    <th>Name</th>
-                    <th>Contact</th>
-                    <th>Email</th>
-                    <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody class="table-border-bottom-0">
-                    <?php 
-                        $result=$mysqli->common_select('customer');
-                        if($result){
-                            if($result['data']){
-                                $i=1;
-                                foreach($result['data'] as $data){
-                    ?>
-                    <tr>
-                    
-                        <td><?= $i++ ?></td>
-                        <td><?= $data->name ?></td>
-                        <td><?= $data->contact_no ?></td>
-                        <td><?= $data->email ?></td>
-                        <td>
-                            <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="<?= $baseurl ?>customer_edit.php?id=<?= $data->id ?>"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                                >
-                                <a class="dropdown-item" href="<?= $baseurl ?>customer_delete.php?id=<?= $data->id ?>"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                                >
-                            </div>
-                            </div>
-                        </td>
-                    </tr>
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Customer</h3>
+              </div>
 
-                    <?php } } } ?>
-                </tbody>
-                </table>
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-secondary" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
+            
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>List</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Settings 1</a>
+                            <a class="dropdown-item" href="#">Settings 2</a>
+                          </div>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                    <!-- start project list -->
+                    <table class="table table-striped projects">
+                      <thead>
+                        <tr>
+                          <th style="width: 1%">#</th>
+                          <th style="width: 20%">Name</th>
+                          <th style="width: 20%">Contact no</th>
+                          <th style="width: 20%">Email</th>
+                          <th style="width: 20%">Active</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <?php 
+                            $result=$mysqli->common_select('customer');
+                            if($result){
+                                if($result['data']){
+                                    $i=1;
+                                    foreach($result['data'] as $data){
+                          ?>
+                            <tr>
+                                <td><?= $i++ ?></td>
+                                <td><?= $data-> name ?></td>
+                                <td><?= $data-> contact_no ?></td>
+                                <td><?= $data-> email ?></td>
+                                <td>
+                                  <a href="<?= $baseurl ?>customer_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                  <a href="<?= $baseurl ?>customer_delete.php?id=<?= $data ->id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                </td>
+                                
+                            </tr>
+                          <?php } } } ?>
+                      </tbody>
+                    </table>
+                    <!-- end project list -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!--/ Basic Bootstrap Table -->
+        <!-- /page content -->
 
-    </div>
-            <!-- / Content -->
-
-
-
-<?php include('include/footer.php') ; ?>
+        <!-- footer content -->
+        <?php include('include/footer.php') ; ?>
