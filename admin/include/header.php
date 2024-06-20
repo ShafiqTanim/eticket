@@ -9,7 +9,7 @@
     $mysqli= new crud;
 ?>
 
-<?php $baseurl="http://localhost/eticket/"; ?>
+<?php $baseurl="http://localhost/eticket/admin/"; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
