@@ -10,7 +10,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>t</h3>
+                            <h3>Ticket</h3>
                         </div>
 
                         <div class="title_right">
@@ -50,22 +50,7 @@
                                     <form class="" action="" method="post" novalidate>
                                         
                                        
-                                    <div class="col-md-6">
-                                        <label class="form-label" for="ticket_id">Ticket ID</label>
-
-                                        <select class="form-control form-select" required name="ticket_id" id="ticket_id">
-                                            <option value="">more</option>
-                                            <?php 
-                                                $result=$mysqli->common_select('ticket');
-                                                if($result){
-                                                    if($result['data']){
-                                                        $i=1;
-                                                        foreach($result['data'] as $d){
-                                            ?>
-                                                <option value="<?= $d->id ?>"> <?= $d->id ?> </option>
-                                            <?php } } } ?>
-                                        </select>
-                                    </div>
+                                    
                                     <div class="col-md-6">
                                         <label class="form-label" for="subject_id">Customer ID</label>
 
@@ -98,27 +83,31 @@
                                             <?php } } } ?>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label" for="subject_id">Vehicle Seat Type ID</label>
-
-                                        <select class="form-control form-select" required name="vehicle_seat_type_id" id="vehicle_seat_type_id">
-                                            <option value="">Select Subject</option>
-                                            <?php 
-                                                $result=$mysqli->common_select('vehicle_seat_type');
-                                                if($result){
-                                                    if($result['data']){
-                                                        $i=1;
-                                                        foreach($result['data'] as $d){
-                                            ?>
-                                                <option value="<?= $d->id ?>"> <?= $d->seat_type_id ?> </option>
-                                            <?php } } } ?>
-                                        </select>
-                                    </div>
                                         
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">price<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Quantity<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="price" data-validate-length-range="5,15" type="text" /></div>
+                                                <input class="form-control" class='optional' name="qty" id="qty" data-validate-length-range="5,15" type="text" /></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Sub total<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" class='optional' name="sub_total" id="sub_total" data-validate-length-range="5,15" type="text" /></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Discount<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" class='optional' name="discount" id="discount" data-validate-length-range="5,15" type="text" /></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Vat<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" class='optional' name="vat" id="vat" data-validate-length-range="5,15" type="text" /></div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Total<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" class='optional' name="total" id="total" data-validate-length-range="5,15" type="text" /></div>
                                         </div>
                                        
                                         <div class="ln_solid">
@@ -134,10 +123,10 @@
                                         if($_POST){
                                             $_POST['created_at']=date('Y-m-d H:i:s');
                                             $_POST['created_by']=1;
-                                            $rs=$mysqli->common_create('ticket_details',$_POST);
+                                            $rs=$mysqli->common_create('ticket',$_POST);
                                             if($rs){
                                                 if($rs['data']){
-                                                    echo "<script>window.location='{$baseurl}ticket_details_list.php'</script>";
+                                                    echo "<script>window.location='{$baseurl}ticket_list.php'</script>";
                                                 }else{
                                                     echo $rs['error'];
                                                 }
