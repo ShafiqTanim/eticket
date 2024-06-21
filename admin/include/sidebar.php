@@ -127,10 +127,10 @@
                     </ul>
                   </li>
 
-                  <li><a><i class="fa fa-edit"></i>Division<span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-edit"></i>Location<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="division_add.php">Add New</a></li>
-                      <li><a href="division_list.php">List</a></li>
+                      <li><a href="location_add.php">Add New</a></li>
+                      <li><a href="location_list.php">List</a></li>
                     </ul>
                   </li>
 

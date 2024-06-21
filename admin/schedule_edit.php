@@ -60,7 +60,7 @@
                                 <div class="field item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3  label-align">Couch Number<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" class='optional' name="couch_number" value="<?= $olddata->name ?>" data-validate-length-range="5,15" type="text" /></div>
+                                        <input class="form-control" class='optional' name="couch_number" value="<?= $olddata->couch_number ?>" data-validate-length-range="5,15" type="text" /></div>
                                 </div>
                                 <div class="field item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3  label-align">Vehicle id<span class="required">*</span></label>
@@ -77,7 +77,7 @@
                                 <div class="field item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3  label-align">Departure Time<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->departure_time ?>" name="departure_time" required="required" />
+                                        <input class="form-control" type="datetime-local" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->departure_time ?>" name="departure_time" required="required" />
                                     </div>
                                 </div>
                                 <div class="field item form-group">
@@ -89,7 +89,7 @@
                                 <div class="field item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3  label-align">Arrival Time<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->arrival_time ?>" name="arrival_time" required="required" />
+                                        <input class="form-control" type="datetime-local" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->arrival_time ?>" name="arrival_time" required="required" />
                                     </div>
                                 </div>
                                 <div class="field item form-group">
@@ -101,7 +101,7 @@
                                 <div class="ln_solid">
                                     <div class="form-group">
                                         <div class="col-md-6 offset-md-3">
-                                            <button type='submit' class="btn btn-Success">Submit</button>
+                                            <button type='submit' class="btn btn-primary">Submit</button>
                                             
                                         </div>
                                     </div>
