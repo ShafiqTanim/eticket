@@ -56,6 +56,7 @@
                                                 <th scope="col">Schedule ID</th>
                                                 <th scope="col">Vehicle_seat_type_id</th>
                                                 <th scope="col">price</th>
+                                                <th scope="col">Action</th>
                                             
                                             </tr>
                                         </thead>

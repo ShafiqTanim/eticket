@@ -6,7 +6,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Division</h3>
+                <h3>District</h3>
               </div>
 
               <div class="title_right">
@@ -50,13 +50,13 @@
                       <thead>
                         <tr>
                           <th style="width: 1%">#</th>
-                          <th style="width: 20%">Division Name</th>
+                          <th style="width: 20%"> District Name</th>
                           <th style="width: 20%">Action</th>
                         </tr>
                       </thead>
                       <tbody>
                           <?php 
-                            $result=$mysqli->common_select('division');
+                            $result=$mysqli->common_select('district');
                             if($result){
                                 if($result['data']){
                                     $i=1;
@@ -65,9 +65,10 @@
                             <tr>
                                 <td><?= $i++ ?></td>
                                 <td><?= $data-> name ?></td>
+                                <td><?= $data-> registration_no ?></td>
                                 <td>
-                                  <a href="<?= $baseurl ?>division_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                  <a href="<?= $baseurl ?>division_delete.php?id=<?= $data ->id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                  <a href="<?= $baseurl ?>district_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                  <a href="<?= $baseurl ?>district_delete.php?id=<?= $data ->id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                                 </td>
                                 
                             </tr>
