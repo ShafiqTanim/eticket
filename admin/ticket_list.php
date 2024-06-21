@@ -58,6 +58,7 @@
                                                 <th scope="col">Discount</th>
                                                 <th scope="col">Vat</th>
                                                 <th scope="col">Total</th>
+                                                <th scope="col">Action</th>
                                             
                                             </tr>
                                         </thead>
