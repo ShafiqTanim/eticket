@@ -62,8 +62,9 @@
                       </thead>
                       <tbody>
                           <?php 
-                            $result=$mysqli->common_select_query("select schedule.id, schedule.couch_number,vehicle.name, schedule.route_id, schedule.departure_time, counter.departure_counter,schedule.arrival_time, counter.counter_name,
+                            $result=$mysqli->common_select_query("select schedule.id, schedule.couch_number,vehicle.name, route.area_from, schedule.departure_time, counter.departure_counter,schedule.arrival_time, counter.counter_name,
                             from schedule join vehicle on schedule.vehicle_id=vehicle.id
+                            join route on schedule.route_id=route.id
                             join counter on schedule.departure_counter=.id
                             join counter on schedule.counter_name=id");
                             if($result){
@@ -75,7 +76,7 @@
                                 <td><?= $i++ ?></td>
                                 <td><?= $data-> couch_number ?></td>
                                 <td><?= $data-> name ?></td>
-                                <td><?= $data-> route_id ?></td>
+                                <td><?= $data-> area_from ?></td>
                                 <td><?= $data-> departure_time ?></td>
                                 <td><?= $data-> departure_counter ?></td>
                                 <td><?= $data-> arrival_time ?></td>

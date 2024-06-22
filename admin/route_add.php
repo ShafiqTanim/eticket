@@ -10,18 +10,10 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Vehicle</h3>
+                            <h3>Route</h3>
                         </div>
 
-                        <div class="title_right">
-                            <div class="col-md-5 col-sm-5 form-group pull-right top_search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
-                                    </span>
-                                </div>
-                            </div>
+                        
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -56,23 +48,56 @@
                                             <div class="col-md-6 col-sm-6">
                                                 <input class="form-control" class='optional' name="name" data-validate-length-range="5,15" type="text" /></div>
                                         </div>
-                                       <div class="field item form-group">
+                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Area From<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="area_from" required="required" />
+                                                <select class="form-control" required name="area_from" id="area_from" >
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('area');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>"><?= $data->name ?></option>
+                                                <?php } } } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align"> Breack Area <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <select class="form-control" required name="break_area" id="break_area" >
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('area');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>"><?= $data->name ?></option>
+                                                <?php } } } ?>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Break Area<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align"> Area To <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="break_area" required="required" />
-                                            </div>
-                                        </div><div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Area To<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="area_to" required="required" />
+                                                <select class="form-control" required name="area_to" id="area_to" >
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('area');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>"><?= $data->name ?></option>
+                                                <?php } } } ?>
+                                                </select>
                                             </div>
                                         </div>
+                                       
                                         <div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
