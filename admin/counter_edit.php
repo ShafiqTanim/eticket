@@ -57,55 +57,85 @@
                                 
                                 
                                 
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Counter Name<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" class='optional' name="counter_name" value="<?= $olddata->counter_name ?>" data-validate-length-range="5,15" type="text" /></div>
-                                </div>
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Contact No<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->contact_no ?>" name="contact_no" required="required" />
-                                    </div>
-                                </div>
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Counter Location<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->counter_location ?>" name="counter_location" required="required" />
-                                    </div>
-                                </div>
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">District id<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->district_id?>" name="district_id" required="required" />
-                                    </div>
-                                </div>
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Division id<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->division_id ?>" name="division_id" required="required" />
-                                    </div>
-                                </div>
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Address<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->address ?>" name="address" required="required" />
-                                    </div>
-                                </div>
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Contact Person<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->contact_person ?>" name="contact_person" required="required" />
-                                    </div>
-                                </div>
-                                <div class="ln_solid">
-                                    <div class="form-group">
-                                        <div class="col-md-6 offset-md-3">
-                                            <button type='submit' class="btn btn-Success">Submit</button>
-                                            
+                            <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Counter Name<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" class='optional' name="counter_name" data-validate-length-range="5,15" type="text" /></div>
                                         </div>
-                                    </div>
-                                </div>
+                                       <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Contact No<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="contact_no" required="required" />
+                                            </div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Area<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <select class="form-control" name="area_id" id="area_id" required="required">
+                                                    <option value="">Choose One</option>
+                                                    <?php 
+                                                        $result=$mysqli->common_select('area');
+                                                        if($result){
+                                                            if($result['data']){
+                                                                foreach($result['data'] as $data){
+                                                    ?>
+                                                        <option value="<?= $data->id ?>"<?= $d->id==$olddata->area_id ? "selected" :"" ?>><?= $data->name ?></option>
+                                                    <?php } } } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">District<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <select class="form-control" name="district_id" id="district_id" required="required">
+                                                    <option value="">Choose One</option>
+                                                    <?php 
+                                                        $result=$mysqli->common_select('district');
+                                                        if($result){
+                                                            if($result['data']){
+                                                                foreach($result['data'] as $data){
+                                                    ?>
+                                                        <option value="<?= $data->id ?>"<?= $d->id==$olddata->district_id? "selected" :"" ?>><?= $data->district_name ?></option>
+                                                    <?php } } } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Division<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <select class="form-control" name="division_id" id="" required="required">
+                                                    <option value="">Choose One</option>
+                                                    <?php 
+                                                        $result=$mysqli->common_select('division');
+                                                        if($result){
+                                                            if($result['data']){
+                                                                foreach($result['data'] as $data){
+                                                    ?>
+                                                        <option value="<?= $data->id ?>"<?= $d->id==$olddata->division_id? "selected" :"" ?>><?= $data->division_name ?></option>
+                                                    <?php } } } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Address<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="address" value="<?= $olddata->address ?>" required="required" />
+                                            </div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Contact Person<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="contact_person" value="<?= $olddata->contact_person ?>" required="required" />
+                                            </div>
+                                        </div>
+                                        <div class="ln_solid">
+                                            <div class="form-group">
+                                                <div class="col-md-6 offset-md-3">
+                                                    <button type='submit' class="btn btn-primary">Submit</button>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
                             </form>
                             <?php 
                                 if($_POST){

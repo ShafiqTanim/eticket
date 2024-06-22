@@ -147,3 +147,4 @@
 
             <!-- /page footer -->
             <?php include('include/footer.php') ?>
+...

@@ -81,7 +81,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">District<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="district_id" id="" required="required">
+                                                <select class="form-control" name="district_id" id="district_id" required="required">
                                                     <option value="">Choose One</option>
                                                     <?php 
                                                         $result=$mysqli->common_select('district');
