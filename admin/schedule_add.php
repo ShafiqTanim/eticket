@@ -56,14 +56,25 @@
                                             <div class="col-md-6 col-sm-6">
                                                 <input class="form-control" class='optional' name="couch_number" data-validate-length-range="5,15" type="text" /></div>
                                         </div>
-                                       <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Vehicle id<span class="required">*</span></label>
+                                      <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">vehicle<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="vehicle_id" required="required" />
+                                                <select class="form-control" name="vehicle_id" id="" required="vehicle_id">
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('vehicle');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>"><?= $data->name ?></option>
+                                                <?php } } } ?>
+                                                </select>
                                             </div>
                                         </div>
+                                        </div>
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Route id<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Route<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
                                                 <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="route_id" required="required" />
                                             </div>
@@ -77,8 +88,19 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Departure Counter<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="departure_counter" required="required" />
+                                                <select class="form-control" name="" id="departure_counter" required="departure_counter">
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('counter');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>"><?= $data->departure_counter ?></option>
+                                                <?php } } } ?>
+                                                </select>
                                             </div>
+                                        </div>
                                         </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Arrival Time<span class="required">*</span></label>
@@ -86,11 +108,22 @@
                                                 <input class="form-control" type="datetime-local" data-validate-length-range="6" data-validate-words="2" name="arrival_time" required="required" />
                                             </div>
                                         </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Location name<span class="required">*</span></label>
+                                       <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Arrival Counter<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="location_name" required="required" />
+                                                <select class="form-control" name="" id="counter_name" required="counter_name">
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('counter');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>"><?= $data->counter_name ?></option>
+                                                <?php } } } ?>
+                                                </select>
                                             </div>
+                                        </div>
                                         </div>
                                         <div class="ln_solid">
                                             <div class="form-group">

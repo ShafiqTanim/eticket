@@ -78,7 +78,7 @@
                                 <td><?= $data-> location_name ?></td>
                                 <td>
                                   <a href="<?= $baseurl ?>schedule_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                  <a href="<?= $baseurl ?>schedule_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                  <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>schedule_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                                 </td>
                                 
                             </tr>
