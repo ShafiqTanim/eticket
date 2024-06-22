@@ -82,7 +82,17 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Route<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="route_id" value="<?= $olddata->route_id ?>" required="required" />
+                                                <select class="form-control" required name="route_id" id="route_id" >
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('route');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>"<?= $d->id==$olddata->route_id ? "selected" :"" ?>><?= $data->area_from ?> to <?= $data->area_to ?></option>
+                                                <?php } } } ?>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="field item form-group">
@@ -94,7 +104,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Departure Counter<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="departure_counter"  value="<?= $olddata->departure_counter ?>" required="departure_counter">
+                                                <select class="form-control"  required name="departure_counter"  value="<?= $olddata->departure_counter ?>" >
                                                     <option value="">Choose One</option>
                                                 <?php 
                                                     $result=$mysqli->common_select('counter');
@@ -107,7 +117,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        </div>
+                                        
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Arrival Time<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
@@ -117,7 +127,7 @@
                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Arrival Counter<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="counter_name" id="counter_name" required="counter_name">
+                                                <select class="form-control" required name="counter_name" id="counter_name" >
                                                     <option value="">Choose One</option>
                                                 <?php 
                                                     $result=$mysqli->common_select('counter');
@@ -130,7 +140,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        </div>
+                                        
                                         <div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">

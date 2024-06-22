@@ -49,12 +49,12 @@
                     <table class="table table-striped projects">
                       <thead>
                         <tr>
-                          <th style="width: 1%">#</th>
-                          <th style="width: 20%">Name</th>
-                          <th style="width: 20%">Area From</th>
-                          <th style="width: 20%">Break Area</th>
-                          <th style="width: 20%">Area To</th>
-                          <th style="width: 20%">Active</th>
+                          <th>#</th>
+                          <th>Name</th>
+                          <th>Area From</th>
+                          <th >Break Area</th>
+                          <th>Area To</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
