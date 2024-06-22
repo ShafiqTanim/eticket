@@ -63,21 +63,51 @@
                                             </div>
                                         </div>
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Counter Location<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Area<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="counter_location" required="required" />
+                                                <select class="form-control" name="area_id" id="" required="required">
+                                                    <option value="">Choose One</option>
+                                                    <?php 
+                                                        $result=$mysqli->common_select('area');
+                                                        if($result){
+                                                            if($result['data']){
+                                                                foreach($result['data'] as $data){
+                                                    ?>
+                                                        <option value="<?= $data->id ?>"><?= $data->name ?></option>
+                                                    <?php } } } ?>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">District id<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">District<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="district_id" required="required" />
+                                                <select class="form-control" name="district_id" id="district_id" required="required">
+                                                    <option value="">Choose One</option>
+                                                    <?php 
+                                                        $result=$mysqli->common_select('district');
+                                                        if($result){
+                                                            if($result['data']){
+                                                                foreach($result['data'] as $data){
+                                                    ?>
+                                                        <option value="<?= $data->id ?>"><?= $data->district_name ?></option>
+                                                    <?php } } } ?>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Division id<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Division<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="division_id" required="required" />
+                                                <select class="form-control" name="ddivision_id" id="" required="required">
+                                                    <option value="">Choose One</option>
+                                                    <?php 
+                                                        $result=$mysqli->common_select('division');
+                                                        if($result){
+                                                            if($result['data']){
+                                                                foreach($result['data'] as $data){
+                                                    ?>
+                                                        <option value="<?= $data->id ?>"><?= $data->division_name ?></option>
+                                                    <?php } } } ?>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="field item form-group">

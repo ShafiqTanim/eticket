@@ -55,13 +55,17 @@
                           <th style="width: 20%">Route id</th>
                           <th style="width: 20%">Departure Time</th>
                           <th style="width: 20%">Departure Counter</th>
-                          <th style="width: 20%">Location name</th>
-                          <th style="width: 20%">Active</th>
+                          <th style="width: 20%">Arrival Time</th>
+                          <th style="width: 20%">Arrival Counter</th>
+                          <th style="width: 20%">Action</th>
                         </tr>
                       </thead>
                       <tbody>
                           <?php 
-                            $result=$mysqli->common_select('schedule');
+                            $result=$mysqli->common_select_query("select schedule.id, schedule.couch_number,vehicle.name, schedule.route_id, schedule.departure_time, counter.departure_counter,schedule.arrival_time, counter.counter_name,
+                            from schedule join vehicle on schedule.vehicle_id=vehicle.id
+                            join counter on schedule.departure_counter=.id
+                            join counter on schedule.counter_name=id");
                             if($result){
                                 if($result['data']){
                                     $i=1;
@@ -70,15 +74,15 @@
                             <tr>
                                 <td><?= $i++ ?></td>
                                 <td><?= $data-> couch_number ?></td>
-                                <td><?= $data-> vehicle_id ?></td>
+                                <td><?= $data-> name ?></td>
                                 <td><?= $data-> route_id ?></td>
                                 <td><?= $data-> departure_time ?></td>
                                 <td><?= $data-> departure_counter ?></td>
                                 <td><?= $data-> arrival_time ?></td>
-                                <td><?= $data-> location_name ?></td>
+                                <td><?= $data-> counter_name ?></td>
                                 <td>
                                   <a href="<?= $baseurl ?>schedule_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                  <a href="<?= $baseurl ?>schedule_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                  <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>schedule_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                                 </td>
                                 
                             </tr>
