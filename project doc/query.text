@@ -1,0 +1,2 @@
+ alter table vehicle add column vehicle_type varchar(255) after registration_no;
+ alter table seat drop column seat_type;

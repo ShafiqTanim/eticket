@@ -18,17 +18,6 @@
                 <div class="title_left">
                     <h3>Vehicle Seat Type</h3>
                 </div>
-
-                <div class="title_right">
-                    <div class="col-md-5 col-sm-5 form-group pull-right top_search">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Go!</button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="clearfix"></div>
 
@@ -69,9 +58,19 @@
                                     </div>
                                 </div>
                                 <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Seat Type id<span class="required">*</span></label>
+                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Seat Type<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->seat_type_id ?>" name="seat_type_id" required="required" />
+                                        <select class="form-control" name="seat_type" id="" required="required">
+                                            <option value="">Choose One</option>
+                                            <?php 
+                                                $result=$mysqli->common_select('seat_type');
+                                                if($result){
+                                                    if($result['data']){
+                                                        foreach($result['data'] as $data){
+                                            ?>
+                                                <option <?= $olddata->seat_type==$data->id?"selected":"" ?> value="<?= $data->id ?>"><?= $data->name ?></option>
+                                            <?php } } } ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="field item form-group">

@@ -18,17 +18,6 @@
                 <div class="title_left">
                     <h3>Vehicle</h3>
                 </div>
-
-                <div class="title_right">
-                    <div class="col-md-5 col-sm-5 form-group pull-right top_search">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">Go!</button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="clearfix"></div>
 
@@ -54,20 +43,12 @@
                         </div>
                         <div class="x_content">
                             <form class="" action="" method="post" novalidate>
-                                
-                                
-                                
                                 <div class="field item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3  label-align">Name<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6">
                                         <input class="form-control" class='optional' name="name" value="<?= $olddata->name ?>" data-validate-length-range="5,15" type="text" /></div>
                                 </div>
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Seat Type<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata-> seat_type ?>" name="seat_type" required="required" />
-                                    </div>
-                                </div>
+                                
                                 <div class="ln_solid">
                                     <div class="form-group">
                                         <div class="col-md-6 offset-md-3">

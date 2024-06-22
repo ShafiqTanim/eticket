@@ -3,7 +3,7 @@
     $baseurl="http://localhost/eticket/";
     include_once('class/crud.php');
 ?>
-<?php $baseurl="http://localhost/eticket/"; ?>
+<?php $baseurl="http://localhost/eticket/admin/"; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -75,7 +75,7 @@
                         $_SESSION['loggedin']="true";
                         $_SESSION['username']=$rs['data']->username;
                         $_SESSION['email']=$rs['data']->email;
-                        header('location:dashboard.php');
+                        header('location:index.php');
                     }else{
                         echo "Please check your user name and password again.";
                     }
