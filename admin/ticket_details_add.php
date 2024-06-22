@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="x_content">
                                     <form class="" action="" method="post" novalidate>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <label class="form-label" for="ticket_id">Ticket ID</label>
 
                                             <select class="form-control form-select" required name="ticket_id" id="ticket_id">
@@ -64,7 +64,7 @@
                                                 <?php } } } ?>
                                             </select>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <label class="form-label" for="subject_id">Customer ID</label>
                                             <select class="form-control form-select" required name="customer_id" id="customer_id">
                                                 <option value="">Select Subject</option>
@@ -79,7 +79,7 @@
                                                 <?php } } } ?>
                                             </select>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <label class="form-label" for="subject_id">Schedule ID</label>
                                             <select class="form-control form-select" required name="schedule_id" id="schedule_id">
                                                 <option value="">Select Subject</option>
@@ -94,7 +94,7 @@
                                                 <?php } } } ?>
                                             </select>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <label class="form-label" for="subject_id">Vehicle Seat Type ID</label>
                                             <select class="form-control form-select" required name="vehicle_seat_type_id" id="vehicle_seat_type_id">
                                                 <option value="">Select Subject</option>
@@ -110,17 +110,15 @@
                                             </select>
                                         </div>
 
-                                            <div class="col-md-6">
-                                                <label class="col-form-label col-md-3 col-sm-3  label-align">price<span class="required">*</span></label>
-                                                <div class="col-md-6 col-sm-6">
-                                                    <input class="form-control" class='optional' name="price" data-validate-length-range="5,15" type="text" /></div>
+                                            <div class="col-md-4">
+                                                <label class="form-label">Price<span class="required">*</span></label>
+                                                <input class="form-control" class='optional' name="price" data-validate-length-range="5,15" type="text" />
                                             </div>
 
                                             <div class="ln_solid">
                                                 <div class="form-group">
                                                     <div class="col-md-6 offset-md-3">
                                                         <button type='submit' class="btn btn-primary">Submit</button>
-                                                    
                                                     </div>
                                                 </div>
                                             </div>
