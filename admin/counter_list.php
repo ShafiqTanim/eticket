@@ -52,34 +52,37 @@
                           <th style="width: 1%">#</th>
                           <th style="width: 20%">Counter Name</th>
                           <th style="width: 20%">Contact No</th>
-                          <th style="width: 20%">Counter Location</th>
-                          <th style="width: 20%">District id</th>
-                          <th style="width: 20%">Division id</th>
+                          <th style="width: 20%">Area</th>
+                          <th style="width: 20%">District</th>
+                          <th style="width: 20%">Division</th>
                           <th style="width: 20%">Address</th>
                           <th style="width: 20%">Contact Person</th>
-                          <th style="width: 20%">Active</th>
+                          <th style="width: 20%">Action</th>
                         </tr>
                       </thead>
                       <tbody>
-                          <?php 
-                            $result=$mysqli->common_select('counter');
-                            if($result){
-                                if($result['data']){
-                                    $i=1;
-                                    foreach($result['data'] as $data){
-                          ?>
+                      <?php 
+                        $result=$mysqli->common_select_query("select counter.id, counter.counter_name, counter.contact_no, area.name, district.district_name, division.division_name, counter.address, counter.contact_person, 
+                        from counter join area on counter.area_id=area.id
+                        join district on counter.district_id=district.id
+                        join division on counter.division_id=division.id");
+                        if($result){
+                            if($result['data']){
+                                $i=1;
+                                foreach($result['data'] as $data){
+                        ?>
                             <tr>
                                 <td><?= $i++ ?></td>
                                 <td><?= $data-> counter_name ?></td>
                                 <td><?= $data-> contact_no ?></td>
-                                <td><?= $data-> counter_location ?></td>
-                                <td><?= $data-> district_id ?></td>
-                                <td><?= $data-> division_id ?></td>
+                                <td><?= $data-> name ?></td>
+                                <td><?= $data-> district_name ?></td>
+                                <td><?= $data-> division_name ?></td>
                                 <td><?= $data-> address ?></td>
                                 <td><?= $data-> contact_person ?></td>
                                 <td>
                                   <a href="<?= $baseurl ?>counter_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                  <a href="<?= $baseurl ?>counter_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                  <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>counter_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                                 </td>
                                 
                             </tr>

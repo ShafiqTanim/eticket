@@ -94,13 +94,6 @@
                         </ul>
                       </li>
 
-                      <li><a>Location<span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                          <li><a href="location_add.php">Add New</a></li>
-                          <li><a href="location_list.php">List</a></li>
-                        </ul>
-                      </li>
-
                     </ul>
                   </li>   
 
