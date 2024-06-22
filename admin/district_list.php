@@ -67,8 +67,8 @@
                                 <td><?= $data-> name ?></td>
                                 <td><?= $data-> registration_no ?></td>
                                 <td>
-                                  <a href="<?= $baseurl ?>district_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                  <a href="<?= $baseurl ?>district_delete.php?id=<?= $data ->id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                  <a href="<?= $baseurl ?>district_edit.php?id=<?= $data->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                  <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>district_delete.php?id=<?= $data->id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                                 </td>
                                 
                             </tr>

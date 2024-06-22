@@ -73,7 +73,7 @@
                                 <td><?= $data-> price ?></td>
                                 <td>
                                   <a href="<?= $baseurl ?>Vehicle_Seat_type _edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                  <a href="<?= $baseurl ?>Vehicle_Seat_type _delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                  <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>Vehicle_Seat_type _delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                                 </td>
                                 
                             </tr>

@@ -87,7 +87,7 @@
                                                     <a href="<?= $baseurl ?>ticket_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"
                                                         data-placement="top" title="Edit"><i
                                                             class="fa fa-pencil color-muted"></i> </a>
-                                                    <a href="<?= $baseurl ?>ticket_delete.php?id=<?= $data ->id ?>" data-toggle="tooltip"
+                                                    <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>ticket_delete.php?id=<?= $data->id ?>" data-toggle="tooltip"
                                                         data-placement="top" title="Close"><i
                                                             class="fa fa-close color-danger"></i></a>
                                                 </span>
