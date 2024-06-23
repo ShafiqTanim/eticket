@@ -40,10 +40,21 @@
                                         
                                         
                                         
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Vehicle id<span class="required">*</span></label>
+                                    <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Vehicle<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="vehicle_id" data-validate-length-range="5,15" type="text" /></div>
+                                                <select class="form-control" required name="vehicle_id" id="vehicle_id">
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('vehicle');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>"><?= $data->name ?></option>
+                                                <?php } } } ?>
+                                                </select>
+                                            </div>
                                         </div>
                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Seat id<span class="required">*</span></label>
