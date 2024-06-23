@@ -43,6 +43,7 @@
                           <th style="width: 1%">#</th>
                           <th style="width: 20%">Name</th>
                           <th style="width: 20%">Registration no</th>
+                          <th style="width: 20%">Vehicle Type</th>
                           <th style="width: 20%">Action</th>
                         </tr>
                       </thead>
@@ -56,8 +57,9 @@
                           ?>
                             <tr>
                                 <td><?= $i++ ?></td>
-                                <td><?= $data-> name ?></td>
-                                <td><?= $data-> registration_no ?></td>
+                                <td><?= $data->name ?></td>
+                                <td><?= $data->registration_no ?></td>
+                                <td><?= $data->vehicle_type ?></td>
                                 <td>
                                   <a href="<?= $baseurl ?>vehicle_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
                                   <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>vehicle_delete.php?id=<?= $data ->id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
@@ -66,9 +68,7 @@
                             </tr>
                           <?php } } } ?>
                       </tbody>
-                    </table>
-                    <!-- end project list -->
-
+                    </table><!-- end project list -->
                   </div>
                 </div>
               </div>
