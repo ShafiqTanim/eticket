@@ -8,17 +8,6 @@
               <div class="title_left">
                 <h3>Route</h3>
               </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
             
             <div class="clearfix"></div>
@@ -58,32 +47,33 @@
                         </tr>
                       </thead>
                       <tbody>
-                          <?php 
-                            $result=$mysqli->common_select_query("select route.id,route.name,area.name from route 
-                            join area on route.area_from=area.id
-                           ");
-                            if($result){
-                                if($result['data']){
-                                    $i=1;
-                                    foreach($result['data'] as $data){
-                          ?>
-                            <tr>
-                                <td><?= $i++ ?></td>
-                                <td><?= $data-> name ?></td>
-                                <td><?= $data-> name ?></td>
-                                <td><?= $data-> name ?></td>
-                                <td><?= $data-> name ?></td>
-                                <td>
-                                  <a href="<?= $baseurl ?>route_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                  <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>route_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                </td>
-                                
-                            </tr>
-                          <?php } } } ?>
+                        <?php 
+                          $result=$mysqli->common_select_query("
+                          select route.*,
+                        (select name from area where area.id=route.area_from) as area_from,
+                        (select name from area where area.id=route.break_area) as break_area,
+                        (select name from area where area.id=route.area_to) as area_to
+                        from route
+                          ");
+                          if($result){
+                            if($result['data']){
+                              $i=1;
+                              foreach($result['data'] as $data){
+                        ?>
+                          <tr>
+                            <td><?= $i++ ?></td>
+                            <td><?= $data->name ?></td>
+                            <td><?= $data->area_from ?></td>
+                            <td><?= $data->break_area ?></td>
+                            <td><?= $data->area_to ?></td>
+                            <td>
+                              <a href="<?= $baseurl ?>route_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                              <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>route_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                            </td>
+                          </tr>
+                        <?php } } } ?>
                       </tbody>
-                    </table>
-                    <!-- end project list -->
-
+                    </table><!-- end project list -->
                   </div>
                 </div>
               </div>

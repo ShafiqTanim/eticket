@@ -37,9 +37,6 @@
                                 </div>
                                 <div class="x_content">
                                     <form class="" action="" method="post" novalidate>
-                                        
-                                        
-                                        
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Couch number<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
@@ -73,7 +70,7 @@
                                                         if($result['data']){
                                                             foreach($result['data'] as $data){
                                                 ?>
-                                                    <option value="<?= $data->id ?>"><?= $data->area_from ?>to<?= $data->area_to ?></option>
+                                                    <option value="<?= $data->id ?>"><?= $data->name ?></option>
                                                 <?php } } } ?>
                                                 </select>
                                             </div>
@@ -81,7 +78,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Departure Time<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" type="datetime-local" data-validate-length-range="6" data-validate-words="2" name="departure_time" required="required" />
+                                                <input class="form-control" type="datetime-local" name="departure_time" required="required" />
                                             </div>
                                         </div>
                                         <div class="field item form-group">
@@ -95,7 +92,7 @@
                                                         if($result['data']){
                                                             foreach($result['data'] as $data){
                                                 ?>
-                                                    <option value="<?= $data->id ?>"><?= $data->departure_counter ?></option>
+                                                    <option value="<?= $data->id ?>"><?= $data->counter_name ?></option>
                                                 <?php } } } ?>
                                                 </select>
                                             </div>
@@ -110,7 +107,7 @@
                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Arrival Counter<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" required name="counter_name" id="counter_name" >
+                                                <select class="form-control" required name="arrival_counter" id="arrival_counter" >
                                                     <option value="">Choose One</option>
                                                 <?php 
                                                     $result=$mysqli->common_select('counter');

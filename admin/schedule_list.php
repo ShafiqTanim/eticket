@@ -8,17 +8,6 @@
               <div class="title_left">
                 <h3>Schedule</h3>
               </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
             
             <div class="clearfix"></div>
@@ -61,37 +50,37 @@
                         </tr>
                       </thead>
                       <tbody>
-                          <?php 
-                            $result=$mysqli->common_select_query("select schedule.id, schedule.couch_number,vehicle.name, route.area_from, schedule.departure_time, counter.departure_counter,schedule.arrival_time, counter.counter_name,
-                            from schedule join vehicle on schedule.vehicle_id=vehicle.id
-                            join route on schedule.route_id=route.id
-                            join counter on schedule.departure_counter=counter.id
-                            join counter on schedule.counter_name=conter.id");
-                            if($result){
-                                if($result['data']){
-                                    $i=1;
-                                    foreach($result['data'] as $data){
-                          ?>
-                            <tr>
-                                <td><?= $i++ ?></td>
-                                <td><?= $data-> couch_number ?></td>
-                                <td><?= $data-> name ?></td>
-                                <td><?= $data-> area_from ?></td>
-                                <td><?= $data-> departure_time ?></td>
-                                <td><?= $data-> departure_counter ?></td>
-                                <td><?= $data-> arrival_time ?></td>
-                                <td><?= $data-> counter_name ?></td>
-                                <td>
-                                  <a href="<?= $baseurl ?>schedule_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                  <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>schedule_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
-                                </td>
-                                
-                            </tr>
-                          <?php } } } ?>
+                        <?php 
+                          $result=$mysqli->common_select_query("
+                          select schedule.*, vehicle.name as vehicle, 
+                          route.name as route,
+                          (select counter_name from counter where counter.id=schedule.arrival_counter) as arrival_counter,
+                          (select counter_name from counter where counter.id=schedule.departure_counter) as departure_counter
+                          from schedule
+                          join vehicle on schedule.vehicle_id=vehicle.id
+                          join route on schedule.route_id=route.id");
+                          if($result){
+                            if($result['data']){
+                              $i=1;
+                              foreach($result['data'] as $data){
+                        ?>
+                          <tr>
+                            <td><?= $i++ ?></td>
+                            <td><?= $data->couch_number ?></td>
+                            <td><?= $data->vehicle ?></td>
+                            <td><?= $data->route ?></td>
+                            <td><?= date('d-m-Y h:iA',strtotime($data->departure_time)) ?></td>
+                            <td><?= $data->departure_counter ?></td>
+                            <td><?= date('d-m-Y h:iA',strtotime($data->arrival_time)) ?></td>
+                            <td><?= $data->arrival_counter ?></td>
+                            <td>
+                              <a href="<?= $baseurl ?>schedule_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                              <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>schedule_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                            </td>
+                          </tr>
+                        <?php } } } ?>
                       </tbody>
-                    </table>
-                    <!-- end project list -->
-
+                    </table><!-- end project list -->
                   </div>
                 </div>
               </div>
