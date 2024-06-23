@@ -40,6 +40,7 @@
                         <tr>
                           <th style="width: 1%">#</th>
                           <th style="width: 20%">Name</th>
+                          <th style="width: 20%">Action</th>
                         </tr>
                       </thead>
                       <tbody>

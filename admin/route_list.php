@@ -52,14 +52,16 @@
                           <th>#</th>
                           <th>Name</th>
                           <th>Area From</th>
-                          <th >Break Area</th>
+                          <th>Break Area</th>
                           <th>Area To</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                           <?php 
-                            $result=$mysqli->common_select('route');
+                            $result=$mysqli->common_select_query("select route.id,route.name,area.name from route 
+                            join area on route.area_from=area.id
+                           ");
                             if($result){
                                 if($result['data']){
                                     $i=1;
@@ -68,9 +70,9 @@
                             <tr>
                                 <td><?= $i++ ?></td>
                                 <td><?= $data-> name ?></td>
-                                <td><?= $data-> area_from ?></td>
-                                <td><?= $data-> break_area ?></td>
-                                <td><?= $data-> area_to ?></td>
+                                <td><?= $data-> name ?></td>
+                                <td><?= $data-> name ?></td>
+                                <td><?= $data-> name ?></td>
                                 <td>
                                   <a href="<?= $baseurl ?>route_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
                                   <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>route_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>

@@ -50,14 +50,14 @@
                       <thead>
                         <tr>
                           <th style="width: 1%">#</th>
-                          <th style="width: 20%">Couch Number</th>
-                          <th style="width: 20%">Vehicle id</th>
-                          <th style="width: 20%">Route id</th>
-                          <th style="width: 20%">Departure Time</th>
-                          <th style="width: 20%">Departure Counter</th>
-                          <th style="width: 20%">Arrival Time</th>
-                          <th style="width: 20%">Arrival Counter</th>
-                          <th style="width: 20%">Action</th>
+                          <th style="width: 12%">Couch Number</th>
+                          <th style="width: 12%">Vehicle id</th>
+                          <th style="width: 12%">Route id</th>
+                          <th style="width: 12%">Departure Time</th>
+                          <th style="width: 12%">Departure Counter</th>
+                          <th style="width: 12%">Arrival Time</th>
+                          <th style="width: 12%">Arrival Counter</th>
+                          <th style="width: 12%">Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -65,8 +65,8 @@
                             $result=$mysqli->common_select_query("select schedule.id, schedule.couch_number,vehicle.name, route.area_from, schedule.departure_time, counter.departure_counter,schedule.arrival_time, counter.counter_name,
                             from schedule join vehicle on schedule.vehicle_id=vehicle.id
                             join route on schedule.route_id=route.id
-                            join counter on schedule.departure_counter=.id
-                            join counter on schedule.counter_name=id");
+                            join counter on schedule.departure_counter=counter.id
+                            join counter on schedule.counter_name=conter.id");
                             if($result){
                                 if($result['data']){
                                     $i=1;

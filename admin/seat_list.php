@@ -40,7 +40,7 @@
                         <tr>
                           <th>#</th>
                           <th>Name</th>
-                          <th>Active</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>

@@ -13,16 +13,7 @@
                             <h3>Counter</h3>
                         </div>
 
-                        <div class="title_right">
-                            <div class="col-md-5 col-sm-5 form-group pull-right top_search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Go!</button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                     <div class="clearfix"></div>
 
@@ -97,7 +88,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Division<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="ddivision_id" id="" required="required">
+                                                <select class="form-control" name="division_id" id="" required="required">
                                                     <option value="">Choose One</option>
                                                     <?php 
                                                         $result=$mysqli->common_select('division');
