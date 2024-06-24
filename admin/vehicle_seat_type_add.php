@@ -56,16 +56,27 @@
                                                 </select>
                                             </div>
                                         </div>
-                                       <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Seat id<span class="required">*</span></label>
+                                    <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Seat<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="Seat_id" required="required" />
+                                                <select class="form-control" required name="Seat_id" id="Seat_id">
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('Seat');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>"><?= $data->name ?></option>
+                                                <?php } } } ?>
+                                                </select>
                                             </div>
                                         </div>
+                                       
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Seat Type<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="seat_type" id="" required="required">
+                                                <select class="form-control" name="seat_type_id" id="seat_type_id" required="required">
                                                     <option value="">Choose One</option>
                                                 <?php 
                                                     $result=$mysqli->common_select('seat_type');

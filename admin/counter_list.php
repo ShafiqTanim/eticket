@@ -53,11 +53,11 @@
                       </thead>
                       <tbody>
                       <?php 
-                        $result=$mysqli->common_select_query("select counter.id, counter.counter_name, counter.contact_no, area.name, district.district_name, division.division_name, counter.address, counter.contact_person, 
-                        from counter join area on counter.area_id=area.id
+                        $result=$mysqli->common_select_query("select counter.*, area.name as area, district.district_name as district, division.division_name as division from counter
+                        join area on counter.area_id=area.id
                         join district on counter.district_id=district.id
                         join division on counter.division_id=division.id");
-                        if($result){
+                        if($result){S
                             if($result['data']){
                                 $i=1;
                                 foreach($result['data'] as $data){
@@ -66,9 +66,9 @@
                                 <td><?= $i++ ?></td>
                                 <td><?= $data-> counter_name ?></td>
                                 <td><?= $data-> contact_no ?></td>
-                                <td><?= $data-> name ?></td>
-                                <td><?= $data-> district_name ?></td>
-                                <td><?= $data-> division_name ?></td>
+                                <td><?= $data-> area ?></td>
+                                <td><?= $data-> district ?></td>
+                                <td><?= $data-> division ?></td>
                                 <td><?= $data-> address ?></td>
                                 <td><?= $data-> contact_person ?></td>
                                 <td>

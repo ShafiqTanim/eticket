@@ -6,7 +6,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Vehicle</h3>
+                <h3>Vehicle Seat Type</h3>
               </div>
 
             </div>
@@ -40,26 +40,30 @@
                       <thead>
                         <tr>
                           <th style="width: 1%">#</th>
-                          <th style="width: 20%">Vehicle id</th>
-                          <th style="width: 20%">Seat id</th>
-                          <th style="width: 20%">Seat Type id</th>
+                          <th style="width: 20%">Vehicle </th>
+                          <th style="width: 20%">Seat </th>
+                          <th style="width: 20%">Seat Type</th>
                           <th style="width: 20%">Price</th>
                           <th style="width: 20%">Action</th>
                         </tr>
                       </thead>
                       <tbody>
-                          <?php 
-                            $result=$mysqli->common_select('Vehicle_Seat_type ');
-                            if($result){
-                                if($result['data']){
-                                    $i=1;
-                                    foreach($result['data'] as $data){
-                          ?>
+                         <?php 
+                        $result=$mysqli->common_select_query("select vehicle_seat_type.*, vehicle.name as vehicle, seat.name as seat,seat_type.name as type
+                        from vehicle_seat_type join vehicle on vehicle_seat_type.vehicle_id=vehicle.id
+                        join Seat on vehicle_seat_type.seat_id=seat.id
+                        join seat_type on vehicle_seat_type.seat_type_id=seat_type.id");
+                        if($result){
+                            if($result['data']){
+                                $i=1;
+                                foreach($result['data'] as $data){
+                        ?>
+                          
                             <tr>
                                 <td><?= $i++ ?></td>
-                                <td><?= $data-> vehicle_id ?></td>
-                                <td><?= $data-> seat_id ?></td>
-                                <td><?= $data-> seat_type_id ?></td>
+                                <td><?= $data-> vehicle ?></td>
+                                <td><?= $data-> seat ?></td>
+                                <td><?= $data->type ?></td>
                                 <td><?= $data-> price ?></td>
                                 <td>
                                   <a href="<?= $baseurl ?>Vehicle_Seat_type _edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
