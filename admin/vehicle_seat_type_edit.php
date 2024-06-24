@@ -47,46 +47,68 @@
                                 
                                 
                                 <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Vehicle id<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" class='optional' name="vehicle_id" value="<?= $olddata->vehicle_id ?>" data-validate-length-range="5,15" type="text" /></div>
-                                </div>
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Seat id<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->seat_id ?>" name="seat_id" required="required" />
-                                    </div>
-                                </div>
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">Seat Type<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <select class="form-control" name="seat_type" id="" required="required">
-                                            <option value="">Choose One</option>
-                                            <?php 
-                                                $result=$mysqli->common_select('seat_type');
-                                                if($result){
-                                                    if($result['data']){
-                                                        foreach($result['data'] as $data){
-                                            ?>
-                                                <option <?= $olddata->seat_type==$data->id?"selected":"" ?> value="<?= $data->id ?>"><?= $data->name ?></option>
-                                            <?php } } } ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="field item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3  label-align">price<span class="required">*</span></label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->price ?>" name="price" required="required" />
-                                    </div>
-                                </div>
-                                <div class="ln_solid">
-                                    <div class="form-group">
-                                        <div class="col-md-6 offset-md-3">
-                                            <button type='submit' class="btn btn-Success">Submit</button>
-                                            
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Vehicle<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <select class="form-control" required name="vehicle_id" id="vehicle_id">
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('vehicle');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>"><?= $data->name ?></option>
+                                                <?php } } } ?>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Seat<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <select class="form-control" required name="Seat_id" id="Seat_id">
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('Seat');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>"<?= $d->id==$olddata->Seat_id ? "selected" :"" ?>><?= $data->name ?></option>
+                                                <?php } } } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Seat Type<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <select class="form-control" name="seat_type" id="seat_type" required="required">
+                                                    <option value="">Choose One</option>
+                                                <?php 
+                                                    $result=$mysqli->common_select('seat_type');
+                                                    if($result){
+                                                        if($result['data']){
+                                                            foreach($result['data'] as $data){
+                                                ?>
+                                                    <option value="<?= $data->id ?>" <?= $d->id==$olddata->seat_type ? "selected" :"" ?>><?= $data->name ?></option>
+                                                <?php } } } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Price<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->price ?>" name="price" required="required" />
+                                            </div>
+                                        </div>
+                                        <div class="ln_solid">
+                                            <div class="form-group">
+                                                <div class="col-md-6 offset-md-3">
+                                                    <button type='submit' class="btn btn-primary">Submit</button>
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
                             </form>
                             <?php 
                                 if($_POST){
