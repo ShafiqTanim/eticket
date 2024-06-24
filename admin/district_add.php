@@ -12,8 +12,6 @@
                         <div class="title_left">
                             <h3>Distrct</h3>
                         </div>
-
-
                     </div>
                     <div class="clearfix"></div>
 

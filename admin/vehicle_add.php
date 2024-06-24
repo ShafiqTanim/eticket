@@ -44,12 +44,19 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Name<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="name" data-validate-length-range="5,15" type="text" /></div>
+                                                <input class="form-control" class='optional' name="name" data-validate-length-range="5,15" type="text" />
+                                            </div>
                                         </div>
                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Registration No<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
                                                 <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="registration_no" required="required" />
+                                            </div>
+                                        </div>
+                                       <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Vehicle Type<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="vehicle_type" required="required" />
                                             </div>
                                         </div>
                                         <div class="ln_solid">
