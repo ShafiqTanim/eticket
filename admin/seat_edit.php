@@ -16,7 +16,7 @@
         <div class="">
             <div class="page-title">
                 <div class="title_left">
-                    <h3>Vehicle</h3>
+                    <h3>Seat</h3>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -52,7 +52,7 @@
                                 <div class="ln_solid">
                                     <div class="form-group">
                                         <div class="col-md-6 offset-md-3">
-                                            <button type='submit' class="btn btn-Success">Submit</button>
+                                            <button type='submit' class="btn btn-primary btn-xs">Submit</button>
                                             
                                         </div>
                                     </div>

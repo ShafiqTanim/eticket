@@ -41,14 +41,14 @@
                       <thead>
                         <tr>
                           <th style="width: 1%">#</th>
-                          <th style="width: 20%">Counter Name</th>
-                          <th style="width: 20%">Contact No</th>
-                          <th style="width: 20%">Area</th>
-                          <th style="width: 20%">District</th>
-                          <th style="width: 20%">Division</th>
-                          <th style="width: 20%">Address</th>
-                          <th style="width: 20%">Contact Person</th>
-                          <th style="width: 20%">Action</th>
+                          <th style="width: 12.37%">Counter Name</th>
+                          <th style="width: 12.37%">Contact No</th>
+                          <th style="width: 12.37%">Area</th>
+                          <th style="width: 12.37%">District</th>
+                          <th style="width: 12.37%">Division</th>
+                          <th style="width: 12.37%">Address</th>
+                          <th style="width: 12.37%">Contact Person</th>
+                          <th style="width: 12.37%">Action</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -57,7 +57,7 @@
                         join area on counter.area_id=area.id
                         join district on counter.district_id=district.id
                         join division on counter.division_id=division.id");
-                        if($result){S
+                        if($result){
                             if($result['data']){
                                 $i=1;
                                 foreach($result['data'] as $data){
@@ -73,7 +73,7 @@
                                 <td><?= $data-> contact_person ?></td>
                                 <td>
                                   <a href="<?= $baseurl ?>counter_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                  <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>counter_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                  <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>counter_delete.php?id=<?= $data ->id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                                 </td>
                                 
                             </tr>

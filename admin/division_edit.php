@@ -51,7 +51,7 @@
                                 <div class="field item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3  label-align">Division Name<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" class='optional' name="division" id="division" value="<?= $olddata->division ?>" data-validate-length-range="5,15" type="text" /></div>
+                                        <input class="form-control" class='optional' name="division_name" id="division_name" value="<?= $olddata->division_name ?>" data-validate-length-range="5,15" type="text" /></div>
                                 </div>
                                 
                                 <div class="ln_solid">

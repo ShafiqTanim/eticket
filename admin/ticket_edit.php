@@ -48,9 +48,9 @@
                                 
                                 
                                 
-                            <div class="col-md-6">
-                                        <label class="form-label" for="subject_id">Customer ID</label>
-
+                            <div class="field item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align" for="subject_id">Customer ID</label>
+                                        <div class="col-md-6 col-sm-6">
                                         <select class="form-control form-select" required name="customer_id" id="customer_id">
                                             <option value="">Select Subject</option>
                                             <?php 
@@ -64,9 +64,10 @@
                                             <?php } } } ?>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label" for="subject_id">Schedule ID</label>
-
+                                    </div>
+                                    <div class="field item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3  label-align" for="subject_id">Schedule ID</label>
+                                        <div class="col-md-6 col-sm-6">
                                         <select class="form-control form-select" required name="schedule_id" id="schedule_id">
                                             <option value="">Select Subject</option>
                                             <?php 
@@ -79,6 +80,7 @@
                                                 <option value="<?= $d->id ?>"<?= $d->id==$olddata->schedule_id ? "selected" :"" ?>> <?= $d->route_id ?> <?= $d->departure_time?> </option>
                                             <?php } } } ?>
                                         </select>
+                                    </div>
                                     </div>
                                         
                                         <div class="field item form-group">
