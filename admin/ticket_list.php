@@ -39,7 +39,7 @@
 
                     <!-- start project list -->
                     <table class="table table-striped projects">
-                    <thead>
+                                        <thead>
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Customer ID</th>
@@ -53,10 +53,10 @@
                                             
                                             </tr>
                                         </thead>
-                      <tbody>
+                                   <tbody>
                          
                       <?php 
-                        $result=$mysqli->common_select_query("select ticket.id,customer.name,schedule.departure_time,ticket.qty,ticket.sub_total,ticket.discount,ticket.vat,ticket.total,
+                        $result=$mysqli->common_select_query("select ticket.*,customer.name as name,schedule.departure_time as time
                         from ticket join customer on ticket.customer_id=customer.id
                         join schedule on ticket.schedule_id=schedule.id");
                         if($result){
@@ -67,7 +67,7 @@
                                         <tr>
                                             <td><?= $i++ ?></td>
                                             <td><?= $data-> name?></td>
-                                            <td><?= $data-> departure_time?></td>
+                                            <td><?= $data-> time?></td>
                                             <td><?= $data-> qty?></td>
                                             <td><?= $data-> sub_total?></td>
                                             <td><?= $data-> discount?></td>

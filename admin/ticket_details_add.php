@@ -39,9 +39,9 @@
                                 </div>
                                 <div class="x_content">
                                     <form class="" action="" method="post" novalidate>
-                                        <div class="col-md-4">
-                                            <label class="form-label" for="ticket_id">Ticket ID</label>
-
+                                    <div class="field item form-group">
+                                         <label class="col-form-label col-md-3 col-sm-3  label-align" for="ticket_id">Ticket ID</label>
+                                        <div class="col-md-6 col-sm-6">
                                             <select class="form-control form-select" required name="ticket_id" id="ticket_id">
                                                 <option value="">more</option>
                                                 <?php 
@@ -54,9 +54,11 @@
                                                     <option value="<?= $d->id ?>"> <?= $d->id ?> </option>
                                                 <?php } } } ?>
                                             </select>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label class="form-label" for="subject_id">Customer ID</label>
+                                    </div>
+                                </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align" for="subject_id">Customer ID</label>
+                                            <div class="col-md-6 col-sm-6">
                                             <select class="form-control form-select" required name="customer_id" id="customer_id">
                                                 <option value="">Select Subject</option>
                                                 <?php 
@@ -69,9 +71,11 @@
                                                     <option value="<?= $d->id ?>"> <?= $d->name ?></option>
                                                 <?php } } } ?>
                                             </select>
+                                            </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <label class="form-label" for="subject_id">Schedule ID</label>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align" for="subject_id">Schedule ID</label>
+                                            <div class="col-md-6 col-sm-6">
                                             <select class="form-control form-select" required name="schedule_id" id="schedule_id">
                                                 <option value="">Select Subject</option>
                                                 <?php 
@@ -84,9 +88,11 @@
                                                     <option value="<?= $d->id ?>"> <?= $d->route_id ?> <?= $d->departure_time?> </option>
                                                 <?php } } } ?>
                                             </select>
+                                            </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <label class="form-label" for="subject_id">Vehicle Seat Type ID</label>
+                                        <div class="field item form-grou">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align" for="subject_id">Vehicle Seat Type ID</label>
+                                            <div class="col-md-6 col-sm-6">
                                             <select class="form-control form-select" required name="vehicle_seat_type_id" id="vehicle_seat_type_id">
                                                 <option value="">Select Subject</option>
                                                 <?php 
@@ -99,12 +105,15 @@
                                                     <option value="<?= $d->id ?>"> <?= $d->seat_type_id ?> </option>
                                                 <?php } } } ?>
                                             </select>
+                                            </div>
                                         </div>
 
-                                            <div class="col-md-4">
-                                                <label class="form-label">Price<span class="required">*</span></label>
-                                                <input class="form-control" class='optional' name="price" data-validate-length-range="5,15" type="text" />
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Price<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                                <input class="form-control" type="text" data-validate-length-range="6" data-validate-words="2" name="price" required="required" />
                                             </div>
+                                        </div>
 
                                             <div class="ln_solid">
                                                 <div class="form-group">

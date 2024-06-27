@@ -8,17 +8,6 @@
               <div class="title_left">
                 <h3>Division</h3>
               </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
             
             <div class="clearfix"></div>
@@ -64,7 +53,7 @@
                           ?>
                             <tr>
                                 <td><?= $i++ ?></td>
-                                <td><?= $data->division_name?></td>
+                                <td><?= $data->division_name ?></td>
                                 <td>
                                   <a href="<?= $baseurl ?>division_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
                                   <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>division_delete.php?id=<?= $data ->id ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>

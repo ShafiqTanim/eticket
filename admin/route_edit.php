@@ -65,7 +65,7 @@
                                                         if($result['data']){
                                                             foreach($result['data'] as $data){
                                                 ?>
-                                                    <option value="<?= $data->id ?>"<?= $d->id==$olddata-> area_from? "selected" :"" ?>><?= $data->name ?></option>
+                                                    <option value="<?= $data->id ?>"<?= $data->id==$olddata-> area_from? "selected" :"" ?>><?= $data->name ?></option>
                                                 <?php } } } ?>
                                                 </select>
                                             </div>
@@ -82,7 +82,7 @@
                                                         if($result['data']){
                                                             foreach($result['data'] as $data){
                                                 ?>
-                                                    <option value="<?= $data->id ?>"<?= $d->id==$olddata->break_area ? "selected" :"" ?>><?= $data->name ?></option>
+                                                    <option value="<?= $data->id ?>"<?= $data->id==$olddata->break_area ? "selected" :"" ?>><?= $data->name ?></option>
                                                 <?php } } } ?>
                                                 </select>
                                             </div>
@@ -98,7 +98,7 @@
                                                         if($result['data']){
                                                             foreach($result['data'] as $data){
                                                 ?>
-                                                    <option value="<?= $data->id ?>"<?= $d->id==$olddata->area_to ? "selected" :"" ?>><?= $data->name ?></option>
+                                                    <option value="<?= $data->id ?>"<?= $data->id==$olddata->area_to ? "selected" :"" ?>><?= $data->name ?></option>
                                                 <?php } } } ?>
                                                 </select>
                                             </div>

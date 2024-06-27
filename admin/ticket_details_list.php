@@ -51,25 +51,25 @@
                                             
                                             </tr>
                                         </thead>
-                      <tbody>
+                                      <tbody>
                          
-                      <?php 
-                        $result=$mysqli->common_select_query("select ticket_details.id,ticket.id,customer.name,schedule.departure_time,vehicle_seat_type.seat_type_id,ticket_details.price,
-                        from ticket_details join ticket on ticket_details.ticket_id=ticket.id
-                        join customer on ticket_details.customer_id=customer.id
-                        join schedule on ticket_details.schedule_id=schedule.id
-                        join vehicle_seat_type on ticket_details.vehicle_seat_type_id=vehicle_seat_type.id");
-                        if($result){
-                            if($result['data']){
-                                $i=1;
-                                foreach($result['data'] as $data){
-                    ?>
+                                  <?php 
+                                    $result=$mysqli->common_select_query("select ticket_details.*,ticket.id as ticket ,customer.name as name,schedule.departure_time as time ,vehicle_seat_type.seat_type_id as type ,from ticket_details 
+                                    join ticket on ticket_details.ticket_id=ticket.id
+                                    join customer on ticket_details.customer_id=name.id
+                                    join schedule on ticket_details.schedule_id=time.id
+                                    join vehicle_seat_type on ticket_details.vehicle_seat_type_id=type.id");
+                                    if($result){
+                                        if($result['data']){
+                                            $i=1;
+                                            foreach($result['data'] as $data){
+                                ?>
                                         <tr>
                                             <td><?= $i++ ?></td>
-                                            <td><?= $data-> id ?></td>
+                                            <td><?= $data-> ticket ?></td>
                                             <td><?= $data-> name ?></td>
-                                            <td><?= $data-> departure_time?></td>
-                                            <td><?= $data-> seat_type_id?></td>
+                                            <td><?= $data-> time?></td>
+                                            <td><?= $data-> type?></td>
                                             <td><?= $data-> price?></td>
                                             <td>
                                             <span>
