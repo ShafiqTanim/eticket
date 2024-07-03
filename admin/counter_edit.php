@@ -62,7 +62,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Area<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="area_id" value="<?= $olddata->area_id ?>" id="area_id" required="required">
+                                                <select class="form-control" name="area_id" id="area_id" required="required">
                                                     <option value="">Choose One</option>
                                                     <?php 
                                                         $result=$mysqli->common_select('area');
@@ -70,7 +70,7 @@
                                                             if($result['data']){
                                                                 foreach($result['data'] as $data){
                                                     ?>
-                                                        <option value="<?= $data->id ?>"<?= $d->id==$olddata->area_id ? "selected" :"" ?>><?= $data->name ?></option>
+                                                        <option value="<?= $data->id ?>"<?= $data->id==$olddata->area_id ? "selected" :"" ?>><?= $data->name ?></option>
                                                     <?php } } } ?>
                                                 </select>
                                             </div>
@@ -78,7 +78,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">District<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="district_id"  value="<?= $olddata->district_id ?>" id="district_id" required="required">
+                                                <select class="form-control" name="district_id" id="district_id" required="required">
                                                     <option value="">Choose One</option>
                                                     <?php 
                                                         $result=$mysqli->common_select('district');
@@ -86,7 +86,7 @@
                                                             if($result['data']){
                                                                 foreach($result['data'] as $data){
                                                     ?>
-                                                        <option value="<?= $data->id ?>"<?= $d->id==$olddata->district_id? "selected" :"" ?>><?= $data->district_name ?></option>
+                                                        <option value="<?= $data->id ?>"<?= $data->id==$olddata->district_id? "selected" :"" ?>><?= $data->district_name ?></option>
                                                     <?php } } } ?>
                                                 </select>
                                             </div>
@@ -94,7 +94,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Division<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="division_id" value="<?= $olddata->division_id ?>" id="" required="required">
+                                                <select class="form-control" name="division_id" id="" required="required">
                                                     <option value="">Choose One</option>
                                                     <?php 
                                                         $result=$mysqli->common_select('division');
@@ -102,7 +102,7 @@
                                                             if($result['data']){
                                                                 foreach($result['data'] as $data){
                                                     ?>
-                                                        <option value="<?= $data->id ?>"<?= $d->id==$olddata->division_id? "selected" :"" ?>><?= $data->division_name ?></option>
+                                                        <option value="<?= $data->id ?>"<?= $data->id==$olddata->division_id? "selected" :"" ?>><?= $data->division_name ?></option>
                                                     <?php } } } ?>
                                                 </select>
                                             </div>
