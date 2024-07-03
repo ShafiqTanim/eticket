@@ -51,18 +51,18 @@
                             <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Counter Name<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" class='optional' name="counter_name" data-validate-length-range="5,15" type="text" /></div>
+                                                <input class="form-control" class='optional' name="counter_name" value="<?= $olddata->counter_name ?>" data-validate-length-range="5,15" type="text" /></div>
                                         </div>
                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Contact No<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="contact_no" required="required" />
+                                                <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->contact_no ?>" name="contact_no"  required="required" />
                                             </div>
                                         </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Area<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="area_id" id="area_id" required="required">
+                                                <select class="form-control" name="area_id" value="<?= $olddata->area_id ?>" id="area_id" required="required">
                                                     <option value="">Choose One</option>
                                                     <?php 
                                                         $result=$mysqli->common_select('area');
@@ -78,7 +78,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">District<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="district_id" id="district_id" required="required">
+                                                <select class="form-control" name="district_id"  value="<?= $olddata->district_id ?>" id="district_id" required="required">
                                                     <option value="">Choose One</option>
                                                     <?php 
                                                         $result=$mysqli->common_select('district');
@@ -94,7 +94,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Division<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="division_id" id="" required="required">
+                                                <select class="form-control" name="division_id" value="<?= $olddata->division_id ?>" id="" required="required">
                                                     <option value="">Choose One</option>
                                                     <?php 
                                                         $result=$mysqli->common_select('division');
