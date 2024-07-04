@@ -131,48 +131,7 @@
       <section class="section">
         <div class="swiper-form-wrap">
           <!-- Swiper-->
-          <div class="swiper-container swiper-slider swiper-slider_height-1 swiper-align-left swiper-align-left-custom context-dark bg-gray-darker" data-loop="false" data-autoplay="5500" data-simulate-touch="false" data-slide-effect="fade">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide" data-slide-bg="images/swiper-slide-1.jpg">
-                <div class="swiper-slide-caption">
-                  <div class="container container-bigger swiper-main-section">
-                    <div class="row row-fix justify-content-sm-center justify-content-md-start">
-                      <div class="col-md-6 col-lg-5 col-xl-4 col-xxl-5">
-                        <h3>Hundreds of Amazing Destinations</h3>
-                        <div class="divider divider-decorate"></div>
-                        <p class="text-spacing-sm">We offer a variety of destinations to travel to, ranging from exotic to some extreme ones. They include very popular countries and cities like Paris, Rio de Janeiro, Cairo and a lot of others.</p><a class="button button-default-outline button-nina button-sm" href="#">learn more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide" data-slide-bg="images/swiper-slide-2.jpg">
-                <div class="swiper-slide-caption">
-                  <div class="container container-bigger swiper-main-section">
-                    <div class="row row-fix justify-content-sm-center justify-content-md-start">
-                      <div class="col-md-6 col-lg-5 col-xl-4 col-xxl-5">
-                        <h3>The Trip of Your Dream</h3>
-                        <div class="divider divider-decorate"></div>
-                        <p class="text-spacing-sm">Our travel agency is ready to offer you an exciting vacation that is designed to fit your own needs and wishes. Whether it’s an exotic cruise or a trip to your favorite resort, you will surely have the best experience.</p><a class="button button-default-outline button-nina button-sm" href="#">learn more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide" data-slide-bg="images/swiper-slide-3.jpg">
-                <div class="swiper-slide-caption">
-                  <div class="container container-bigger swiper-main-section">
-                    <div class="row row-fix justify-content-sm-center justify-content-md-start">
-                      <div class="col-md-6 col-lg-5 col-xl-4 col-xxl-5">
-                        <h3>unique Travel Insights</h3>
-                        <div class="divider divider-decorate"></div>
-                        <p class="text-spacing-sm">Our team is ready to provide you with unique weekly travel insights that include photos, videos, and articles about untravelled tourist paths. We know everything about the places you’ve never been to!</p><a class="button button-default-outline button-nina button-sm" href="#">learn more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="swiper-container context-dark bg-gray-darker">
             <!-- Swiper controls-->
             <div class="swiper-pagination-wrap">
               <div class="container container-bigger">
@@ -250,7 +209,7 @@
                       </div>
                     </div>
                     <div class="form-wrap form-button">
-                      <button class="button button-block button-secondary" type="submit">search flight</button>
+                      <button class="button button-block button-secondary" type="submit">search</button>
                     </div>
                   </form>
                 </div>
@@ -260,7 +219,7 @@
         </div>
       </section>
 
-      <section class="section section-variant-1 bg-default novi-background bg-cover"> 
+      <!-- <section class="section section-variant-1 bg-default novi-background bg-cover"> 
         <div class="container container-wide">
           <div class="row row-fix justify-content-xl-end row-30 text-center text-xl-left">
             <div class="col-xl-8">
@@ -346,7 +305,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!-- our advantages-->
       <section class="section section-lg bg-gray-lighter novi-background bg-cover text-center">
@@ -391,13 +350,13 @@
       </section>
 
       <!-- Tips & tricks-->
-      <section class="section section-lg novi-background bg-cover bg-default text-center">
+      <!-- <section class="section section-lg novi-background bg-cover bg-default text-center">
         <div class="container-wide">
           <div class="row row-50">
             <div class="col-sm-12">
               <h3>Latest News</h3>
               <div class="divider divider-decorate"></div>
-              <!-- Owl Carousel-->
+              Owl Carousel COMMENT
               <div class="owl-carousel owl-carousel-team owl-carousel-inset" data-items="1" data-md-items="2" data-xl-items="3" data-stage-padding="15" data-loop="true" data-margin="30" data-mouse-drag="false" data-dots="true" data-autoplay="true">
                 <article class="post-blog"><a class="post-blog-image" href="#"><img src="images/landing-private-airlines-7-570x415.jpg" alt="" width="570" height="415"/></a>
                   <div class="post-blog-caption">
@@ -455,16 +414,16 @@
                 </article>
               </div>
             </div>
-            <div class="col-12"><a class="button button-secondary button-nina button-offset-lg" href="#">view all blog posts</a></div>
+            <div class="col-12"><a class="button button-secondary button-nina button-offset-lg" href="#">view all posts</a></div>
           </div>
         </div>
-      </section>
+      </section> -->
 
-      <section class="section section-lg text-center bg-gray-lighter novi-background bg-cover">
+      <!-- <section class="section section-lg text-center bg-gray-lighter novi-background bg-cover">
         <div class="container container-bigger">
           <h3>testimonials</h3>
           <div class="divider divider-decorate"></div>
-          <!-- Owl Carousel-->
+          Owl Carousel COMMENT
           <div class="owl-carousel owl-layout-1" data-items="1" data-dots="true" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false" data-autoplay="true">
             <article class="quote-boxed">
               <div class="quote-boxed-aside"><img class="quote-boxed-image" src="images/quote-user-1-210x210.jpg" alt="" width="210" height="210"/>
@@ -507,7 +466,7 @@
             </article>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section class="section section-md text-center text-md-left bg-gray-700 novi-background bg-cover">
         <div class="container container-wide">
