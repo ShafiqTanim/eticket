@@ -1,234 +1,52 @@
-<!DOCTYPE html>
-<html class="wide wow-animation" lang="en"> 
-  <head>
-    <!-- Site Title-->
-    <title>Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <!-- Stylesheets -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fonts.css">
-		<!--[if lt IE 10]>
-    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <script src="js/html5shiv.min.js"> </script>
-		<![endif]--> 
-  </head>
-  <body>
-    <!-- Page preloader-->
-    <div class="page-loader"> 
-      <div class="page-loader-body"> 
-        <div class="preloader-wrapper big active"> 
-          <div class="spinner-layer spinner-blue"> 
-            <div class="circle-clipper left">
-              <div class="circle"> </div>
-            </div>
-            <div class="gap-patch">
-              <div class="circle"> </div>
-            </div>
-            <div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-          <div class="spinner-layer spinner-red">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div>
-            <div class="gap-patch">
-              <div class="circle"> </div>
-            </div>
-            <div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-          <div class="spinner-layer spinner-yellow"> 
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div>
-            <div class="gap-patch">
-              <div class="circle"></div>
-            </div>
-            <div class="circle-clipper right">
-              <div class="circle"> </div>
-            </div>
-          </div>
-          <div class="spinner-layer spinner-green"> 
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div>
-            <div class="gap-patch">
-              <div class="circle"></div>
-            </div>
-            <div class="circle-clipper right">
-              <div class="circle"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Page-->
-    <div class="page"><a class="section section-banner text-center d-none d-xl-block" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-04-1920x60.jpg); background-image: -webkit-image-set( url(images/banner/background-04-1920x60.jpg) 1x, url(images/banner/background-04-3840x120.jpg) 2x )"><img src="images/banner/foreground-04-1600x60.png" srcset="images/banner/foreground-04-1600x60.png 1x, images/banner/foreground-04-3200x120.png 2x" alt="" width="1600" height="310"></a>
-      <!-- Page Header-->
-      <header class="section page-header">
-        <!-- RD Navbar-->
-        <div class="rd-navbar-wrap rd-navbar-corporate">
-          <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth" data-xl-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-device-layout="rd-navbar-static" data-md-stick-up-offset="130px" data-lg-stick-up-offset="100px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-xl-stick-up="true">
-            <div class="rd-navbar-collapse-toggle" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
-            <div class="rd-navbar-top-panel rd-navbar-collapse novi-background">
-              <div class="rd-navbar-top-panel-inner">
-                <ul class="list-inline">
-                  <li class="box-inline list-inline-item"><span class="icon novi-icon icon-md-smaller icon-secondary mdi mdi-phone"></span>
-                    <ul class="list-comma">
-                      <li><a href="tel:#">1-800-1234-567</a></li>
-                      <li><a href="tel:#">1-800-6780-345</a></li>
-                    </ul>
-                  </li>
-                  <li class="box-inline list-inline-item"><span class="icon novi-icon icon-md-smaller icon-secondary mdi mdi-map-marker"></span><a href="#">2130 Fulton Street, San Diego, CA 94117-1080 USA</a></li>
-                  <li class="box-inline list-inline-item"><span class="icon novi-icon icon-md-smaller icon-secondary mdi mdi-email"></span><a href="mailto:#">mail@demolink.org</a></li>
-                </ul>
-                <ul class="list-inline">
-                  <li class="list-inline-item"><a class="icon novi-icon icon-sm-bigger icon-gray-1 mdi mdi-facebook" href="#"></a></li>
-                  <li class="list-inline-item"><a class="icon novi-icon icon-sm-bigger icon-gray-1 mdi mdi-twitter" href="#"></a></li>
-                  <li class="list-inline-item"><a class="icon novi-icon icon-sm-bigger icon-gray-1 mdi mdi-instagram" href="#"></a></li>
-                  <li class="list-inline-item"><a class="icon novi-icon icon-sm-bigger icon-gray-1 mdi mdi-google-plus" href="#"></a></li>
-                  <li class="list-inline-item"><a class="icon novi-icon icon-sm-bigger icon-gray-1 mdi mdi-linkedin" href="#"></a></li>
-                </ul>
-              </div>
-              <div class="rd-navbar-top-panel-inner"><a class="button button-sm button-secondary button-nina" href="https://www.templatemonster.com/website-templates/62466.html" target="_blank">buy template now</a></div>
-            </div>
-            <div class="rd-navbar-inner">
-              <!-- RD Navbar Panel-->
-              <div class="rd-navbar-panel">
-                <!-- RD Navbar Toggle-->
-                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                <!-- RD Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img class="logo-default" src="images/logo-default-208x46.png" alt="" width="208" height="46"/><img class="logo-inverse" src="images/logo-inverse-208x46.png" alt="" width="208" height="46"/></a></div>
-              </div>
-              <div class="rd-navbar-aside-center">
-                <div class="rd-navbar-nav-wrap">
-                  <!-- RD Navbar Nav-->
-                  <ul class="rd-navbar-nav">
-                    <li class="active"><a href="index.html">Home</a>
-                    </li>
-                    <li><a href="about-us.html">About Us</a>
-                    </li>
-                    <li><a href="contacts.html">Contacts</a>
-                    </li>
-                    <li><a href="typography.html">Typography</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="rd-navbar-aside-right"><a class="button button-sm button-secondary button-nina" href="#">Book a tour now</a></div>
-            </div>
-          </nav>
-        </div>
-      </header>
+<?php require_once('include/header.php'); ?>
+
+
       <section class="section">
         <div class="swiper-form-wrap">
-          
-
-          <!-- Seat layout-->
-           <div class="container">
-    <div class="col-4  ">
-      <div class="col-4 bg-light">
-
-      <table class="table bg-ligh">
-        <thead>
-            <tr>
-            <th scope="col">SL</th>
-            <th scope="col">Left1</th>
-            <th scope="col">Left2</th>
-            <th scope="col"></th>
-            <th scope="col">Right1</th>
-            <th scope="col">Right2</th>
-            </tr>
-        </thead>
-          <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td></button></td>
-        <td></button></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td><button type="button" class="btn btn-outline-primary" value="">A1</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">A2</button></td>
-        <td></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">A3</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">A3</button></td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td><button type="button" class="btn btn-outline-primary" value="">B1</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">B2</td>
-        <td></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">B3</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">B4</button></td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td><button type="button" class="btn btn-outline-primary" value="">C1</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">C2</button></td>
-        <td></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">C3</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">C4</button></td>
-      </tr>
-      <tr>
-        <th scope="row">5</th>
-        <td><button type="button" class="btn btn-outline-primary" value="">D1</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">D2</button></td>
-        <td></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">D3</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">D4</button></td>
-      </tr>
-      <tr>
-        <th scope="row">6</th>
-        <td><button type="button" class="btn btn-outline-primary" value="">E1</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">E2</button></td>
-        <td></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">E3</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">E4</button></td>
-      </tr>
-      <tr>
-        <th scope="row">7</th>
-        <td><button type="button" class="btn btn-outline-primary" value="">F1</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">F2</button></td>
-        <td></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">F3</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">F4</button></td>
-      </tr>
-        <th scope="row">8</th>
-        <td><button type="button" class="btn btn-outline-primary" value="">G1</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">G2</button></td>
-        <td></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">G3</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">G4</button></td>
-      </tr>
-      </tr>
-        <th scope="row">8</th>
-        <td><button type="button" class="btn btn-outline-primary" value="">H1</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">H2</button></td>
-        <td></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">H3</button></td>
-        <td><button type="button" class="btn btn-outline-primary" value="">H4</button></td>
-      </tr>
-      
-      </table>
-    </div>
-  </div>
-    
-</div>
-          <div class="swiper-container context-dark bg-gray-darker">
-            <!-- seat lay out-->
+          <!-- Swiper-->
+          <div class="swiper-container swiper-slider swiper-slider_height-1 swiper-align-left swiper-align-left-custom context-dark bg-gray-darker" data-loop="false" data-autoplay="5500" data-simulate-touch="false" data-slide-effect="fade">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" data-slide-bg="<?= $baseurl?>asset/images/swiper-slide-1.jpg">
+                <div class="swiper-slide-caption">
+                  <div class="container container-bigger swiper-main-section">
+                    <div class="row row-fix justify-content-sm-center justify-content-md-start">
+                      <div class="col-md-6 col-lg-5 col-xl-4 col-xxl-5">
+                        <h3>Hundreds of Amazing Destinations</h3>
+                        <div class="divider divider-decorate"></div>
+                        <p class="text-spacing-sm">We offer a variety of destinations to travel to, ranging from exotic to some extreme ones. They include very popular countries and cities like Paris, Rio de Janeiro, Cairo and a lot of others.</p><a class="button button-default-outline button-nina button-sm" href="#">learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide" data-slide-bg="<?= $baseurl?>asset/images/swiper-slide-2.jpg">
+                <div class="swiper-slide-caption">
+                  <div class="container container-bigger swiper-main-section">
+                    <div class="row row-fix justify-content-sm-center justify-content-md-start">
+                      <div class="col-md-6 col-lg-5 col-xl-4 col-xxl-5">
+                        <h3>The Trip of Your Dream</h3>
+                        <div class="divider divider-decorate"></div>
+                        <p class="text-spacing-sm">Our travel agency is ready to offer you an exciting vacation that is designed to fit your own needs and wishes. Whether it’s an exotic cruise or a trip to your favorite resort, you will surely have the best experience.</p><a class="button button-default-outline button-nina button-sm" href="#">learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide" data-slide-bg="<?= $baseurl?>asset/images/swiper-slide-3.jpg">
+                <div class="swiper-slide-caption">
+                  <div class="container container-bigger swiper-main-section">
+                    <div class="row row-fix justify-content-sm-center justify-content-md-start">
+                      <div class="col-md-6 col-lg-5 col-xl-4 col-xxl-5">
+                        <h3>unique Travel Insights</h3>
+                        <div class="divider divider-decorate"></div>
+                        <p class="text-spacing-sm">Our team is ready to provide you with unique weekly travel insights that include photos, videos, and articles about untravelled tourist paths. We know everything about the places you’ve never been to!</p><a class="button button-default-outline button-nina button-sm" href="#">learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Swiper controls-->
             <div class="swiper-pagination-wrap">
               <div class="container container-bigger">
                 <div class="row">
@@ -305,7 +123,7 @@
                       </div>
                     </div>
                     <div class="form-wrap form-button">
-                      <button class="button button-block button-secondary" type="submit">search</button>
+                      <button class="button button-block button-secondary" type="submit">search flight</button>
                     </div>
                   </form>
                 </div>
@@ -315,7 +133,7 @@
         </div>
       </section>
 
-      <!-- <section class="section section-variant-1 bg-default novi-background bg-cover"> 
+      <section class="section section-variant-1 bg-default novi-background bg-cover"> 
         <div class="container container-wide">
           <div class="row row-fix justify-content-xl-end row-30 text-center text-xl-left">
             <div class="col-xl-8">
@@ -401,7 +219,7 @@
             </div>
           </div>
         </div>
-      </section> -->
+      </section>
 
       <!-- our advantages-->
       <section class="section section-lg bg-gray-lighter novi-background bg-cover text-center">
@@ -446,13 +264,13 @@
       </section>
 
       <!-- Tips & tricks-->
-      <!-- <section class="section section-lg novi-background bg-cover bg-default text-center">
+      <section class="section section-lg novi-background bg-cover bg-default text-center">
         <div class="container-wide">
           <div class="row row-50">
             <div class="col-sm-12">
               <h3>Latest News</h3>
               <div class="divider divider-decorate"></div>
-              Owl Carousel COMMENT
+              <!-- Owl Carousel-->
               <div class="owl-carousel owl-carousel-team owl-carousel-inset" data-items="1" data-md-items="2" data-xl-items="3" data-stage-padding="15" data-loop="true" data-margin="30" data-mouse-drag="false" data-dots="true" data-autoplay="true">
                 <article class="post-blog"><a class="post-blog-image" href="#"><img src="images/landing-private-airlines-7-570x415.jpg" alt="" width="570" height="415"/></a>
                   <div class="post-blog-caption">
@@ -510,16 +328,16 @@
                 </article>
               </div>
             </div>
-            <div class="col-12"><a class="button button-secondary button-nina button-offset-lg" href="#">view all posts</a></div>
+            <div class="col-12"><a class="button button-secondary button-nina button-offset-lg" href="#">view all blog posts</a></div>
           </div>
         </div>
-      </section> -->
+      </section>
 
-      <!-- <section class="section section-lg text-center bg-gray-lighter novi-background bg-cover">
+      <section class="section section-lg text-center bg-gray-lighter novi-background bg-cover">
         <div class="container container-bigger">
           <h3>testimonials</h3>
           <div class="divider divider-decorate"></div>
-          Owl Carousel COMMENT
+          <!-- Owl Carousel-->
           <div class="owl-carousel owl-layout-1" data-items="1" data-dots="true" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false" data-autoplay="true">
             <article class="quote-boxed">
               <div class="quote-boxed-aside"><img class="quote-boxed-image" src="images/quote-user-1-210x210.jpg" alt="" width="210" height="210"/>
@@ -562,7 +380,7 @@
             </article>
           </div>
         </div>
-      </section> -->
+      </section>
 
       <section class="section section-md text-center text-md-left bg-gray-700 novi-background bg-cover">
         <div class="container container-wide">
@@ -580,32 +398,4 @@
         </div>
       </section><a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="images/banner/foreground-03-1600x310.png" srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt="" width="1600" height="310"></a>
 
-      <!-- Footer Minimal-->
-      <footer class="section page-footer page-footer-minimal novi-background bg-cover text-center bg-gray-darker">
-        <div class="container container-wide">
-          <div class="row row-fix justify-content-sm-center align-items-md-center row-30">
-            <div class="col-md-10 col-lg-7 col-xl-4 text-xl-left"><a href="index.html"><img class="inverse-logo" src="images/logo-inverse-208x46.png" alt="" width="208" height="46"/></a></div>
-            <div class="col-md-10 col-lg-7 col-xl-4">
-              <p class="right">&#169;&nbsp;<span class="copyright-year"></span> All Rights Reserved. Design&nbsp;by&nbsp;<a href="https://www.templatemonster.com">TemplateMonster</a></p>
-            </div>
-            <div class="col-md-10 col-lg-7 col-xl-4 text-xl-right">
-              <ul class="group-xs group-middle"> 
-                <li><a class="icon novi-icon icon-md-middle icon-circle icon-secondary-5-filled mdi mdi-facebook" href="#"></a></li>
-                <li><a class="icon novi-icon icon-md-middle icon-circle icon-secondary-5-filled mdi mdi-twitter" href="#"></a></li>
-                <li><a class="icon novi-icon icon-md-middle icon-circle icon-secondary-5-filled mdi mdi-instagram" href="#"></a></li>
-                <li><a class="icon novi-icon icon-md-middle icon-circle icon-secondary-5-filled mdi mdi-google" href="#"></a></li>
-                <li><a class="icon novi-icon icon-md-middle icon-circle icon-secondary-5-filled mdi mdi-linkedin" href="#"></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <!-- Global Mailform Output-->
-    <div class="snackbars" id="form-output-global"> </div>
-    <!-- Javascript-->
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-    <!-- coded by barber-->
-  </body>
-</html>
+<?php require_once('include/footer.php'); ?>
