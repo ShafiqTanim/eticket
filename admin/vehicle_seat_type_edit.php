@@ -65,15 +65,15 @@
                                     <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Seat<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" required name="Seat_id" id="Seat_id">
+                                                <select class="form-control" required name="seat_id" id="seat_id">
                                                     <option value="">Choose One</option>
                                                 <?php 
-                                                    $result=$mysqli->common_select('Seat');
+                                                    $result=$mysqli->common_select('seat');
                                                     if($result){
                                                         if($result['data']){
                                                             foreach($result['data'] as $data){
                                                 ?>
-                                                    <option value="<?= $data->id ?>"<?= $d->id==$olddata->Seat_id ? "selected" :"" ?>><?= $data->name ?></option>
+                                                    <option value="<?= $data->id ?>"<?= $data->id==$olddata->seat_id ? "selected" :"" ?>><?= $data->name ?></option>
                                                 <?php } } } ?>
                                                 </select>
                                             </div>
@@ -82,7 +82,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Seat Type<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                                <select class="form-control" name="seat_type" id="seat_type" required="required">
+                                                <select class="form-control" name="seat_type_id" id="seat_type_id" required="required">
                                                     <option value="">Choose One</option>
                                                 <?php 
                                                     $result=$mysqli->common_select('seat_type');
@@ -90,7 +90,7 @@
                                                         if($result['data']){
                                                             foreach($result['data'] as $data){
                                                 ?>
-                                                    <option value="<?= $data->id ?>" <?= $d->id==$olddata->seat_type ? "selected" :"" ?>><?= $data->name ?></option>
+                                                    <option value="<?= $data->id ?>" <?= $data->id==$olddata->seat_type_id ? "selected" :"" ?>><?= $data->name ?></option>
                                                 <?php } } } ?>
                                                 </select>
                                             </div>
