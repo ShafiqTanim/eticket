@@ -1,8 +1,7 @@
 <?php
     session_start();
-    $baseurl="http://localhost/eticket/";
-    include_once('class/crud.php');
 ?>
+<?php require_once('include/connection.php'); ?>
 <?php $baseurl="http://localhost/eticket/admin/"; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,10 +66,9 @@
             </form>
               <?php
                 if(isset($_POST['login_button'])){
-                    $crud=new crud();
                     unset($_POST['login_button']);
                     $_POST['password']=sha1($_POST['password']);
-                    $rs=$crud->common_select_single('auth','*',$_POST);
+                    $rs=$mysqli->common_select_single('auth','*',$_POST);
                     if($rs['data']){
                         $_SESSION['loggedin']="true";
                         $_SESSION['username']=$rs['data']->username;
