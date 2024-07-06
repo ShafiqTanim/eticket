@@ -51,7 +51,7 @@
                          <?php 
                         $result=$mysqli->common_select_query("select vehicle_seat_type.*, vehicle.name as vehicle, seat.name as seat,seat_type.name as type
                         from vehicle_seat_type join vehicle on vehicle_seat_type.vehicle_id=vehicle.id
-                        join Seat on vehicle_seat_type.seat_id=seat.id
+                        join seat on vehicle_seat_type.seat_id=seat.id
                         join seat_type on vehicle_seat_type.seat_type_id=seat_type.id");
                         if($result){
                             if($result['data']){
@@ -63,11 +63,11 @@
                                 <td><?= $i++ ?></td>
                                 <td><?= $data-> vehicle ?></td>
                                 <td><?= $data-> seat ?></td>
-                                <td><?= $data->type ?></td>
+                                <td><?= $data-> type ?></td>
                                 <td><?= $data-> price ?></td>
                                 <td>
-                                  <a href="<?= $baseurl ?>Vehicle_Seat_type _edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                  <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>Vehicle_Seat_type _delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
+                                  <a href="<?= $baseurl ?>vehicle_seat_type_edit.php?id=<?= $data ->id ?>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
+                                  <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>vehicle_seat_type_delete.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                                 </td>
                                 
                             </tr>
