@@ -1,4 +1,11 @@
 <?php require_once('include/header.php'); ?>
+<div class="mt-4 ml-3" >
+  <form action="" method="get">
+   From <input type="text" name="">
+   To <input type="text" name="">
+   Date <input type="datetime" name="">
+  </form>
+</div>
 
       <!-- hi, we are brave-->
       <section class="section section-lg bg-default">
