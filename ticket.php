@@ -18,90 +18,85 @@
       <div class="row row-fix justify-content-sm-center justify-content-lg-end pt-5">
         <div class="col-lg-6 col-xxl-5">
           <!-- Seat layout-->
-          <table class="table">
-            <thead>
+           <div class="pt-5 mt-5">
+            <table class="table">
+              <thead>
+                  <tr>
+                    <th scope="col">R1</th>
+                    <th scope="col">R2</th>
+                    <th scope="col"></th>
+                    <th scope="col">R3</th>
+                    <th scope="col">R4</th>
+                  </tr>
+              </thead>
+              <tbody>
                 <tr>
-                  <th scope="col">R1</th>
-                  <th scope="col">R2</th>
-                  <th scope="col"></th>
-                  <th scope="col">R3</th>
-                  <th scope="col">R4</th>
+                  <td></button></td>
+                  <td></button></td>
+                  <td></td>
+                  <td></td>
                 </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></button></td>
-                <td></button></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td><button type="button" class="btn btn-outline-primary" value="">A1</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">A2</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">A3</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">A3</button></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td><button type="button" class="btn btn-outline-primary" value="">B1</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">B2</td>
-                <td></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">B3</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">B4</button></td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td><button type="button" class="btn btn-outline-primary" value="">C1</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">C2</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">C3</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">C4</button></td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td><button type="button" class="btn btn-outline-primary" value="">D1</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">D2</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">D3</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">D4</button></td>
-              </tr>
-              <tr>
-                <th scope="row">6</th>
-                <td><button type="button" class="btn btn-outline-primary" value="">E1</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">E2</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">E3</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">E4</button></td>
-              </tr>
-              <tr>
-                <th scope="row">7</th>
-                <td><button type="button" class="btn btn-outline-primary" value="">F1</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">F2</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">F3</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">F4</button></td>
-              </tr>
-                <th scope="row">8</th>
-                <td><button type="button" class="btn btn-outline-primary" value="">G1</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">G2</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">G3</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">G4</button></td>
-              </tr>
-              </tr>
-                <th scope="row">8</th>
-                <td><button type="button" class="btn btn-outline-primary" value="">H1</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">H2</button></td>
-                <td></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">H3</button></td>
-                <td><button type="button" class="btn btn-outline-primary" value="">H4</button></td>
-              </tr>
-            </thead>
-          </table>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">A1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">A2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">A3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">A3</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">B1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">B2</td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">B3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">B4</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">C1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">C2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">C3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">C4</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">D1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">D2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">D3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">D4</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">E1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">E2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">E3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">E4</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">F1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">F2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">F3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">F4</button></td>
+                </tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">G1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">G2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">G3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">G4</button></td>
+                </tr>
+                </tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">H1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">H2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">H3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">H4</button></td>
+                </tr>
+              </thead>
+            </table>
+           </div>
         </div>
-        <div class="col-lg-6 col-xxl-5">
-          <div class="form-request form-request-modern bg-gray-lighter novi-background">
+        <div class="pt-5 col-lg-6 col-xxl-5">
+          <div class="mt-5 form-request form-request-modern bg-gray-lighter novi-background">
             <h4>Find your Tour</h4>
             <!-- RD Mailform-->
             <form class="rd-mailform form-fix">
