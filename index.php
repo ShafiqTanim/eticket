@@ -63,25 +63,38 @@
                 <div class="form-request form-request-modern bg-gray-lighter novi-background">
                   <h4>Find your Tour</h4>
                   <!-- RD Mailform-->
-                  <form class="rd-mailform form-fix">
+                   <!-- form start -->
+                  <form action="area_add.php" method="get" class="rd-mailform form-fix">
                     <div class="row row-20 row-fix">
                       <div class="col-sm-12">
                         <label class="form-label-outside">From</label>
                         <div class="form-wrap form-wrap-inline">
-                          <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="city">
-                            <option value="1">New York</option>
-                            <option value="2">Lisbon</option>
-                            <option value="3">Stockholm</option>
+                          <select class="form-input select-filter" required name="area_from" id="area_from" data-placeholder="Choose One"  >
+                          <option value=""></option>
+                              <?php 
+                                  $result=$mysqli->common_select('area');
+                                  if($result){
+                                      if($result['data']){
+                                          foreach($result['data'] as $data){
+                              ?>
+                                  <option value="<?= $data->id ?>"><?= $data->name ?></option>
+                              <?php } } } ?>
                           </select>
                         </div>
                       </div>
                       <div class="col-sm-12">
                         <label class="form-label-outside">To</label>
                         <div class="form-wrap form-wrap-inline">
-                          <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="city">
-                            <option value="1">Chicago</option>
-                            <option value="2">Madrid</option>
-                            <option value="3">Paris</option>
+                          <select class="form-input select-filter" data-placeholder="Choose One" required name="area_to" id="area_to">
+                          <option value=""></option>
+                            <?php 
+                                $result=$mysqli->common_select('area');
+                                if($result){
+                                    if($result['data']){
+                                        foreach($result['data'] as $data){
+                            ?>
+                                <option value="<?= $data->id ?>"><?= $data->name ?></option>
+                            <?php } } } ?>
                           </select>
                         </div>
                       </div>
@@ -109,23 +122,13 @@
                           </select>
                         </div>
                       </div>
-                      <div class="col-lg-6">
-                        <label class="form-label-outside">Adults</label>
-                        <div class="form-wrap form-wrap-modern">
-                          <input class="form-input input-append" id="form-element-stepper" type="number" min="0" max="300" value="2">
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <label class="form-label-outside">Children</label>
-                        <div class="form-wrap form-wrap-modern">
-                          <input class="form-input input-append" id="form-element-stepper-1" type="number" min="0" max="300" value="0">
-                        </div>
-                      </div>
                     </div>
+                   
                     <div class="form-wrap form-button">
-                      <button class="button button-block button-secondary" type="submit">search flight</button>
+                      <button class="button button-block button-secondary" type="submit" value=""><a href="bus.php"> search</a></button>
                     </div>
                   </form>
+                  <!-- form end -->
                 </div>
               </div>
             </div>
