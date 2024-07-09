@@ -1,37 +1,93 @@
 <?php require_once('include/header.php'); ?>
-<div class="mt-4 ml-3" >
-  <form action="" method="get">
-   From <input type="text" name="">
-   To <input type="text" name="">
-   Date <input type="datetime" name="">
-  </form>
-</div>
+
+
 
       <!-- hi, we are brave-->
       <section class="section section-lg bg-default">
         <div class="container container-bigger">
+          <div class="row">
+            <div class="col-12">
+              <form action="" method="get">
+                <div class="d-flex bd-highlight">
+                  <div class="p-2 flex-even">
+                    <div class="form-wrap form-wrap-inline">
+                      <label class="form-label-outside">From</label>
+                      <div class="form-wrap form-wrap-inline">
+                        <select class="form-input select-filter" required name="area_from" id="area_from" data-placeholder="Choose One"  >
+                          <option value=""></option>
+                            <?php 
+                              $result=$mysqli->common_select('area');
+                                if($result){
+                                  if($result['data']){
+                                    foreach($result['data'] as $data){
+                            ?>
+                                <option value="<?= $data->id ?>" <?= $_GET['area_from']==$data->id?"selected":"" ?>><?= $data->name ?></option>
+                            <?php } } } ?>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-2 flex-even">
+                    <label class="form-label-outside">To</label>
+                    <div class="form-wrap form-wrap-inline">
+                      <select class="form-input select-filter" data-placeholder="Choose One" required name="area_to" id="area_to">
+                        <option value=""></option>
+                          <?php 
+                            $result=$mysqli->common_select('area');
+                              if($result){
+                                if($result['data']){
+                                  foreach($result['data'] as $data){
+                          ?>
+                              <option value="<?= $data->id ?>" <?= $_GET['area_to']==$data->id?"selected":"" ?>><?= $data->name ?></option>
+                          <?php } } } ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="p-2 flex-even">
+                    <label class="form-label-outside">Depart Date</label>
+                    <div class="form-wrap form-wrap-validation">
+                      <input class="form-input" id="dateForm" name="dep_date" type="text" value="<?= $_GET['dep_date'] ?>" data-time-picker="date">
+                      <label class="form-label" for="dateForm">Choose the date</label>
+                    </div>
+                  </div>
+                  <div class="p-2 flex-even">
+                    <button class="button button-block button-secondary mt-3" type="submit">search</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
           
           <?php 
             $cols=array(1,2,3,4);
-            $result=$mysqli->common_select('vehicle');
-            if($result){
-                if($result['data']){
-                    foreach($result['data'] as $data){
-            $seat=$rows=array();
-            $con['id']=$_GET['id'] ?? 0;
-            $result=$mysqli->common_select_query("SELECT vehicle_seat_type.*,seat.name,seat_type.name as stype FROM `vehicle_seat_type` 
-                                                  JOIN seat on seat.id=vehicle_seat_type.seat_id
-                                                  JOIN seat_type on seat_type.id=vehicle_seat_type.seat_type_id
-                                                  WHERE vehicle_seat_type.vehicle_id={$data->id} and vehicle_seat_type.deleted_at is null order by seat.name");
+            $depdate=date('Y-m-d',strtotime($_GET['dep_date']));
+            $result=$mysqli->common_select_query("SELECT schedule.*,route.name,vehicle.name as bus,vehicle.registration_no,vehicle.vehicle_type,(select area.name from area where area.id= route.break_area) as breakarea,
+                                                  (select counter.counter_name from counter WHERE counter.id=schedule.departure_counter) as depcounter,
+                                                  (select counter.counter_name from counter WHERE counter.id=schedule.arrival_counter) as arrcounter
+                                                  FROM `schedule`
+                                                  JOIN vehicle on vehicle.id=schedule.vehicle_id
+                                                  JOIN route on route.id=schedule.route_id
+                                                  WHERE route.area_from={$_GET['area_from']} and route.area_to={$_GET['area_to']} and 
+                                                  date(schedule.departure_time)='{$depdate}'");
+           
             if($result){
               if($result['data']){
-                foreach($result['data'] as $rs){
-                  $rows[substr($rs->name,0,1)]=substr($rs->name,0,1);
-                  $seat[$rs->name]=$rs;
-                }
-              }
-            }
-            if(count($seat) > 0){
+                  foreach($result['data'] as $data){
+                    $seat=$rows=array();
+                    $con['id']=$_GET['id'] ?? 0;
+                    $result=$mysqli->common_select_query("SELECT vehicle_seat_type.*,seat.name,seat_type.name as stype FROM `vehicle_seat_type` 
+                                                  JOIN seat on seat.id=vehicle_seat_type.seat_id
+                                                  JOIN seat_type on seat_type.id=vehicle_seat_type.seat_type_id
+                                                  WHERE vehicle_seat_type.vehicle_id={$data->vehicle_id} and vehicle_seat_type.deleted_at is null order by seat.name");
+                    if($result){
+                      if($result['data']){
+                        foreach($result['data'] as $rs){
+                          $rows[substr($rs->name,0,1)]=substr($rs->name,0,1);
+                          $seat[$rs->name]=$rs;
+                        }
+                      }
+                    }
+                    if(count($seat) > 0){
           ?>
 
 
@@ -39,9 +95,16 @@
             <div class="col-md-10 col-lg-6">
               <h3>
                 <button type="button" onclick="show_seatplan(<?= $data->id ?>)" class="btn btn-link">
-                  <?= $data->name ?> (<?= $data->registration_no ?>)
+                  <?= $data->bus ?> #<?= $data->couch_number ?>
                 </button>
               </h3>
+              <p>
+                Bus Type: <?= $data->vehicle_type ?><br>
+                Start Counter: <?= $data->depcounter ?><br>
+                Break: <?= $data->breakarea ?><br>
+                End Counter: <?= $data->arrcounter ?><br>
+                Time: <?= date('h:i A',strtotime($data->departure_time)) ?> - <?= date('h:i A',strtotime($data->arrival_time)) ?><br>
+              </p>
               <div class="divider divider-decorate"></div>
               <table class="table">
                 <tr>
@@ -74,8 +137,8 @@
                             ?>
                                 <td>
                                   <?php if(isset($seat["{$r}{$c}"])){ ?>
-                                  <button title="<?= $seat["{$r}{$c}"]->name ?? '' ?>" onclick="get_seat(this)" type="button" data-seat='<?= json_encode($seat["{$r}{$c}"]) ?>' class="btn btn-default vseat<?= $data->id ?>" value="">
-                                    <i class="fa fa-edit"></i>
+                                  <button title="<?= $seat["{$r}{$c}"]->name ?? '' ?>" onclick="get_seat(this)" type="button" data-seat='<?= json_encode($seat["{$r}{$c}"]) ?>' class="btn btn-link p-0 vseat<?= $data->id ?>" value="">
+                                    <img width="25px" src="<?= $baseurl ?>asset/images/seat_black.svg" alt="">
                                   </button>
                                   <?php } ?>
                                 </td>
@@ -148,7 +211,7 @@
         </div>
       </section>
 <?php require_once('include/footer.php'); ?>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
 <script>
   function show_seatplan(e){
     $('.seat_plan').hide()

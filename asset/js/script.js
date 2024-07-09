@@ -1411,7 +1411,7 @@ $document.ready(function () {
 
 			options['format'] = 'dddd DD MMMM YYYY - HH:mm';
 			if ($dateTimePicker.attr("data-time-picker") == "date") {
-				options['format'] = 'MM-DD-YYYY';
+				options['format'] = 'DD-MM-YYYY';
 				options['minDate'] = new Date();
 			} else if ($dateTimePicker.attr("data-time-picker") == "time") {
 				options['format'] = 'HH:mm';

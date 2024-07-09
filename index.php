@@ -64,7 +64,7 @@
                   <h4>Find your Tour</h4>
                   <!-- RD Mailform-->
                    <!-- form start -->
-                  <form action="area_add.php" method="get" class="rd-mailform form-fix">
+                  <form action="bus.php" method="get" class="form-fix">
                     <div class="row row-20 row-fix">
                       <div class="col-sm-12">
                         <label class="form-label-outside">From</label>
@@ -74,8 +74,8 @@
                               <?php 
                                   $result=$mysqli->common_select('area');
                                   if($result){
-                                      if($result['data']){
-                                          foreach($result['data'] as $data){
+                                    if($result['data']){
+                                      foreach($result['data'] as $data){
                               ?>
                                   <option value="<?= $data->id ?>"><?= $data->name ?></option>
                               <?php } } } ?>
@@ -102,30 +102,14 @@
                         <label class="form-label-outside">Depart Date</label>
                         <div class="form-wrap form-wrap-validation">
                           <!-- Select -->
-                          <input class="form-input" id="dateForm" name="date" type="text" data-time-picker="date">
+                          <input class="form-input" id="dateForm" name="dep_date" type="text" data-time-picker="date">
                           <label class="form-label" for="dateForm">Choose the date</label>
-                          <!--select.form-input.select-filter(data-placeholder="All", data-minimum-results-for-search="Infinity",  name='city')-->
-                          <!--  option(value="1") Choose the date-->
-                          <!--  option(value="2") Primary-->
-                          <!--  option(value="3") Middle-->
-                        </div>
-                      </div>
-                      <div class="col-sm-12 col-lg-6">
-                        <label class="form-label-outside">Duration</label>
-                        <div class="form-wrap form-wrap-validation">
-                          <!-- Select 2-->
-                          <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="city">
-                            <option value="1">Any length</option>
-                            <option value="2">2 days</option>
-                            <option value="3">3 days</option>
-                            <option value="4">4 days</option>
-                          </select>
                         </div>
                       </div>
                     </div>
                    
                     <div class="form-wrap form-button">
-                      <button class="button button-block button-secondary" type="submit" value=""><a href="bus.php"> search</a></button>
+                      <button class="button button-block button-secondary" type="submit">search</button>
                     </div>
                   </form>
                   <!-- form end -->
