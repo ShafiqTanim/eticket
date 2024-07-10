@@ -138,7 +138,7 @@
                                 <td>
                                   <?php if(isset($seat["{$r}{$c}"])){ ?>
                                   <button title="<?= $seat["{$r}{$c}"]->name ?? '' ?>" onclick="get_seat(this)" type="button" data-seat='<?= json_encode($seat["{$r}{$c}"]) ?>' class="btn btn-link p-0 vseat<?= $data->id ?>" value="">
-                                    <img width="25px" src="<?= $baseurl ?>asset/images/seat_black.svg" alt="">
+                                    <img width="25px" src="<?= $baseurl ?>asset/images/icon/seat_green.svg" alt="">
                                   </button>
                                   <?php } ?>
                                 </td>
@@ -218,12 +218,16 @@
     $('.seat_plan'+e).show()
   }
   function get_seat(e){
-    $(e).toggleClass('btn-warning');
+    $(e).toggleClass('selectedSeat');
+    if($(e).hasClass('selectedSeat'))
+      $(e).find('img').attr('src','<?= $baseurl ?>asset/images/icon/seat_yellow.svg')
+    else
+      $(e).find('img').attr('src','<?= $baseurl ?>asset/images/icon/seat_green.svg')
     let seat= $(e).data('seat');
     let seat_data="";
     let seat_qty=0;
     let seat_total=0;
-    $('.vseat'+seat.vehicle_id+'.btn-warning').each(function(e){
+    $('.vseat'+seat.vehicle_id+'.selectedSeat').each(function(e){
       seat_qty++;
       seat_total+=parseFloat($(this).data('seat').price);
       
