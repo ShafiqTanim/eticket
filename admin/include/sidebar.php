@@ -25,7 +25,7 @@
                       <li><a href="index3.html">Dashboard3</a></li> -->
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-cog"></i> Settings <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-cog"></i> Ticket Details <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a>Schedule<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
@@ -109,13 +109,6 @@
                     <ul class="nav child_menu">
                       <li><a href="ticket_add.php">Add New</a></li>
                       <li><a href="ticket_list.php">List</a></li>
-                    </ul>
-                  </li>
-
-                  <li><a><i class="fa fa-edit"></i>Ticket Details<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="ticket_details_add.php">Add New</a></li>
-                      <li><a href="ticket_details_list.php">List</a></li>
                     </ul>
                   </li>
 
