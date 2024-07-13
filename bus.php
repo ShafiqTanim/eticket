@@ -51,7 +51,7 @@
                     </div>
                   </div>
                   <div class="p-2 flex-even">
-                    <button class="button button-block button-secondary mt-3" type="submit">search</button>
+                    <button class="button button-block button-secondary mt-4" type="submit">search</button>
                   </div>
                 </div>
               </form>
@@ -69,6 +69,7 @@
                                                   JOIN route on route.id=schedule.route_id
                                                   WHERE route.area_from={$_GET['area_from']} and route.area_to={$_GET['area_to']} and 
                                                   date(schedule.departure_time)='{$depdate}'");
+           
            
             if($result){
               if($result['data']){
@@ -91,12 +92,14 @@
           ?>
 
 
+
           <div class="row row-50 justify-content-md-center align-items-lg-center justify-content-xl-between">
             <div class="col-md-10 col-lg-6">
               <h3>
                 <button type="button" onclick="show_seatplan(<?= $data->id ?>)" class="btn btn-link">
                   <?= $data->bus ?> #<?= $data->couch_number ?>
                 </button>
+                <button type="button" onclick="show_seatplan(<?= $data->id ?>)" class="btn btn-link btn-warning">View Seat-plan</button>
               </h3>
               <p>
                 Bus Type: <?= $data->vehicle_type ?><br>
@@ -119,7 +122,6 @@
                   <th class="total_price<?= $data->id ?>">0.00</th>
                 </tr>
               </table>
-              
             </div>
             <div class="col-md-10 col-lg-6">
               <div class="p-3 seat_plan seat_plan<?= $data->id ?>" style="display:none">
@@ -138,7 +140,7 @@
                                 <td>
                                   <?php if(isset($seat["{$r}{$c}"])){ ?>
                                   <button title="<?= $seat["{$r}{$c}"]->name ?? '' ?>" onclick="get_seat(this)" type="button" data-seat='<?= json_encode($seat["{$r}{$c}"]) ?>' class="btn btn-link p-0 vseat<?= $data->id ?>" value="">
-                                    <img width="25px" src="<?= $baseurl ?>asset/images/seat_black.svg" alt="">
+                                    <img width="25px" src="<?= $baseurl ?>asset/images/icon/seat_green.svg" alt="">
                                   </button>
                                   <?php } ?>
                                 </td>
@@ -155,7 +157,11 @@
           <?php } } } } ?>
         </div>
       </section>
-
+    
+      <div class="row row- justify-content-md-center align-items-md-center ">
+            <div class="col-md-6 ">
+      <button type="button" onclick="" class="btn-warning"><a href="ticket_details.php" >BUY NOW</a></button>
+      </div>
       <!-- Small Features-->
       <section class="section section-lg section-lg-alternative bg-gray-lighter novi-background bg-cover">
         <div class="container container-wide">
@@ -218,12 +224,16 @@
     $('.seat_plan'+e).show()
   }
   function get_seat(e){
-    $(e).toggleClass('btn-warning');
+    $(e).toggleClass('selectedSeat');
+    if($(e).hasClass('selectedSeat'))
+      $(e).find('img').attr('src','<?= $baseurl ?>asset/images/icon/seat_yellow.svg')
+    else
+      $(e).find('img').attr('src','<?= $baseurl ?>asset/images/icon/seat_green.svg')
     let seat= $(e).data('seat');
     let seat_data="";
     let seat_qty=0;
     let seat_total=0;
-    $('.vseat'+seat.vehicle_id+'.btn-warning').each(function(e){
+    $('.vseat'+seat.vehicle_id+'.selectedSeat').each(function(e){
       seat_qty++;
       seat_total+=parseFloat($(this).data('seat').price);
       
@@ -238,3 +248,6 @@
     $('.total_price'+seat.vehicle_id).html(seat_total)
   }
 </script>
+<div class="form-group">
+									<button class="btn btn-black btn-lg py-3 btn-block" type="submit">Place Order</button>
+								</div>

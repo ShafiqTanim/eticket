@@ -60,7 +60,7 @@
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <!-- RD Navbar Brand-->
                 <div class="rd-navbar-brand">
-                  <a class="brand-name" href="index.html">
+                  <a class="brand-name" href="<?= $baseurl ?>">
                     <img class="logo-default" src="<?= $baseurl?>asset/images/logo-default-208x46.png" alt="" width="208" height="46"/>
                     <img class="logo-inverse" src="<?= $baseurl?>asset/images/logo-inverse-208x46.png" alt="" width="208" height="46"/>
                   </a>
@@ -70,7 +70,7 @@
                 <div class="rd-navbar-nav-wrap">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="active"><a href="index.html">Home</a>
+                    <li class="active"><a href="<?= $baseurl ?>">Home</a>
                     </li>
                     <li><a href="about-us.html">About Us</a>
                     </li>
