@@ -69,8 +69,6 @@
                                                   JOIN route on route.id=schedule.route_id
                                                   WHERE route.area_from={$_GET['area_from']} and route.area_to={$_GET['area_to']} and 
                                                   date(schedule.departure_time)='{$depdate}'");
-           
-           
             if($result){
               if($result['data']){
                   foreach($result['data'] as $data){
@@ -90,9 +88,6 @@
                     }
                     if(count($seat) > 0){
           ?>
-
-
-
           <div class="row row-50 justify-content-md-center align-items-lg-center justify-content-xl-between">
             <div class="col-md-10 col-lg-6">
               <h3>
@@ -117,16 +112,22 @@
                 <tbody class="vehicle<?= $data->id ?>">
 
                 </tbody>
-                <tr>
-                  <th class="total_qty<?= $data->id ?>">0</th>
-                  <th class="total_price<?= $data->id ?>">0.00</th>
-                </tr>
+                <tfoot>
+                  <tr>
+                    <th class="total_qty<?= $data->id ?>">0</th>
+                    <th class="total_price<?= $data->id ?>">0.00</th>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <a class="button button-sm button-secondary button-nina" href="ticket_details.php" >BUY NOW</a>
+                    </td>
+                  </tr>
+                </tfoot>
               </table>
             </div>
             <div class="col-md-10 col-lg-6">
               <div class="p-3 seat_plan seat_plan<?= $data->id ?>" style="display:none">
                 <table style="border:2px solid #ffa900" class="table">
-                  
                   <tbody>
                     <?php 
                       if(count($rows)){
@@ -139,7 +140,7 @@
                             ?>
                                 <td>
                                   <?php if(isset($seat["{$r}{$c}"])){ ?>
-                                  <button title="<?= $seat["{$r}{$c}"]->name ?? '' ?>" onclick="get_seat(this)" type="button" data-seat='<?= json_encode($seat["{$r}{$c}"]) ?>' class="btn btn-link p-0 vseat<?= $data->id ?>" value="">
+                                  <button title="<?= $seat["{$r}{$c}"]->name ?? '' ?>" onclick="get_seat(this)" type="button" data-schedule="<?= $data->id ?>" data-seat='<?= json_encode($seat["{$r}{$c}"]) ?>' class="btn btn-link p-0 vseat<?= $data->id ?>" value="">
                                     <img width="25px" src="<?= $baseurl ?>asset/images/icon/seat_green.svg" alt="">
                                   </button>
                                   <?php } ?>
@@ -147,21 +148,16 @@
                             <?php } } ?>
                           </tr>
                     <?php } } ?>
-                    
-                  </thead>
+                  </tbody>
+                  
                 </table>
               </div>
-              
             </div>
           </div>
           <?php } } } } ?>
         </div>
       </section>
-    
-      <div class="row row- justify-content-md-center align-items-md-center ">
-            <div class="col-md-6 ">
-      <button type="button" onclick="" class="btn-warning"><a href="ticket_details.php" >BUY NOW</a></button>
-      </div>
+
       <!-- Small Features-->
       <section class="section section-lg section-lg-alternative bg-gray-lighter novi-background bg-cover">
         <div class="container container-wide">
@@ -246,8 +242,20 @@
     $('.vehicle'+seat.vehicle_id).html(seat_data)
     $('.total_qty'+seat.vehicle_id).html(seat_qty)
     $('.total_price'+seat.vehicle_id).html(seat_total)
+
+    let schedule=$(e).data('schedule');
+    addToCart(seat.seat_id,seat.price,seat.name,schedule,seat.vehicle_id)
   }
 </script>
-<div class="form-group">
-									<button class="btn btn-black btn-lg py-3 btn-block" type="submit">Place Order</button>
-								</div>
+<script>
+  function addToCart(seat_id,price,name,schedule,vehicle_id){
+    $.get('cart_add.php',
+      { seat_id : seat_id,price:price,name:name,schedule:schedule,vehicle:vehicle_id},
+      function(data){
+        if(data){
+          console.log(data)
+        }
+      }
+    )
+  }
+</script>
