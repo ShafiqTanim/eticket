@@ -61,8 +61,8 @@
                 <!-- RD Navbar Brand-->
                 <div class="rd-navbar-brand">
                   <a class="brand-name" href="<?= $baseurl ?>">
-                    <img class="logo-default" src="<?= $baseurl?>asset/images/logo-default-208x46.png" alt="" width="208" height="46"/>
-                    <img class="logo-inverse" src="<?= $baseurl?>asset/images/logo-inverse-208x46.png" alt="" width="208" height="46"/>
+                    <img class="logo-default" src="<?= $baseurl?>asset/images/logo-f.png" alt="" width="208" height="46"/>
+                    <img class="logo-inverse" src="<?= $baseurl?>asset/images/logo-f.png" alt="" width="208" height="46"/>
                   </a>
                 </div>
               </div>
