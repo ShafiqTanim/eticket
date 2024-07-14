@@ -9,8 +9,8 @@
 </head>
 <body> 
   <div class="container">
-    <div class="col-4 ">
-      <div class="col-4 bg-light">
+    <div class="col-5  ">
+      <div class="col-5 bg-light">
 
       <table class="table">
         <thead>
