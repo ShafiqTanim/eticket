@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+    <title>TICKET F0! | </title>
 
     <!-- Bootstrap -->
     <link href="<?= $baseurl ?>asset/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +27,7 @@
     <link href="<?= $baseurl ?>asset/build/css/custom.min.css" rel="stylesheet">
   </head>
 
+
   <body class="login">
     <div>
       <a class="hiddenanchor" id="signup"></a>
@@ -36,6 +37,7 @@
         <div class="animate form login_form">
           <section class="login_content">
             <form method="post">
+              <a href=""></a>
               <h1>Login Form</h1>
               <div>
                 <input type="text" name="username" class="form-control" placeholder="Username" required="" />
@@ -59,8 +61,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
+                  <h1><i class="asset/images/BUS.svg"></i>TICKET FO!</h1>
+                  <p>©from 2020 we are successfully providing our e-ticket service. Ticket F0! is a Bootstrap 4 version</p>
                 </div>
               </div>
             </form>
@@ -110,8 +112,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
+                  <h1><i class="fa fa-paw"></i> TICKET-FO!</h1>
+                  <p>©from 2020 we are successfully providing our e-ticket service. Ticket F0! is a Bootstrap 4 version</p>
                 </div>
               </div>
             </form>
