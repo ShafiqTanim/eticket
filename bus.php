@@ -220,6 +220,7 @@
     $('.seat_plan'+e).show()
   }
   function get_seat(e){
+    let schedule=$(e).data('schedule');
     $(e).toggleClass('selectedSeat');
     if($(e).hasClass('selectedSeat'))
       $(e).find('img').attr('src','<?= $baseurl ?>asset/images/icon/seat_yellow.svg')
@@ -229,7 +230,7 @@
     let seat_data="";
     let seat_qty=0;
     let seat_total=0;
-    $('.vseat'+seat.vehicle_id+'.selectedSeat').each(function(e){
+    $('.vseat'+schedule+'.selectedSeat').each(function(e){
       seat_qty++;
       seat_total+=parseFloat($(this).data('seat').price);
       
@@ -239,11 +240,11 @@
       seat_data+="</tr>";
       
     })
-    $('.vehicle'+seat.vehicle_id).html(seat_data)
-    $('.total_qty'+seat.vehicle_id).html(seat_qty)
-    $('.total_price'+seat.vehicle_id).html(seat_total)
+    $('.vehicle'+schedule).html(seat_data)
+    $('.total_qty'+schedule).html(seat_qty)
+    $('.total_price'+schedule).html(seat_total)
 
-    let schedule=$(e).data('schedule');
+    
     addToCart(seat.seat_id,seat.price,seat.name,schedule,seat.vehicle_id)
   }
 </script>
