@@ -62,7 +62,7 @@
                                                 <select class="form-control" required name="Seat_id" id="Seat_id">
                                                     <option value="">Choose One</option>
                                                 <?php 
-                                                    $result=$mysqli->common_select('Seat');
+                                                    $result=$mysqli->common_select('seat');
                                                     if($result){
                                                         if($result['data']){
                                                             foreach($result['data'] as $data){

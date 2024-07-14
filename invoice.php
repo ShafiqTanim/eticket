@@ -24,7 +24,7 @@
 <?php 
     $invdata=array();
     $con['id']=$_GET['invoice'];
-    $result=$mysqli->common_select_single('orders','*',$con);
+    $result=$mysqli->common_select_single('seat_book','*',$con);
     if($result){
         if($result['data']){
             $invdata=$result['data'];

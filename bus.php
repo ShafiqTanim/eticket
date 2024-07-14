@@ -84,6 +84,19 @@
                           $rows[substr($rs->name,0,1)]=substr($rs->name,0,1);
                           $seat[$rs->name]=$rs;
                         }
+
+
+                        $booked_seat=array();
+                        $conbook['vehicle_id']=$data->vehicle_id;
+                        $conbook['schedule_id']=$data->id;
+                        $booked=$mysqli->common_select('seat_book_details','*',$conbook);
+                        if($booked){
+                            if($booked['data']){
+                              foreach($booked['data'] as $bd){
+                                $booked_seat[$bd->seat_id]=$bd->seat_id;
+                              }
+                            }
+                        }
                       }
                     }
                     if(count($seat) > 0){
@@ -139,11 +152,16 @@
                                 foreach($cols as $c){
                             ?>
                                 <td>
-                                  <?php if(isset($seat["{$r}{$c}"])){ ?>
-                                  <button title="<?= $seat["{$r}{$c}"]->name ?? '' ?>" onclick="get_seat(this)" type="button" data-schedule="<?= $data->id ?>" data-seat='<?= json_encode($seat["{$r}{$c}"]) ?>' class="btn btn-link p-0 vseat<?= $data->id ?>" value="">
-                                    <img width="25px" src="<?= $baseurl ?>asset/images/icon/seat_green.svg" alt="">
-                                  </button>
-                                  <?php } ?>
+                                  <?php if(isset($seat["{$r}{$c}"])){ 
+                                        if(isset($booked_seat[$seat["{$r}{$c}"]->seat_id])){ ?>
+                                          <button title="<?= $seat["{$r}{$c}"]->name ?? '' ?>" style="cursor: no-drop;" type="button" class="btn btn-link p-0 " value="">
+                                            <img width="25px" src="<?= $baseurl ?>asset/images/icon/seat_ash.svg" alt="">
+                                          </button>
+                                  <?php }else{ ?>
+                                            <button title="<?= $seat["{$r}{$c}"]->name ?? '' ?>" style="cursor: pointer;" onclick="get_seat(this)" type="button" data-schedule="<?= $data->id ?>" data-seat='<?= json_encode($seat["{$r}{$c}"]) ?>' class="btn btn-link p-0 vseat<?= $data->id ?>" value="">
+                                              <img width="25px" src="<?= $baseurl ?>asset/images/icon/seat_green.svg" alt="">
+                                            </button>
+                                  <?php }} ?>
                                 </td>
                             <?php } } ?>
                           </tr>
@@ -220,6 +238,7 @@
     $('.seat_plan'+e).show()
   }
   function get_seat(e){
+    let schedule=$(e).data('schedule');
     $(e).toggleClass('selectedSeat');
     if($(e).hasClass('selectedSeat'))
       $(e).find('img').attr('src','<?= $baseurl ?>asset/images/icon/seat_yellow.svg')
@@ -229,7 +248,7 @@
     let seat_data="";
     let seat_qty=0;
     let seat_total=0;
-    $('.vseat'+seat.vehicle_id+'.selectedSeat').each(function(e){
+    $('.vseat'+schedule+'.selectedSeat').each(function(e){
       seat_qty++;
       seat_total+=parseFloat($(this).data('seat').price);
       
@@ -239,11 +258,11 @@
       seat_data+="</tr>";
       
     })
-    $('.vehicle'+seat.vehicle_id).html(seat_data)
-    $('.total_qty'+seat.vehicle_id).html(seat_qty)
-    $('.total_price'+seat.vehicle_id).html(seat_total)
+    $('.vehicle'+schedule).html(seat_data)
+    $('.total_qty'+schedule).html(seat_qty)
+    $('.total_price'+schedule).html(seat_total)
 
-    let schedule=$(e).data('schedule');
+    
     addToCart(seat.seat_id,seat.price,seat.name,schedule,seat.vehicle_id)
   }
 </script>
