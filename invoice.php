@@ -10,12 +10,12 @@
 
 </head>
 <body>
+
 <?php 
            
   $id=$_GET['invoice'];
-  $result=$mysqli->common_select_query("SELECT schedule.*,route.name,vehicle.name as bus,vehicle.registration_no,vehicle.vehicle_type,(select area.name from area where area.id= route.break_area) as breakarea,
-                                        (select counter.counter_name from counter WHERE counter.id=schedule.departure_counter) as depcounter,
-                                        (select counter.counter_name from counter WHERE counter.id=schedule.arrival_counter) as arrcounter
+  $result=$mysqli->common_select_query("SELECT seat_book.first_name as fname, seat_book.last_name as lname, seat_book.phone as phone,schedule.route_id as route,counter.counter_name as issue_counter,schedule.created_at as issue_date,seat_book.total_seat as seat_qty,seat_book.total_amount as total_price(select area.name from area where area.id= route.break_area) as breakarea,
+                                       
                                         FROM `schedule`
                                         JOIN vehicle on vehicle.id=schedule.vehicle_id
                                         JOIN route on route.id=schedule.route_id
