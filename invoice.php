@@ -1,31 +1,30 @@
+<?php require_once('include/connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- External CSS libraries -->
-    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
-
-    <!-- Favicon icon -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" >
-
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
-
-    <!-- Custom Stylesheet -->
-    <link type="text/css" rel="stylesheet" href="css/invoice.css">
+   
     <title>Document</title>
 
 </head>
 <body>
-    <style>
+<?php 
+           
+  $id=$_GET['invoice'];
+  $result=$mysqli->common_select_query("SELECT schedule.*,route.name,vehicle.name as bus,vehicle.registration_no,vehicle.vehicle_type,(select area.name from area where area.id= route.break_area) as breakarea,
+                                        (select counter.counter_name from counter WHERE counter.id=schedule.departure_counter) as depcounter,
+                                        (select counter.counter_name from counter WHERE counter.id=schedule.arrival_counter) as arrcounter
+                                        FROM `schedule`
+                                        JOIN vehicle on vehicle.id=schedule.vehicle_id
+                                        JOIN route on route.id=schedule.route_id
+                                        WHERE route.area_from={$_GET['area_from']} and route.area_to={$_GET['area_to']} and 
+                                        date(schedule.departure_time)='{$depdate}'");
 
-    </style>
 
-        
+
+?>
 
 <div class="container">
     <div class="row bg-warning">
@@ -60,7 +59,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4 bg-light">
+                <div class="col-md-5 bg-light">
                     <div class="col-md-8 mt-5">
                         <ul class="list-unstyled">
                             <li>start counter:<span>dampara station</span></li>
@@ -73,83 +72,71 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4 bg-light">
-                    <div class="col-md-8">
-                    <table class="table">
-              <thead>
-                  <tr>
-                    <th scope="col">R1</th>
-                    <th scope="col">R2</th>
-                    <th scope="col"></th>
-                    <th scope="col">R3</th>
-                    <th scope="col">R4</th>
-                  </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td></button></td>
-                  <td></button></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td><button type="button" class="btn btn-outline-primary" value="">A1</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">A2</button></td>
-                  <td></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">A3</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">A3</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button" class="btn btn-outline-primary" value="">B1</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">B2</td>
-                  <td></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">B3</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">B4</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button" class="btn btn-outline-primary" value="">C1</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">C2</button></td>
-                  <td></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">C3</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">C4</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button" class="btn btn-outline-primary" value="">D1</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">D2</button></td>
-                  <td></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">D3</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">D4</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button" class="btn btn-outline-primary" value="">E1</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">E2</button></td>
-                  <td></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">E3</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">E4</button></td>
-                </tr>
-                <tr>
-                  <td><button type="button" class="btn btn-outline-primary" value="">F1</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">F2</button></td>
-                  <td></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">F3</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">F4</button></td>
-                </tr>
-                  <td><button type="button" class="btn btn-outline-primary" value="">G1</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">G2</button></td>
-                  <td></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">G3</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">G4</button></td>
-                </tr>
-                </tr>
-                  <td><button type="button" class="btn btn-outline-primary" value="">H1</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">H2</button></td>
-                  <td></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">H3</button></td>
-                  <td><button type="button" class="btn btn-outline-primary" value="">H4</button></td>
-                </tr>
-              </thead>
-            </table>
-                    </div>
+                <div class="col-md-3 bg-light">
+                <?php 
+                    $booked=$mysqli->common_select_single('seat_book','*',array('id'=>$_GET['invoice']))['data'];
+                    
+                    $cols=array(1,2,3,4);
+                    $seat=$rows=array();
+                    $result=$mysqli->common_select_query("SELECT vehicle_seat_type.*,seat.name,seat_type.name as stype FROM `vehicle_seat_type` 
+                                                  JOIN seat on seat.id=vehicle_seat_type.seat_id
+                                                  JOIN seat_type on seat_type.id=vehicle_seat_type.seat_type_id
+                                                  WHERE vehicle_seat_type.vehicle_id={$booked->vehicle_id} and vehicle_seat_type.deleted_at is null order by seat.name");
+                    if($result){
+                      if($result['data']){
+                        foreach($result['data'] as $rs){
+                          $rows[substr($rs->name,0,1)]=substr($rs->name,0,1);
+                          $seat[$rs->name]=$rs;
+                        }
+
+
+                        $booked_seat=array();
+                        $conbook['seat_book_id']=$booked->id;
+                        $booked=$mysqli->common_select('seat_book_details','*',$conbook);
+                        if($booked){
+                            if($booked['data']){
+                              foreach($booked['data'] as $bd){
+                                $booked_seat[$bd->seat_id]=$bd->seat_id;
+                              }
+                            }
+                        }
+                      }
+                    }
+                    if(count($seat) > 0){
+          ?>
+          
+                <table style="border:2px solid #ffa900; width:150px; margin-top:30px">
+                  <tbody>
+                    <?php 
+                      if(count($rows)){
+                        foreach($rows as $r){
+                    ?>
+                          <tr>
+                            <?php
+                              if(count($cols)){
+                                foreach($cols as $c){
+                            ?>
+                                <td style="padding:0; border:1px solid #aaa">
+                                  <?php if(isset($seat["{$r}{$c}"])){ 
+                                        if(isset($booked_seat[$seat["{$r}{$c}"]->seat_id])){ ?>
+                                          <button title="<?= $seat["{$r}{$c}"]->name ?? '' ?>" type="button" class="btn btn-dark p-0 " value="">
+                                            <?= $seat["{$r}{$c}"]->name ?? '' ?>
+                                          </button>
+                                  <?php }else{ ?>
+                                            <button title="<?= $seat["{$r}{$c}"]->name ?? '' ?>" type="button"  class="btn  p-0 vseat" value="">
+                                              <?= $seat["{$r}{$c}"]->name ?? '' ?>
+                                            </button>
+                                  <?php }} ?>
+                                </td>
+                            <?php } } ?>
+                          </tr>
+                    <?php } } ?>
+                  </tbody>
+                  
+                </table>
+              
+          <?php }  ?>
+
                 </div>
             </div> 
         </div>
