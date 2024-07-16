@@ -1,11 +1,9 @@
-<?php require_once('include/connection.php'); ?>
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 <head>
-    <title>invoice</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- External CSS libraries -->
     <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
@@ -19,145 +17,149 @@
 
     <!-- Custom Stylesheet -->
     <link type="text/css" rel="stylesheet" href="css/invoice.css">
+    <title>Document</title>
+
 </head>
 <body>
-<?php 
-    $invdata=array();
-    $con['id']=$_GET['invoice'];
-    $result=$mysqli->common_select_single('seat_book','*',$con);
-    if($result){
-        if($result['data']){
-            $invdata=$result['data'];
-        }
-    }
-?>
-<!-- Invoice 2 start -->
-<div class="invoice-2 invoice-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="invoice-inner clearfix">
-                    <div class="invoice-info clearfix" id="invoice_wrapper">
-                        <div class="invoice-headar">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="invoice-logo">
-                                        <!-- logo started -->
-                                        <div class="logo">
-                                            <h1 style="color:white">TICKET FO!</h1>
-                                            <a href=""></a>
-                                        </div>
-                                        <!-- logo ended --> 
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="invoice-id">
-                                        <div class="info">
-                                            <h1 class="inv-header-1">Invoice</h1>
-                                            <p class="mb-1">Invoice Number: <span>#<?= str_pad($invdata->id,7,"0",STR_PAD_LEFT) ?></span></p>
-                                            <p class="mb-0">Invoice Date: <span><?= date('d M Y',strtotime($invdata->created_at)) ?></span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="invoice-top">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="invoice-number mb-30">
-                                        <h4 class="inv-title-1">Invoice To</h4>
-                                        <h2 class="name"><?= $invdata->first_name ?> <?= $invdata->last_name ?></h2>
-                                        <span>Phone: <?= $invdata->phone ?></span><br/>
-                                        <span>Email: <?= $invdata->email ?></span><br/>
-                                        <span>Address: <?= $invdata->address ?></span>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="invoice-number mb-30">
-                                        <div class="invoice-number-inner">
-                                            <h4 class="inv-title-1">Invoice From</h4>
-                                            <h2 class="name">TICKET FO!</h2>
-                                            <p class="invo-addr-1">
-                                                Ticket fo BD  <br/>
-                                                ticketfo.com <br/>
-                                                Chittagong, Bangladesh <br/>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="invoice-center">
-                            <div class="table-responsive">
-                                <table class="table mb-0 table-striped invoice-table">
-                                    <thead class="bg-active">
-                                    <tr class="tr">
-                                        <th>No.</th>
-                                        <th class="pl0 text-start">Item Description</th>
-                                        <th class="text-center">Price</th>
-                                        <th class="text-center">Quantity</th>
-                                        <th class="text-end">Amount</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                            $cartdata=json_decode(base64_decode($invdata->cart_data));
-                                            
-                                            $i=0;
-                                            foreach($cartdata->item as $item){
-                                        ?>
-                                            <tr class="tr">
-                                                <td>
-                                                    <div class="item-desc-1">
-                                                        <span><?= str_pad(++$i,2,"0",STR_PAD_LEFT) ?></span>
-                                                    </div>
-                                                </td>
-                                                <td class="pl0"><?= $item->product_name ?></td>
-                                                <td class="text-center">BDT <?= $item->price ?></td>
-                                                <td class="text-center"><?= $item->qty ?></td>
-                                                <td class="text-end">BDT <?= $item->price * $item->qty ?></td>
-                                            </tr>
-                                        <?php } ?>
-                                    
-                                    <tr class="tr2">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="text-center">SubTotal</td>
-                                        <td class="text-end">BDT <?= $cartdata->total ?></td>
-                                    </tr>
-                                    <tr class="tr2">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="text-center">Discount</td>
-                                        <td class="text-end">BDT <?= $cartdata->discount ?></td>
-                                    </tr>
-                                    <tr class="tr2">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="text-center f-w-600 active-color">Grand Total</td>
-                                        <td class="f-w-600 text-end active-color">BDT <?= $cartdata->total - $cartdata->discount ?></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    <div class="invoice-btn-section clearfix d-print-none">
-                        <a href="javascript:window.print()" class="btn btn-lg btn-print">
-                            <i class="fa fa-print"></i> Print Invoice
-                        </a>
-                        <a id="invoice_download_btn" class="btn btn-lg btn-download btn-theme">
-                            <i class="fa fa-download"></i> Download Invoice
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <style>
+
+    </style>
+
+        
+
+<div class="container">
+    <div class="row bg-warning">
+   
+        <div class="col-md-4">
+          
+            <p> ticket NO: 00002</p>
+            
+        </div>
+        <div class="col-md-4 text-center ">
+            <h2 class="text-align-center">TICKET F0!</h2>
+            <p>Coach no-#0001 Chittagong-Dhaka</p>
+        </div>
+        <div class="col-md-4">
+            <p>Passenser Copy</p>
         </div>
     </div>
-</div>
-<!-- Invoice 2 end -->
 
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-4 bg-light">
+                    <div class="col-md-8 mt-5">
+                        <ul class="list-unstyled">
+                            <li>Name:<span>kamal</span></li>
+                            <li>Contact No:<span>01976465865</span></li>
+                            <li>Route:<span>Chittagong to cox-bazar</span></li>
+                            <li>Issue Counter:<span>dampara,Chittagong</span></li>
+                            <li>Issue Date:<span>10/08/24</span></li>
+                            <li>Seat QTY:<span>4</span></li>
+                            <li>unit price:<span>400</span></li>
+                            <li>Total price:<span>1600</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 bg-light">
+                    <div class="col-md-8 mt-5">
+                        <ul class="list-unstyled">
+                            <li>start counter:<span>dampara station</span></li>
+                            <li>End counter:<span>kolatoli station</span></li>
+                            <li>Route:<span>Chittagong to cox-bazar</span></li>
+                            <li>Journey Date:<span>11/08/24</span></li>
+                            <li>Seat QTY:<span>4</span></li>
+                            <li>unit price:<span>400</span></li>
+                            <li>Total price:<span>1600</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 bg-light">
+                    <div class="col-md-8">
+                    <table class="table">
+              <thead>
+                  <tr>
+                    <th scope="col">R1</th>
+                    <th scope="col">R2</th>
+                    <th scope="col"></th>
+                    <th scope="col">R3</th>
+                    <th scope="col">R4</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></button></td>
+                  <td></button></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">A1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">A2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">A3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">A3</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">B1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">B2</td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">B3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">B4</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">C1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">C2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">C3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">C4</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">D1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">D2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">D3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">D4</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">E1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">E2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">E3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">E4</button></td>
+                </tr>
+                <tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">F1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">F2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">F3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">F4</button></td>
+                </tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">G1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">G2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">G3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">G4</button></td>
+                </tr>
+                </tr>
+                  <td><button type="button" class="btn btn-outline-primary" value="">H1</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">H2</button></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">H3</button></td>
+                  <td><button type="button" class="btn btn-outline-primary" value="">H4</button></td>
+                </tr>
+              </thead>
+            </table>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="row bg-warning">
+        <p><i>fa-fa-phone</i></p>
+                    
+
+
+
+        </div>
+</div>      
 </body>
 </html>
