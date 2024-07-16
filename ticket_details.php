@@ -5,15 +5,15 @@
 	<div class="col-md-6 mb-5 mb-md-0">
 		<h2 class="h3 mb-3 text-black">Billing Details</h2>
 		<div class="p-3 p-lg-5 border bg-white">
-			<form action="" method="post">
+			<form action="checkout.php" method="post">
 			<div class="form-group row">
 				<div class="col-md-6">
-					<label for="first_name" class="text-black">First Name <span class="text-danger">*</span></label>
-					<input required="" type="text" class="form-control" id="" name="first_name">
+					<label for="name" class="text-black">Name <span class="text-danger">*</span></label>
+					<input required="" type="text" class="form-control" id="" name="name">
 				</div>
 				<div class="col-md-6">
-					<label for="last_name" class="text-black">Last Name <span class="text-danger">*</span></label>
-					<input  required="" type="text" class="form-control" id="" name="last_name">
+					<label for="email" class="text-black">Email <span class="text-danger">*</span></label>
+					<input  required="" type="text" class="form-control" id="" name="email">
 				</div>
 			
 				<div class="col-md-12">
@@ -28,7 +28,7 @@
 			</div>
 			<div class="form-group row">
 				<div class="col-md-6">
-				<button type="Submit" class="btn btn-link btn-warning">Submit</button>
+					<button class="btn btn-black btn-lg py-3 btn-block" type="submit">Place Order </button>
 				</div>
 			</div>
 
@@ -109,10 +109,6 @@
 									</tr>
 						</tbody>
 					</table>
-
-					<div class="form-group">
-						<button class="btn btn-black btn-lg py-3 btn-block" type="submit"><a href="thankyou.php">Place Order</a> </button>
-					</div>
 
 				</div>
 			</div>
