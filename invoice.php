@@ -11,16 +11,8 @@
 </head>
 <body>
 
-<?php 
-           
-  $id=$_GET['invoice'];
-  $result=$mysqli->common_select_query("SELECT seat_book.first_name as fname, seat_book.last_name as lname, seat_book.phone as phone,schedule.route_id as route,counter.counter_name as issue_counter,schedule.created_at as issue_date,seat_book.total_seat as seat_qty,seat_book.total_amount as total_price(select area.name from area where area.id= route.break_area) as breakarea,
-                                       
-                                        FROM `schedule`
-                                        JOIN vehicle on vehicle.id=schedule.vehicle_id
-                                        JOIN route on route.id=schedule.route_id
-                                        WHERE route.area_from={$_GET['area_from']} and route.area_to={$_GET['area_to']} and 
-                                        date(schedule.departure_time)='{$depdate}'");
+                         
+                                        
 
 
 
@@ -48,15 +40,31 @@
                 <div class="col-md-4 bg-light">
                     <div class="col-md-8 mt-5">
                         <ul class="list-unstyled">
-                            <li>Name:<span>kamal</span></li>
-                            <li>Contact No:<span>01976465865</span></li>
-                            <li>Route:<span>Chittagong to cox-bazar</span></li>
-                            <li>Issue Counter:<span>dampara,Chittagong</span></li>
-                            <li>Issue Date:<span>10/08/24</span></li>
+                        <?php 
+           
+           $id=$_GET['invoice'];
+           $result=$mysqli->common_select_query("SELECT.seat_book.*, 
+           (select name from customer where customer.id=seat_book.customer_id) as name,
+           (select contact_no from customer where customer.id=seat_book.phone) as phone,
+           (select route_id from schedule where schedule.id=seat_book.route) as route,
+           (select created_at from schedule where schedule.id=seat_book.issue_date) as issue_date,
+           counter.counter_name as issue_counter,FROM seat_book 
+           join counter on seat_book.issue_counter=counter.id"); 
+            if($result){
+             if($result['data']){
+               $i=1;
+               foreach($result['data'] as $data){
+         ?>    
+                            <li><?= $i++ ?></li>
+                            <li>Name:<span><?=$data->name ?></span></li>
+                            <li>Contact No:<span><?=$data->phone ?></span></li>
+                            <li>Route:<span><?=$data->route ?></span></li>
+                            <li>Issue Counter:<span><?=$data->issue_counter ?></span></li>
+                            <li>Issue Date:<span><?= date('d-m-Y h:iA',strtotime($data->issue_date)) ?></span></li>
                             <li>Seat QTY:<span>4</span></li>
-                            <li>unit price:<span>400</span></li>
                             <li>Total price:<span>1600</span></li>
                         </ul>
+                        <?php }}}?>
                     </div>
                 </div>
                 <div class="col-md-5 bg-light">
@@ -67,7 +75,6 @@
                             <li>Route:<span>Chittagong to cox-bazar</span></li>
                             <li>Journey Date:<span>11/08/24</span></li>
                             <li>Seat QTY:<span>4</span></li>
-                            <li>unit price:<span>400</span></li>
                             <li>Total price:<span>1600</span></li>
                         </ul>
                     </div>
