@@ -21,16 +21,16 @@
   </head>
   <body>
     <!-- Page-->
-    <!-- <div class="page">
+    <div class="page">
       <a class="section section-banner text-center" href="">
-        <img src="<?= $baseurl?>asset/images/eticket-banner.jpg" alt="" width="1600" min-height="50px">
-      </a> -->
-      <!-- Page Header-->
+        <img src="<?= $baseurl?>asset/images/eticket-banner.jpg" alt="" width="1600" height="50px">
+</a>
+      <!-- Page Header -->
       <header class="section page-header">
-        <!-- RD Navbar-->
+        <!-- <-- RD Navbar -->
         <div class="rd-navbar-wrap rd-navbar-corporate">
           <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth" data-xl-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-device-layout="rd-navbar-static" data-md-stick-up-offset="130px" data-lg-stick-up-offset="100px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-xl-stick-up="true">
-            <div class="rd-navbar-collapse-toggle" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
+            <div class="rd-navbar-collapse-toggle" data-rd-navbar-toggle=".rd-navbar-collapse">
             <div class="rd-navbar-top-panel rd-navbar-collapse novi-background">
               <div class="rd-navbar-top-panel-inner">
                 <ul class="list-inline">
@@ -52,6 +52,7 @@
                 </ul>
               </div>
             </div>
+           </div>
             <div class="rd-navbar-inner ">
               <!-- RD Navbar Panel-->
               <div class="rd-navbar-panel ">
@@ -61,7 +62,7 @@
                 <div class="rd-navbar-brand">
                   <a class="brand-name" href="<?= $baseurl ?>">
                     <img class="logo-default" src="<?= $baseurl?>asset/images/logo-f.png" alt="" width="100"/>
-                    <img class="logo-inverse" src="<?= $baseurl?>asset/images/logo-f.png" alt="" width="100"/>
+                    <img class="logo-inverse" src="<?= $baseurl?>asset/images/logo-f.pg" alt="" width="100"/>
                   </a>
                 </div>
               </div>

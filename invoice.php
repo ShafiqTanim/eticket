@@ -43,8 +43,7 @@
                         <?php 
            
            $id=$_GET['invoice'];
-           $result=$mysqli->common_select_query("SELECT.seat_book.*, 
-           (select name from customer where customer.id=seat_book.customer_id) as name,
+           $result=$mysqli->common_select_query("SELECT.seat_book.*,(select name from customer where customer.id=seat_book.customer_id) as name,
            (select contact_no from customer where customer.id=seat_book.phone) as phone,
            (select route_id from schedule where schedule.id=seat_book.route) as route,
            (select created_at from schedule where schedule.id=seat_book.issue_date) as issue_date,
