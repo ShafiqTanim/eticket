@@ -20,7 +20,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide" data-slide-bg="<?= $baseurl?>asset/images/white.jpg">
+              <div class="swiper-slide" data-slide-bg="<?= $baseurl?>asset/images/swiper-slide-2.jpg">
                 <div class="swiper-slide-caption">
                   <div class="container container-bigger swiper-main-section">
                     <div class="row row-fix justify-content-sm-center justify-content-md-start">
