@@ -1,4 +1,7 @@
 <?php include('include/header.php') ?>
+<?php
+   session_start();
+?>
 <?php require_once('include/connection.php'); ?>
 <?php $baseurl="http://localhost/eticket/admin/"; ?>
 <!DOCTYPE html>
@@ -124,7 +127,7 @@
                   $rs=$crud->common_create('auth',$_POST);
                   print_r($_POST);
                   if($rs['data']){
-                      header('location:login.php');
+                      header('location:index.php');
                   }else{
                       print_r($rs['error']);
                   }
