@@ -7,7 +7,7 @@
           <!-- Swiper-->
           <div class="swiper-container swiper-slider swiper-slider_height-1 swiper-align-left swiper-align-left-custom context-dark bg-gray-darker" data-loop="false" data-autoplay="5500" data-simulate-touch="false" data-slide-effect="fade">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" data-slide-bg="<?= $baseurl?>asset/images/swiper-slide-1.jpg">
+              <div class="swiper-slide" data-slide-bg="<?= $baseurl?>asset/images/citybus-1.png">
                 <div class="swiper-slide-caption">
                   <div class="container container-bigger swiper-main-section">
                     <div class="row row-fix justify-content-sm-center justify-content-md-start">
@@ -20,7 +20,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide" data-slide-bg="<?= $baseurl?>asset/images/swiper-slide-2.jpg">
+              <div class="swiper-slide" data-slide-bg="<?= $baseurl?>asset/images/YELLOW_bus.jpg">
                 <div class="swiper-slide-caption">
                   <div class="container container-bigger swiper-main-section">
                     <div class="row row-fix justify-content-sm-center justify-content-md-start">
@@ -33,7 +33,7 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide" data-slide-bg="<?= $baseurl?>asset/images/swiper-slide-3.jpg">
+              <div class="swiper-slide" data-slide-bg="<?= $baseurl?>asset/images/Untitled-1.png">
                 <div class="swiper-slide-caption">
                   <div class="container container-bigger swiper-main-section">
                     <div class="row row-fix justify-content-sm-center justify-content-md-start">
