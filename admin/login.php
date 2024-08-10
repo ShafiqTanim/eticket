@@ -2,7 +2,6 @@
     session_start();
 ?>
 <?php require_once('include/connection.php'); ?>
-<?php $baseurl="http://localhost/eticket/admin/"; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
