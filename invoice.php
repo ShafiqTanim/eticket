@@ -31,11 +31,11 @@
    
         <div class="col-md-4">
           
-            <p> ticket NO: 00002</p>
+            <p> Ticket No: 00002</p>
             
         </div>
         <div class="col-md-4 text-center ">
-            <h2 class="text-align-center">TICKET F0!</h2>
+            <h2 class="text-align-center">TICKET-f0!</h2>
             <p>Coach no-#0001 Chittagong-Dhaka</p>
         </div>
         <div class="col-md-4">
@@ -50,8 +50,8 @@
                         <ul class="list-unstyled">
                             <li>Name:<span>kamal</span></li>
                             <li>Contact No:<span>01976465865</span></li>
-                            <li>Route:<span>Chittagong to cox-bazar</span></li>
-                            <li>Issue Counter:<span>dampara,Chittagong</span></li>
+                            <li>Route:<span>Chittagong to Cox-bazar</span></li>
+                            <li>Issue Counter:<span>Dampara,Chittagong</span></li>
                             <li>Issue Date:<span>10/08/24</span></li>
                             <li>Seat QTY:<span>4</span></li>
                             <li>unit price:<span>400</span></li>
@@ -62,9 +62,9 @@
                 <div class="col-md-5 bg-light">
                     <div class="col-md-8 mt-5">
                         <ul class="list-unstyled">
-                            <li>start counter:<span>dampara station</span></li>
-                            <li>End counter:<span>kolatoli station</span></li>
-                            <li>Route:<span>Chittagong to cox-bazar</span></li>
+                            <li>start counter:<span>Dampara station</span></li>
+                            <li>End counter:<span>Kolatoli station</span></li>
+                            <li>Route:<span>Chittagong to Cox-bazar</span></li>
                             <li>Journey Date:<span>11/08/24</span></li>
                             <li>Seat QTY:<span>4</span></li>
                             <li>unit price:<span>400</span></li>
