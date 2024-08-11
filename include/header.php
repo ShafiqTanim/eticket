@@ -72,11 +72,11 @@
                   <ul class="rd-navbar-nav">
                     <li class="active"><a href="index.php">Home</a>
                     </li>
-                    <li><a href="about-us.html">About Us</a>
+                    <li><a href="about-us.html"></a>
                     </li>
-                    <li><a href="contacts.html">Contacts</a>
+                    <li><a href="contacts.html"></a>
                     </li>
-                    <li><a href="typography.html">Typography</a>
+                    <li><a href="typography.html"></a>
                     </li>
                   </ul>
                 </div>
