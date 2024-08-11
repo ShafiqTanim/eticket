@@ -10,14 +10,6 @@
 
 </head>
 <body>
-
-                         
-                                        
-
-
-
-?>
-
 <div class="container">
     <div class="row bg-warning">
    
@@ -42,7 +34,7 @@
                         <ul class="list-unstyled">
                         <?php 
            
-           $id=$_GET['invoice'];
+           $txnid=$_GET['txnid'];
            $result=$mysqli->common_select_query("SELECT.seat_book.*,(select name from customer where customer.id=seat_book.customer_id) as name,
            (select contact_no from customer where customer.id=seat_book.phone) as phone,
            (select route_id from schedule where schedule.id=seat_book.route) as route,
