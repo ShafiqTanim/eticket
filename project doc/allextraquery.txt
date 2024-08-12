@@ -1,1 +1,3 @@
 ALTER TABLE `seat_book` ADD `status` INT NOT NULL DEFAULT '0' AFTER `discount`;
+
+ALTER TABLE `customer` ADD `password` VARCHAR(50) NOT NULL AFTER `email`;
