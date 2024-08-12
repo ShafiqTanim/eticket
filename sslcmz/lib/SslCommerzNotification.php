@@ -242,9 +242,9 @@ class SslCommerzNotification extends AbstractSslCommerz
     }
 
 
-    protected function setSuccessUrl()
+    protected function setSuccessUrl($url)
     {
-        $this->successUrl = $this->config['projectPath'] . '/' . $this->config['success_url'];
+        $this->successUrl = $this->config['projectPath'] . '/' . $this->config['success_url']."?txnid=".$url;
     }
 
     protected function getSuccessUrl()
@@ -316,7 +316,7 @@ class SslCommerzNotification extends AbstractSslCommerz
         $this->data['product_category'] = $info['product_category']; // string (50)	Mandatory - Mention the product category. It is a open field. Example - clothing,shoes,watches,gift,healthcare, jewellery,top up,toys,baby care,pants,laptop,donation,etc
 
         // Set the SUCCESS, FAIL, CANCEL and IPN URL before setting the other parameters
-        $this->setSuccessUrl();
+        $this->setSuccessUrl($info['tran_id']);
         $this->setFailedUrl();
         $this->setCancelUrl();
         $this->setIpnUrl();

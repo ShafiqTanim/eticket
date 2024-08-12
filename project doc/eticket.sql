@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 10, 2024 at 08:50 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: localhost:3306
+-- Generation Time: Jul 13, 2024 at 10:38 AM
+-- Server version: 10.6.18-MariaDB-cll-lve
+-- PHP Version: 8.1.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `eticket`
+-- Database: `weebpbih_eticket`
 --
 
 -- --------------------------------------------------------
@@ -42,34 +42,70 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`id`, `name`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 'Chittagong', '2024-06-23 05:02:04', 1, '2024-07-09 15:31:18', 1, NULL),
-(2, 'Dhaka', '2024-06-23 05:02:18', 1, '2024-07-09 15:31:11', 1, NULL),
-(3, ' lohagara', '2024-06-23 05:02:30', 1, NULL, 1, '2024-07-01 07:02:42'),
-(4, 'Cox-bazar', '2024-06-23 05:32:19', 1, '2024-07-09 15:31:24', 1, NULL),
-(5, 'chittagong', '2024-06-23 05:33:56', 1, NULL, 1, '2024-07-01 07:02:47'),
-(6, 'Vatiary', '2024-06-23 06:45:07', 1, '2024-07-01 07:03:02', 1, NULL),
-(7, 'Lohagara', '2024-07-01 07:02:34', 1, '2024-07-09 17:10:35', 1, NULL),
-(8, 'Dampara, GEC', '2024-07-01 07:03:10', 1, '2024-07-01 07:03:53', 1, NULL),
-(9, 'New market,CTG', '2024-07-01 07:04:17', 1, '2024-07-01 07:04:55', 1, NULL),
-(10, 'A.K khan Road', '2024-07-01 07:04:47', 1, NULL, NULL, NULL),
-(11, 'Kornelhat', '2024-07-01 07:05:27', 1, NULL, NULL, NULL),
-(12, 'Saidabad', '2024-07-01 07:05:38', 1, NULL, NULL, NULL),
-(13, 'Gabtoli', '2024-07-01 07:05:54', 1, NULL, NULL, NULL),
-(14, 'Komolapur', '2024-07-01 07:06:05', 1, NULL, NULL, NULL),
-(15, 'Signboard Road', '2024-07-01 07:06:18', 1, NULL, NULL, NULL),
-(16, 'Chittagong Road', '2024-07-01 07:06:25', 1, NULL, NULL, NULL),
-(17, 'Kanchpur', '2024-07-01 07:06:40', 1, '2024-07-09 17:10:51', 1, NULL),
-(18, 'Uttara', '2024-07-01 07:06:50', 1, NULL, NULL, NULL),
-(19, 'Abdhullahpur', '2024-07-01 07:06:56', 1, NULL, NULL, NULL),
-(20, 'Munshigonj', '2024-07-01 07:07:14', 1, NULL, NULL, NULL),
-(21, 'Kushtia ', '2024-07-01 07:48:43', 1, NULL, NULL, NULL),
-(22, 'Satkhira ', '2024-07-01 07:48:53', 1, NULL, NULL, NULL),
-(23, 'Brahmanbaria', '2024-07-01 07:49:09', 1, NULL, NULL, NULL),
-(24, 'Comilla', '2024-07-01 07:55:18', 1, NULL, NULL, NULL),
-(25, 'Maulvibazar', '2024-07-01 07:57:36', 1, NULL, NULL, NULL),
-(26, 'Bondar Road', '2024-07-01 07:57:57', 1, '2024-07-09 17:11:10', 1, NULL),
-(27, 'Jindabazar', '2024-07-01 07:58:04', 1, NULL, NULL, NULL),
-(28, 'Boro Eidgah ', '2024-07-01 07:58:24', 1, NULL, NULL, NULL);
+(1, 'Dhaka', NULL, NULL, NULL, NULL, NULL),
+(2, 'Faridpur', NULL, NULL, NULL, NULL, NULL),
+(3, 'Gazipur', NULL, NULL, NULL, NULL, NULL),
+(4, 'Gopalganj', NULL, NULL, NULL, NULL, NULL),
+(5, 'Jamalpur', NULL, NULL, NULL, NULL, NULL),
+(6, 'Kishoreganj', NULL, NULL, NULL, NULL, NULL),
+(7, 'Madaripur', NULL, NULL, NULL, NULL, NULL),
+(8, 'Manikganj', NULL, NULL, NULL, NULL, NULL),
+(9, 'Munshiganj', NULL, NULL, NULL, NULL, NULL),
+(10, 'Mymensingh', NULL, NULL, NULL, NULL, NULL),
+(11, 'Narayanganj', NULL, NULL, NULL, NULL, NULL),
+(12, 'Narsingdi', NULL, NULL, NULL, NULL, NULL),
+(13, 'Netrokona', NULL, NULL, NULL, NULL, NULL),
+(14, 'Rajbari', NULL, NULL, NULL, NULL, NULL),
+(15, 'Shariatpur', NULL, NULL, NULL, NULL, NULL),
+(16, 'Sherpur', NULL, NULL, NULL, NULL, NULL),
+(17, 'Tangail', NULL, NULL, NULL, NULL, NULL),
+(18, 'Bogra', NULL, NULL, NULL, NULL, NULL),
+(19, 'Joypurhat', NULL, NULL, NULL, NULL, NULL),
+(20, 'Naogaon', NULL, NULL, NULL, NULL, NULL),
+(21, 'Natore', NULL, NULL, NULL, NULL, NULL),
+(22, 'Nawabganj', NULL, NULL, NULL, NULL, NULL),
+(23, 'Pabna', NULL, NULL, NULL, NULL, NULL),
+(24, 'Rajshahi', NULL, NULL, NULL, NULL, NULL),
+(25, 'Sirajgonj', NULL, NULL, NULL, NULL, NULL),
+(26, 'Dinajpur', NULL, NULL, NULL, NULL, NULL),
+(27, 'Gaibandha', NULL, NULL, NULL, NULL, NULL),
+(28, 'Kurigram', NULL, NULL, NULL, NULL, NULL),
+(29, 'Lalmonirhat', NULL, NULL, NULL, NULL, NULL),
+(30, 'Nilphamari', NULL, NULL, NULL, NULL, NULL),
+(31, 'Panchagarh', NULL, NULL, NULL, NULL, NULL),
+(32, 'Rangpur', NULL, NULL, NULL, NULL, NULL),
+(33, 'Thakurgaon', NULL, NULL, NULL, NULL, NULL),
+(34, 'Barguna', NULL, NULL, NULL, NULL, NULL),
+(35, 'Barisal', NULL, NULL, NULL, NULL, NULL),
+(36, 'Bhola', NULL, NULL, NULL, NULL, NULL),
+(37, 'Jhalokati', NULL, NULL, NULL, NULL, NULL),
+(38, 'Patuakhali', NULL, NULL, NULL, NULL, NULL),
+(39, 'Pirojpur', NULL, NULL, NULL, NULL, NULL),
+(40, 'Bandarban', NULL, NULL, NULL, NULL, NULL),
+(41, 'Brahmanbaria', NULL, NULL, NULL, NULL, NULL),
+(42, 'Chandpur', NULL, NULL, NULL, NULL, NULL),
+(43, 'Chittagong', NULL, NULL, NULL, NULL, NULL),
+(44, 'Comilla', NULL, NULL, NULL, NULL, NULL),
+(45, 'Cox\'\'s Bazar', NULL, NULL, NULL, NULL, NULL),
+(46, 'Feni', NULL, NULL, NULL, NULL, NULL),
+(47, 'Khagrachari', NULL, NULL, NULL, NULL, NULL),
+(48, 'Lakshmipur', NULL, NULL, NULL, NULL, NULL),
+(49, 'Noakhali', NULL, NULL, NULL, NULL, NULL),
+(50, 'Rangamati', NULL, NULL, NULL, NULL, NULL),
+(51, 'Habiganj', NULL, NULL, NULL, NULL, NULL),
+(52, 'Maulvibazar', NULL, NULL, NULL, NULL, NULL),
+(53, 'Sunamganj', NULL, NULL, NULL, NULL, NULL),
+(54, 'Sylhet', NULL, NULL, NULL, NULL, NULL),
+(55, 'Bagerhat', NULL, NULL, NULL, NULL, NULL),
+(56, 'Chuadanga', NULL, NULL, NULL, NULL, NULL),
+(57, 'Jessore', NULL, NULL, NULL, NULL, NULL),
+(58, 'Jhenaidah', NULL, NULL, NULL, NULL, NULL),
+(59, 'Khulna', NULL, NULL, NULL, NULL, NULL),
+(60, 'Kushtia', NULL, NULL, NULL, NULL, NULL),
+(61, 'Magura', NULL, NULL, NULL, NULL, NULL),
+(62, 'Meherpur', NULL, NULL, NULL, NULL, NULL),
+(63, 'Narail', NULL, NULL, NULL, NULL, NULL),
+(64, 'Satkhira', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -128,17 +164,14 @@ CREATE TABLE `counter` (
 --
 
 INSERT INTO `counter` (`id`, `counter_name`, `contact_no`, `area_id`, `district_id`, `division_id`, `address`, `contact_person`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 'cinema palace', '031099586785', 2, 11, 12, 'road no-01, counter no-59, ', 'counter manager,tanim', '2024-06-23 06:51:12', 1, '2024-07-03 08:52:42', 1, NULL),
-(2, 'Dampara', '01540287930', 1, 5, 0, 'Dampara,GEC', 'Tanim Ahmed', '2024-07-01 08:11:20', 1, NULL, NULL, NULL),
-(4, 'Gabtoli', '154896', 13, 24, 9, 'Gabtoli,Dhaka', 'Mukut', '2024-07-07 07:08:41', 1, NULL, NULL, NULL),
-(5, 'Hanif Ent', '465132', 12, 24, 9, 'Saidabad Bus Terminal', 'Mukut Ahmed', '2024-07-07 07:52:12', 1, NULL, 1, NULL),
-(7, 'Soudia Ent', '01579623', 22, 23, 10, 'Telikheli pirozpur', 'Abu foysal', '2024-07-07 07:55:54', 1, NULL, NULL, NULL),
-(8, 'Desh  Travels', '0168959584', 23, 24, 9, 'Fultoli bazar', 'Fahim ', '2024-07-07 07:58:05', 1, NULL, NULL, NULL),
-(9, 'Silk Line', '014896527', 25, 16, 8, 'ratar bazar', 'Julfiqar haidar', '2024-07-07 08:05:15', 1, NULL, NULL, NULL),
-(10, 'Tanim enterprise', '01548762', 4, 6, 7, 'Dolphin moor', 'NurKhan', '2024-07-07 08:09:30', 1, NULL, NULL, NULL),
-(11, 'Nur Brothers', '01579623', 26, 25, 8, 'Bondar Bazar', 'NurKhan', '2024-07-07 08:12:42', 1, NULL, NULL, NULL),
-(12, 'Suriya Enterpirse', '015489652', 18, 24, 9, 'Sector-9,uttara', 'Soniya Ahamed', '2024-07-07 08:19:02', 1, NULL, NULL, NULL),
-(13, 'Joybangla Enterprise', '016489752', 4, 6, 7, 'BongoBondhu Beach', 'Rukiya', '2024-07-07 08:22:30', 1, NULL, NULL, NULL);
+(1, 'Dampara', '015486931', 43, 43, 7, 'Garibullahshah,GEC', 'Sohana', '2024-07-13 06:56:25', 1, NULL, NULL, NULL),
+(2, 'New Market', '01348762', 43, 43, 7, 'BRTC', 'Tanim', '2024-07-13 06:58:27', 1, NULL, NULL, NULL),
+(3, 'A.K Khan Road', '0410258662', 43, 43, 7, 'AKborshah', 'Mukut', '2024-07-13 06:59:16', 1, NULL, NULL, NULL),
+(4, 'Gabtoli', '01658795', 1, 1, 9, 'Gabtoli Bus Stand', 'Bappy', '2024-07-13 07:00:55', 1, NULL, NULL, NULL),
+(5, 'Saidabad', '0134789', 1, 1, 9, 'Saidabad Bus Stand', 'Tanbhir', '2024-07-13 07:01:33', 1, NULL, NULL, NULL),
+(6, 'Komolapur', '0139745', 1, 1, 9, 'Komolapur Stand', 'Nur Khan', '2024-07-13 07:02:11', 1, NULL, NULL, NULL),
+(7, 'Jinda Bazar', '01579335', 54, 54, 8, 'Jinda Bazar Road', 'Mamun', '2024-07-13 07:03:12', 1, NULL, NULL, NULL),
+(8, 'Boro Eidgah', '01364786524', 54, 54, 8, 'Ponchopukur', 'Julfiquer', '2024-07-13 07:03:59', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -157,25 +190,6 @@ CREATE TABLE `customer` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `customer`
---
-
-INSERT INTO `customer` (`id`, `name`, `contact_no`, `email`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 'Julfiqur Haidar Raja', '0154893206', 'julfiqur@yahoo.com', '2024-07-09 16:55:08', 1, '2024-07-09 17:01:56', 1, NULL),
-(2, 'Sanjid Ahmed Mukut', '015641281307', 'sanjid@yahool.com', '2024-07-09 16:55:55', 1, '2024-07-09 17:02:01', 1, NULL),
-(3, 'Sohana Afsana', '0142067912', 'afsana@yahoo.com', '2024-07-09 16:56:31', 1, '2024-07-09 17:02:05', 1, NULL),
-(4, 'Md. Ramzan Ali', '013457964', 'ramzan@yahoo.com', '2024-07-09 16:57:03', 1, '2024-07-09 17:02:11', 1, NULL),
-(5, 'A. N. M. Shafiq Ullah', '01657845999', 'shafiq@yahoo.com', '2024-07-09 16:57:50', 1, '2024-07-09 17:02:16', 1, NULL),
-(6, 'Abdul Al Mamun', '0199421099', 'mamun@yahoo.com', '2024-07-09 16:58:18', 1, '2024-07-09 17:02:21', 1, NULL),
-(7, 'Mohammad Nurkhan', '0136547892', 'nurkhan@yahoo.com', '2024-07-09 16:58:45', 1, '2024-07-09 17:02:25', 1, NULL),
-(8, 'Umma Rukiya', '0148975236', 'rukia@yahoo.com', '2024-07-09 16:59:09', 1, '2024-07-09 17:02:32', 1, NULL),
-(9, 'Suria Ahamed', '016574893', 'suria@yahoo.com', '2024-07-09 16:59:37', 1, '2024-07-09 17:02:38', 1, NULL),
-(10, 'Tanbhir Hossin', '0175428933', 'tanbhir@yahoo.com', '2024-07-09 17:00:01', 1, '2024-07-09 17:02:45', 1, NULL),
-(11, 'Abu Foysal', '018462279', 'foysal@yahoo.com', '2024-07-09 17:00:55', 1, NULL, NULL, NULL),
-(12, 'MD. Moynul Hossain', '0148795230', 'moynul@yahoo.com', '2024-07-09 17:01:45', 1, NULL, NULL, NULL),
-(13, 'Md. Sohel Hossain Atiya', '0194125366', 'atiya@yahoo.com', '2024-07-10 05:11:43', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -198,42 +212,70 @@ CREATE TABLE `district` (
 --
 
 INSERT INTO `district` (`id`, `district_name`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, '0', '2024-06-23 05:03:14', 1, NULL, 1, '2024-06-23 06:00:56'),
-(2, '0', '2024-06-23 05:48:50', 1, NULL, 1, '2024-06-23 06:00:58'),
-(3, 'chittagong', '2024-06-23 06:00:48', 1, NULL, 1, '2024-07-01 06:52:47'),
-(4, 'chittagong', '2024-06-23 06:11:41', 1, NULL, 1, '2024-07-01 06:52:45'),
-(5, 'Chattogram', '2024-07-01 06:53:22', 1, NULL, NULL, NULL),
-(6, 'Coxbazar', '2024-07-01 06:53:41', 1, NULL, NULL, NULL),
-(7, 'Sitakundu', '2024-07-01 06:54:25', 1, NULL, NULL, NULL),
-(8, 'Comilla', '2024-07-01 06:55:23', 1, NULL, NULL, NULL),
-(9, 'Narayongoj', '2024-07-01 06:55:52', 1, NULL, NULL, NULL),
-(10, 'Gajipur', '2024-07-01 06:56:00', 1, NULL, NULL, NULL),
-(11, 'Chapai Nobabgonj', '2024-07-01 06:56:11', 1, '2024-07-01 06:57:19', 1, NULL),
-(12, 'Nougoan', '2024-07-01 06:58:10', 1, NULL, NULL, NULL),
-(13, 'Rajshahi', '2024-07-01 06:58:24', 1, NULL, NULL, NULL),
-(14, 'Hobigonj', '2024-07-01 06:58:34', 1, NULL, NULL, NULL),
-(15, 'Shunamgonj', '2024-07-01 06:58:43', 1, NULL, NULL, NULL),
-(16, 'Maulvibazar', '2024-07-01 07:00:45', 1, NULL, NULL, NULL),
-(17, 'Narail  ', '2024-07-01 07:01:00', 1, NULL, NULL, NULL),
-(18, 'Magura ', '2024-07-01 07:01:09', 1, NULL, NULL, NULL),
-(19, 'Rangpur ', '2024-07-01 07:01:22', 1, NULL, NULL, NULL),
-(20, 'Gaibandha', '2024-07-01 07:01:32', 1, NULL, NULL, NULL),
-(21, 'Natore', '2024-07-01 07:01:41', 1, NULL, NULL, NULL),
-(22, 'Faridpur', '2024-07-01 07:02:00', 1, NULL, NULL, NULL),
-(23, 'Pirozpur', '2024-07-01 07:02:14', 1, NULL, NULL, NULL),
-(24, 'Dhaka', '2024-07-07 07:07:42', 1, NULL, NULL, NULL),
-(25, 'Sylhet', '2024-07-07 08:06:30', 1, NULL, NULL, NULL),
-(26, 'Rangpur', '2024-07-07 08:06:43', 1, NULL, NULL, NULL),
-(27, 'Barisal', '2024-07-07 08:06:51', 1, NULL, NULL, NULL),
-(28, 'Khulna', '2024-07-07 08:06:57', 1, NULL, NULL, NULL),
-(29, 'Mymansingh', '2024-07-07 08:07:23', 1, NULL, NULL, NULL),
-(30, 'Tangail', '2024-07-09 17:06:20', 1, '2024-07-09 17:08:02', 1, NULL),
-(31, 'Rajbari', '2024-07-09 17:08:34', 1, NULL, NULL, NULL),
-(32, 'Bagerhat', '2024-07-09 17:08:49', 1, NULL, NULL, NULL),
-(33, 'Lakshmipur ', '2024-07-09 17:09:14', 1, NULL, NULL, NULL),
-(34, 'Sunamganj', '2024-07-09 17:09:37', 1, NULL, NULL, NULL),
-(35, 'Bhola', '2024-07-09 17:09:52', 1, NULL, NULL, NULL),
-(36, 'Jhenaidah', '2024-07-09 17:10:13', 1, NULL, NULL, NULL);
+(1, 'Dhaka', NULL, NULL, NULL, NULL, NULL),
+(2, 'Faridpur', NULL, NULL, NULL, NULL, NULL),
+(3, 'Gazipur', NULL, NULL, NULL, NULL, NULL),
+(4, 'Gopalganj', NULL, NULL, NULL, NULL, NULL),
+(5, 'Jamalpur', NULL, NULL, NULL, NULL, NULL),
+(6, 'Kishoreganj', NULL, NULL, NULL, NULL, NULL),
+(7, 'Madaripur', NULL, NULL, NULL, NULL, NULL),
+(8, 'Manikganj', NULL, NULL, NULL, NULL, NULL),
+(9, 'Munshiganj', NULL, NULL, NULL, NULL, NULL),
+(10, 'Mymensingh', NULL, NULL, NULL, NULL, NULL),
+(11, 'Narayanganj', NULL, NULL, NULL, NULL, NULL),
+(12, 'Narsingdi', NULL, NULL, NULL, NULL, NULL),
+(13, 'Netrokona', NULL, NULL, NULL, NULL, NULL),
+(14, 'Rajbari', NULL, NULL, NULL, NULL, NULL),
+(15, 'Shariatpur', NULL, NULL, NULL, NULL, NULL),
+(16, 'Sherpur', NULL, NULL, NULL, NULL, NULL),
+(17, 'Tangail', NULL, NULL, NULL, NULL, NULL),
+(18, 'Bogra', NULL, NULL, NULL, NULL, NULL),
+(19, 'Joypurhat', NULL, NULL, NULL, NULL, NULL),
+(20, 'Naogaon', NULL, NULL, NULL, NULL, NULL),
+(21, 'Natore', NULL, NULL, NULL, NULL, NULL),
+(22, 'Nawabganj', NULL, NULL, NULL, NULL, NULL),
+(23, 'Pabna', NULL, NULL, NULL, NULL, NULL),
+(24, 'Rajshahi', NULL, NULL, NULL, NULL, NULL),
+(25, 'Sirajgonj', NULL, NULL, NULL, NULL, NULL),
+(26, 'Dinajpur', NULL, NULL, NULL, NULL, NULL),
+(27, 'Gaibandha', NULL, NULL, NULL, NULL, NULL),
+(28, 'Kurigram', NULL, NULL, NULL, NULL, NULL),
+(29, 'Lalmonirhat', NULL, NULL, NULL, NULL, NULL),
+(30, 'Nilphamari', NULL, NULL, NULL, NULL, NULL),
+(31, 'Panchagarh', NULL, NULL, NULL, NULL, NULL),
+(32, 'Rangpur', NULL, NULL, NULL, NULL, NULL),
+(33, 'Thakurgaon', NULL, NULL, NULL, NULL, NULL),
+(34, 'Barguna', NULL, NULL, NULL, NULL, NULL),
+(35, 'Barisal', NULL, NULL, NULL, NULL, NULL),
+(36, 'Bhola', NULL, NULL, NULL, NULL, NULL),
+(37, 'Jhalokati', NULL, NULL, NULL, NULL, NULL),
+(38, 'Patuakhali', NULL, NULL, NULL, NULL, NULL),
+(39, 'Pirojpur', NULL, NULL, NULL, NULL, NULL),
+(40, 'Bandarban', NULL, NULL, NULL, NULL, NULL),
+(41, 'Brahmanbaria', NULL, NULL, NULL, NULL, NULL),
+(42, 'Chandpur', NULL, NULL, NULL, NULL, NULL),
+(43, 'Chittagong', NULL, NULL, NULL, NULL, NULL),
+(44, 'Comilla', NULL, NULL, NULL, NULL, NULL),
+(45, 'Cox\'\'s Bazar', NULL, NULL, NULL, NULL, NULL),
+(46, 'Feni', NULL, NULL, NULL, NULL, NULL),
+(47, 'Khagrachari', NULL, NULL, NULL, NULL, NULL),
+(48, 'Lakshmipur', NULL, NULL, NULL, NULL, NULL),
+(49, 'Noakhali', NULL, NULL, NULL, NULL, NULL),
+(50, 'Rangamati', NULL, NULL, NULL, NULL, NULL),
+(51, 'Habiganj', NULL, NULL, NULL, NULL, NULL),
+(52, 'Maulvibazar', NULL, NULL, NULL, NULL, NULL),
+(53, 'Sunamganj', NULL, NULL, NULL, NULL, NULL),
+(54, 'Sylhet', NULL, NULL, NULL, NULL, NULL),
+(55, 'Bagerhat', NULL, NULL, NULL, NULL, NULL),
+(56, 'Chuadanga', NULL, NULL, NULL, NULL, NULL),
+(57, 'Jessore', NULL, NULL, NULL, NULL, NULL),
+(58, 'Jhenaidah', NULL, NULL, NULL, NULL, NULL),
+(59, 'Khulna', NULL, NULL, NULL, NULL, NULL),
+(60, 'Kushtia', NULL, NULL, NULL, NULL, NULL),
+(61, 'Magura', NULL, NULL, NULL, NULL, NULL),
+(62, 'Meherpur', NULL, NULL, NULL, NULL, NULL),
+(63, 'Narail', NULL, NULL, NULL, NULL, NULL),
+(64, 'Satkhira', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -311,22 +353,27 @@ CREATE TABLE `route` (
 --
 
 INSERT INTO `route` (`id`, `name`, `area_from`, `break_area`, `area_to`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 'Chattogram To Sylhet', 8, 23, 26, '2024-06-23 05:32:45', 1, '2024-07-01 07:59:13', 1, NULL),
-(2, 'Chattogram To Coxbazar', 6, 7, 4, '2024-06-23 05:37:12', 1, '2024-07-01 08:01:52', 1, NULL),
-(3, 'Chattogram To Dhaka', 1, 24, 2, '2024-06-23 06:13:13', 1, '2024-07-09 06:51:55', 1, NULL),
-(4, 'Dhaka To Sylhet', 19, 23, 28, '2024-06-23 06:25:45', 1, '2024-07-01 08:02:59', 1, NULL),
-(5, 'Dhaka To Cox-Bazar', 13, 10, 4, '2024-07-01 08:04:32', 1, NULL, NULL, NULL),
-(6, 'Cox-Bazar To Sylhet', 4, 24, 25, '2024-07-01 08:05:54', 1, NULL, NULL, NULL),
-(7, 'Cox-Bazar To Dhaka', 4, 24, 14, '2024-07-01 08:06:58', 1, NULL, NULL, NULL),
-(8, 'Cox-Bazar To Chattogram', 4, 7, 11, '2024-07-01 08:07:36', 1, NULL, NULL, NULL),
-(9, 'Comilla To Sylhet', 24, 23, 26, '2024-07-09 15:35:20', 1, NULL, NULL, NULL),
-(10, 'Cox-Bazar To Comilla', 4, 10, 24, '2024-07-09 15:36:22', 1, NULL, NULL, NULL),
-(11, 'Comilla To Kushtia', 24, 17, 21, '2024-07-09 15:37:34', 1, NULL, NULL, NULL),
-(12, 'Dhaka To Chattogram', 13, 24, 11, '2024-07-09 15:38:43', 1, NULL, NULL, NULL),
-(13, 'Dhaka To Satkhira', 2, 20, 22, '2024-07-09 16:36:50', 1, NULL, NULL, NULL),
-(14, 'Sylhet To Satkhira', 28, 23, 11, '2024-07-09 16:38:28', 1, NULL, NULL, NULL),
-(15, 'Sylhet To Comilla', 25, 20, 24, '2024-07-09 16:39:21', 1, NULL, NULL, NULL),
-(16, 'Comilla To Chattogram', 24, 11, 9, '2024-07-09 16:49:55', 1, '2024-07-09 16:50:06', 1, NULL);
+(1, 'Dhaka To Chittagong', 1, 44, 43, NULL, NULL, NULL, NULL, NULL),
+(2, 'Dhaka To Khulna', 1, 42, 59, NULL, NULL, NULL, NULL, NULL),
+(3, 'Dhaka To Sylhet', 1, 41, 54, NULL, NULL, NULL, NULL, NULL),
+(4, 'Dhaka To Barisal', 1, 42, 35, NULL, NULL, NULL, NULL, NULL),
+(5, 'Dhaka To Rajshahi', 1, 17, 24, NULL, NULL, NULL, NULL, NULL),
+(6, 'Dhaka To Rangpur', 1, 25, 32, NULL, NULL, NULL, NULL, NULL),
+(7, 'Dhaka To Mymensingh', 1, 0, 10, NULL, NULL, NULL, NULL, NULL),
+(8, 'Chittagong To Khulna', 43, 42, 59, NULL, NULL, NULL, NULL, NULL),
+(9, 'Chittagong To Sylhet', 43, 1, 54, NULL, NULL, NULL, NULL, NULL),
+(10, 'Chittagong To Barisal', 43, 42, 35, NULL, NULL, NULL, NULL, NULL),
+(11, 'Chittagong To Rajshahi', 43, 25, 24, NULL, NULL, NULL, NULL, NULL),
+(12, 'Chittagong To Rangpur', 43, 25, 32, NULL, NULL, NULL, NULL, NULL),
+(13, 'Chittagong To Mymensingh', 43, 44, 10, NULL, NULL, NULL, NULL, NULL),
+(14, 'Chittagong To Dhaka', 43, 44, 1, NULL, NULL, NULL, NULL, NULL),
+(15, 'Sylhet To Khulna', 54, 1, 59, NULL, NULL, NULL, NULL, NULL),
+(16, 'Sylhet To Chittagong', 54, 1, 43, NULL, NULL, NULL, NULL, NULL),
+(17, 'Sylhet To Barisal', 54, 1, 35, NULL, NULL, NULL, NULL, NULL),
+(18, 'Sylhet To Rajshahi', 54, 1, 24, NULL, NULL, NULL, NULL, NULL),
+(19, 'Sylhet To Rangpur', 54, 1, 32, NULL, NULL, NULL, NULL, NULL),
+(20, 'Sylhet To Mymensingh', 54, 0, 10, NULL, NULL, NULL, NULL, NULL),
+(21, 'Sylhet To Dhaka', 54, 0, 1, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -355,18 +402,12 @@ CREATE TABLE `schedule` (
 --
 
 INSERT INTO `schedule` (`id`, `couch_number`, `vehicle_id`, `route_id`, `departure_time`, `departure_counter`, `arrival_time`, `arrival_counter`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, '651', 1, 3, '2024-07-11 11:30:00', 2, '2024-07-11 18:31:00', 4, '2024-07-09 06:32:01', 1, NULL, NULL, NULL),
-(2, '729', 2, 1, '2024-07-11 00:30:00', 1, '2024-07-09 21:30:00', 4, '2024-07-09 06:33:39', 1, '2024-07-09 15:48:33', 1, NULL),
-(3, '518', 3, 11, '2024-07-12 19:40:00', 13, '2024-07-13 09:00:00', 8, '2024-07-09 15:41:39', 1, NULL, NULL, NULL),
-(4, '307', 4, 12, '2024-07-19 12:00:00', 4, '2024-07-20 05:00:00', 2, '2024-07-09 15:51:15', 1, NULL, NULL, NULL),
-(5, '153', 5, 4, '2024-07-15 22:00:00', 5, '2024-07-16 04:00:00', 10, '2024-07-09 16:01:09', 1, '2024-07-09 16:01:22', 1, NULL),
-(6, '623', 6, 5, '2024-07-24 12:00:00', 4, '2024-07-25 10:00:00', 5, '2024-07-09 16:02:58', 1, '2024-07-09 16:17:24', 1, NULL),
-(7, '816', 7, 10, '2024-07-21 10:00:00', 12, '2024-07-21 16:00:00', 12, '2024-07-09 16:27:50', 1, NULL, NULL, NULL),
-(8, '542', 8, 9, '2024-07-25 19:30:00', 9, '2024-07-26 01:00:00', 9, '2024-07-09 16:32:05', 1, NULL, NULL, NULL),
-(9, '538', 1, 7, '2024-07-16 22:30:00', 13, '2024-07-17 05:00:00', 4, '2024-07-09 16:34:26', 1, NULL, NULL, NULL),
-(10, '482', 4, 14, '2024-07-22 05:00:00', 12, '2024-07-22 23:00:00', 8, '2024-07-09 16:41:22', 1, '2024-07-09 16:41:33', 1, NULL),
-(11, '456', 6, 13, '2024-07-17 03:00:00', 4, '2024-07-17 09:00:00', 13, '2024-07-09 16:48:10', 1, '2024-07-09 16:53:01', 1, NULL),
-(12, '205', 7, 16, '2024-07-20 07:00:00', 11, '2024-07-20 11:00:00', 10, '2024-07-09 16:52:43', 1, NULL, NULL, NULL);
+(1, '111', 1, 1, '2024-07-22 10:00:00', 6, '2024-07-22 15:00:00', 1, '2024-07-13 07:07:22', 1, NULL, NULL, NULL),
+(2, '222', 2, 1, '2024-07-22 12:00:00', 4, '2024-07-22 17:00:00', 2, '2024-07-13 07:09:37', 1, NULL, NULL, NULL),
+(3, '333', 3, 9, '2024-07-22 22:00:00', 3, '2024-07-23 06:00:00', 8, '2024-07-13 07:11:24', 1, NULL, NULL, NULL),
+(4, '444', 4, 9, '2024-07-23 10:00:00', 1, '2024-07-23 18:00:00', 7, '2024-07-13 07:12:50', 1, NULL, NULL, NULL),
+(5, '555', 5, 16, '2024-07-26 17:00:00', 7, '2024-07-27 02:00:00', 3, '2024-07-13 07:16:55', 1, NULL, NULL, NULL),
+(6, '666', 6, 21, '2024-07-27 18:00:00', 8, '2024-07-27 12:00:00', 6, '2024-07-13 07:20:05', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -446,11 +487,11 @@ CREATE TABLE `seat_book` (
   `other_charge` decimal(10,2) NOT NULL,
   `coupon_code` varchar(20) NOT NULL,
   `discount` int(11) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  `deleted_at` datetime NOT NULL
+  `created_at` datetime DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -466,11 +507,11 @@ CREATE TABLE `seat_book_details` (
   `seat_book_id` int(11) NOT NULL,
   `seat_id` int(11) NOT NULL,
   `price` decimal(10,2) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `updated_by` int(11) NOT NULL,
-  `deleted_at` datetime NOT NULL
+  `created_at` datetime DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -496,63 +537,6 @@ CREATE TABLE `seat_type` (
 INSERT INTO `seat_type` (`id`, `name`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
 (1, 'Economy Class', '2024-06-23 05:05:39', 1, '2024-06-30 08:25:10', 1, NULL),
 (2, 'Business Class', '2024-06-30 08:20:45', 1, '2024-06-30 08:25:45', 1, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `ticket`
---
-
-CREATE TABLE `ticket` (
-  `id` int(11) NOT NULL,
-  `customer_id` int(11) DEFAULT NULL,
-  `schedule_id` int(11) DEFAULT NULL,
-  `qty` int(11) DEFAULT NULL,
-  `sub_total` decimal(10,2) DEFAULT NULL,
-  `discount` decimal(10,2) DEFAULT NULL,
-  `vat` decimal(10,2) DEFAULT NULL,
-  `total` decimal(10,2) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `ticket`
---
-
-INSERT INTO `ticket` (`id`, `customer_id`, `schedule_id`, `qty`, `sub_total`, `discount`, `vat`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`) VALUES
-(1, 1, 3, 2, 1400.00, 200.00, 70.00, 1270.00, '2024-07-09 17:14:44', 1, NULL, NULL, NULL),
-(2, 4, 2, 1, 650.00, 0.00, 0.00, 650.00, '2024-07-09 17:16:59', 1, NULL, NULL, NULL),
-(3, 6, 4, 3, 1950.00, 150.00, 50.00, 1800.00, '2024-07-09 17:18:48', 1, NULL, NULL, NULL),
-(4, 7, 5, 2, 1300.00, 0.00, 20.00, 1320.00, '2024-07-09 17:20:01', 1, NULL, NULL, NULL),
-(5, 8, 6, 4, 4800.00, 400.00, 200.00, 4600.00, '2024-07-09 17:21:33', 1, NULL, NULL, NULL),
-(6, 9, 7, 2, 1300.00, 50.00, 20.00, 1270.00, '2024-07-09 17:22:54', 1, NULL, NULL, NULL),
-(7, 10, 9, 2, 1400.00, 150.00, 0.00, 1250.00, '2024-07-09 17:25:51', 1, NULL, NULL, NULL),
-(8, 11, 2, 1, 650.00, 0.00, 0.00, 650.00, '2024-07-09 17:27:06', 1, NULL, NULL, NULL),
-(9, 12, 1, 4, 5600.00, 300.00, 150.00, 5450.00, '2024-07-09 17:28:22', 1, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `ticket_details`
---
-
-CREATE TABLE `ticket_details` (
-  `id` int(11) NOT NULL,
-  `ticket_id` int(11) DEFAULT NULL,
-  `customer_id` int(11) DEFAULT NULL,
-  `schedule_id` int(11) DEFAULT NULL,
-  `vehicle_seat_type_id` int(11) DEFAULT NULL,
-  `price` decimal(10,2) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -951,18 +935,6 @@ ALTER TABLE `seat_type`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ticket`
---
-ALTER TABLE `ticket`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `ticket_details`
---
-ALTER TABLE `ticket_details`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `vehicle`
 --
 ALTER TABLE `vehicle`
@@ -982,7 +954,7 @@ ALTER TABLE `vehicle_seat_type`
 -- AUTO_INCREMENT for table `area`
 --
 ALTER TABLE `area`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `auth`
@@ -994,19 +966,19 @@ ALTER TABLE `auth`
 -- AUTO_INCREMENT for table `counter`
 --
 ALTER TABLE `counter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `district`
 --
 ALTER TABLE `district`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `division`
@@ -1024,13 +996,13 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `route`
 --
 ALTER TABLE `route`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `schedule`
 --
 ALTER TABLE `schedule`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `seat`
@@ -1055,18 +1027,6 @@ ALTER TABLE `seat_book_details`
 --
 ALTER TABLE `seat_type`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `ticket`
---
-ALTER TABLE `ticket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `ticket_details`
---
-ALTER TABLE `ticket_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `vehicle`
