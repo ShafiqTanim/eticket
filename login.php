@@ -1,3 +1,6 @@
+<?php
+   session_start();
+?>
 <?php include('include/header.php') ?>
 
 <?php require_once('include/connection.php'); ?>
@@ -39,7 +42,7 @@
               <a href=""></a>
               <h1>Login Form</h1>
               <div>
-                <input type="text" name="username" class="form-control" placeholder="Username" required="" />
+                <input type="text" name="email" class="form-control" placeholder="E-mail" required="" />
               </div>
               <div>
                 <input type="password" name="password" class="form-control" placeholder="Password" required="" />
@@ -72,9 +75,8 @@
                     $rs=$mysqli->common_select_single('customer','*',$_POST);
                     if($rs['data']){
                         $_SESSION['loggedin']="true";
-                        $_SESSION['username']=$rs['data']->username;
                         $_SESSION['email']=$rs['data']->email;
-                        header('location:customer_details.php');
+                        header('location:index.php');
                     }else{
                         echo "Please check your user name and password again.";
                     }
@@ -122,10 +124,10 @@
                   unset($_POST['register_button']);
                   $_POST['password']=sha1($_POST['password']);
                   $_POST['created_at']=date('Y-m-d H:i:s');
-                  $rs=$crud->common_create('auth',$_POST);
+                  $rs=$crud->common_create('customer',$_POST);
                   print_r($_POST);
                   if($rs['data']){
-                      header('location:customer_details.php');
+                      header('location:index.php');
                   }else{
                       print_r($rs['error']);
                   }
