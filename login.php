@@ -1,7 +1,5 @@
 <?php include('include/header.php') ?>
-<?php
-   session_start();
-?>
+
 <?php require_once('include/connection.php'); ?>
 <?php $baseurl="http://localhost/eticket/admin/"; ?>
 <!DOCTYPE html>
@@ -71,12 +69,12 @@
                 if(isset($_POST['login_button'])){
                     unset($_POST['login_button']);
                     $_POST['password']=sha1($_POST['password']);
-                    $rs=$mysqli->common_select_single('auth','*',$_POST);
+                    $rs=$mysqli->common_select_single('customer','*',$_POST);
                     if($rs['data']){
                         $_SESSION['loggedin']="true";
                         $_SESSION['username']=$rs['data']->username;
                         $_SESSION['email']=$rs['data']->email;
-                        header('location:index.php');
+                        header('location:customer_details.php');
                     }else{
                         echo "Please check your user name and password again.";
                     }
@@ -127,7 +125,7 @@
                   $rs=$crud->common_create('auth',$_POST);
                   print_r($_POST);
                   if($rs['data']){
-                      header('location:index.php');
+                      header('location:customer_details.php');
                   }else{
                       print_r($rs['error']);
                   }
