@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require_once("connection.php"); ?>
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en"> 
@@ -70,14 +71,17 @@
                 <div class="rd-navbar-nav-wrap">
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li class="active"><a href="index.php">Home</a>
-                    </li>
-                    <li><a href="about-us.html"></a>
-                    </li>
-                    <li><a href="contacts.html"></a>
-                    </li>
-                    <li><a href="typography.html"></a>
-                    </li>
+                    <li class="active"><a href="index.php">Home</a></li>
+                    
+                    <?php if(isset($_SESSION['customer_loggedin']) && $_SESSION['customer_loggedin']){ ?>
+                      <li><a href="profile.php">Profile</a></li>
+                      <li><a href="order.php">My Tickets</a></li>
+                      <li><a href="logout.php">Logout</a></li>
+                    <?php }else{ ?>
+                      <li><a href="login.php">Login</a></li>
+                      <li><a href="signup.php">Register</a></li>
+                    <?php } ?>
+                   
                   </ul>
                 </div>
               </div>
