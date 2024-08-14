@@ -9,7 +9,16 @@
           <section class="login_content">
             <form method="post">
               <a href=""></a>
-              <h1>Login Form</h1>
+              <h1>Register Form</h1>
+              <div>
+                <input type="text" name="name" class="form-control" placeholder="Full Name" required="" />
+              </div>
+              <div>
+                <input type="text" name="contact_no" class="form-control" placeholder="Contact Number" required="" />
+              </div>
+              <div>
+                <input type="text" name="address" class="form-control" placeholder="Address"/>
+              </div>
               <div>
                 <input type="text" name="email" class="form-control" placeholder="E-mail" required="" />
               </div>
@@ -17,7 +26,7 @@
                 <input type="password" name="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                <button class="btn btn-default submit" type="submit">Log in</button>
+                <button class="btn btn-default submit" type="submit">Submit</button>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 
@@ -32,17 +41,14 @@
             </form>
               <?php
                 if($_POST){
-                    $_POST['password']=sha1($_POST['password']);
-                    $rs=$mysqli->common_select_single('customer','*',$_POST);
-                    if($rs['data']){
-                        $_SESSION['customer_loggedin']="true";
-                        $_SESSION['email']=$rs['data']->email;
-                        $_SESSION['customer_id']=$rs['data']->id;
-                        echo "<script>window.location='{$baseurl}profile.php'</script>";
-                    }else{
-                        echo "Please check your user name and password again.";
-                    }
+                  $_POST['password']=sha1($_POST['password']);
+                  $rs=$mysqli->common_create('customer',$_POST);
+                  if($rs['data']){
+                    echo "<script>window.location='{$baseurl}login.php'</script>";
+                  }else{
+                    echo "Please check your user name and password again.";
                   }
+                }
               ?>
           </section>
         </div>
