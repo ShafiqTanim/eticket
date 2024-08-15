@@ -14,11 +14,10 @@
 				</span>
 				<h2 class="display-3 text-black">Thank you!</h2>
 				<p class="lead mb-5">Your ticket is successfuly booked.</p>
-				<p><a href="invoice.php?txnid=<?= $_GET['txnid'] ?? "" ?>" class="btn btn-sm btn-outline-black">Print Invoice</a></p>
+				<p><a href="invoice.php?txnid=<?= $_GET['txnid'] ?? "" ?>" class="btn btn-lg btn-warning mb-3">Print Invoice</a></p>
         	</div>
       	</div>
     </div>
 </div>
-
 <!-- Start Footer Section -->
 <?php include_once('include/footer.php')?>
