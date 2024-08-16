@@ -10,24 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php 
-  $seatdata=[];
-  $transaction_id=$_GET['txnid'];
-  $result=$mysqli->common_select_query("SELECT seat_book.*, schedule.couch_number,schedule.departure_time,
-schedule.arrival_time,
-(select route.name from route WHERE route.id=schedule.route_id) as route,
-(select counter.counter_name from counter WHERE counter.id=schedule.departure_counter) as departure_counter,
-(select counter.counter_name from counter WHERE counter.id=schedule.arrival_counter) as arrival_counter,
-vehicle.name as vehicle_name, vehicle.registration_no FROM `seat_book`
-JOIN schedule on schedule.id=seat_book.schedule_id
-JOIN vehicle on vehicle.id=seat_book.vehicle_id WHERE seat_book.transaction_id='$transaction_id'"); 
-  if($result){
-    if($result['data']){
-      $seatdata=$result['data'][0];
-    }
-  }
-  
-?>    
+    
 
   <!-- start project list -->
                     <table class="table table-striped projects">
@@ -45,36 +28,38 @@ JOIN vehicle on vehicle.id=seat_book.vehicle_id WHERE seat_book.transaction_id='
                                             </tr>
                                         </thead>
                                    <tbody>
-                         
-                      <?php 
-                        $result=$mysqli->common_select_query("select ticket.*,customer.name as name,schedule.departure_time as time
-                        from ticket join customer on ticket.customer_id=customer.id
-                        join schedule on ticket.schedule_id=schedule.id");
-                        if($result){
-                            if($result['data']){
-                                $i=1;
-                                foreach($result['data'] as $data){
-                    ?>
+                                   <?php 
+  $result=$mysqli->common_select_query("SELECT ticket.*,schedule.departure_time as journey_date,seat_book.total_amount
+(select seat_book.name from seat_book WHERE seat_book.id=ticket.customer_id) as customer,
+(select seat_book.schedule_id from seat_book WHERE seat_book.id=ticket.schedule_id) as schedule,
+(select seat_book.created_at from seat_book WHERE seat_book.id=ticket.order_date) as order_date,
+(select seat_book.status from seat_book WHERE seat_book.id=ticket.status) as status,
+(select seat_book.total_amount from seat_book WHERE seat_book.id=ticket.total_price) as total_price
+FROM `ticket`
+JOIN schedule on schedule.id=ticket.schedule_id"); 
+  if($result){
+    if($result['data']){
+      $data=$result['data'][0];
+    }
+  }
+  
+?>
+                                          
                                         <tr>
                                             <td><?= $i++ ?></td>
-                                            <td><?= $data-> name?></td>
-                                            <td><?= $data-> time?></td>
-                                            <td><?= $data-> qty?></td>
+                                            <td><?= date('d-m-Y h:iA',strtotime( $data-> journey_date)) ?></td>
+                                            <td><?= $data-> customer?></td>
+                                            <td><?= $data-> schedule?></td>
                                             <td><?= $data-> sub_total?></td>
-                                            <td><?= $data-> discount?></td>
-                                            <td><?= $data-> vat?></td>
-                                            <td><?= $data-> total?></td>
+                                            <td><?= date('d-m-Y h:iA',strtotime($data-> order_date)) ?></td>
+                                            <td><?= $data-> status?></td>
+                                            <td><?= $data-> total_price?></td>
                                             <td>
-                                            <span>
-                                                    <a href="<?= $baseurl ?>ticket_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"
-                                                        data-placement="top" title="Edit"><i
-                                                            class="fa fa-pencil color-muted"></i> </a>
-                                                    <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>ticket_delete.php?id=<?= $data->id ?>" data-toggle="tooltip"
-                                                        data-placement="top" title="Close"><i
-                                                            class="fa fa-close color-danger"></i></a>
-                                                </span>
+                                            <button class="btn-warning">View</button>
+                                            <button class="btn-warning">Cencel</button>
+                                                    
                                             </td>
                                         </tr>
-                                        <?php } } } ?>
+                                        
                       </tbody>
                     </table>
