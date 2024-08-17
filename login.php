@@ -1,6 +1,8 @@
 <?php include('include/header.php') ?>
 
 <?php require_once('include/connection.php'); ?>
+
+
 <div class="container">
   <div class="row">
     <div class="col-6 offset-3 mb-5 pb-5">
@@ -25,7 +27,12 @@
 
               <div class="separator">
                 <p class="change_link">New to site?
-                  <a href="signup.php" class="to_register"> Create Account </a>
+                  <?php if(isset($_GET['rurl'])){ ?>
+                    <a href="signup.php?rurl=<?= $_GET['rurl'] ?>" class="to_register"> Create Account </a>
+                  <?php  }else{ ?>
+                      <a href="signup.php" class="to_register"> Create Account </a>
+                  <?php  } ?>
+                  
                 </p>
 
               </div>
@@ -36,9 +43,13 @@
                     $rs=$mysqli->common_select_single('customer','*',$_POST);
                     if($rs['data']){
                         $_SESSION['customer_loggedin']="true";
-                        $_SESSION['email']=$rs['data']->email;
+                        $_SESSION['customer_data']=$rs['data'];
                         $_SESSION['customer_id']=$rs['data']->id;
-                        echo "<script>window.location='{$baseurl}profile.php'</script>";
+                        if(isset($_GET['rurl'])){
+                          echo "<script>window.location='{$_GET['rurl']}'</script>";
+                        }else{
+                          echo "<script>window.location='{$baseurl}profile.php'</script>";
+                        }
                     }else{
                         echo "Please check your user name and password again.";
                     }

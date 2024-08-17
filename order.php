@@ -1,65 +1,68 @@
+<?php include_once('include/header.php') ?>
+<?php include_once('include/auth_check.php') ?>
+<div class="untree_co-section">
+    <div class="container">
+      	<div class="row">
+        	<div class="col-md-12 text-center pt-5">
+              <!-- start project list -->
+            <table class="table table-striped projects">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Route</th>
+                  <th scope="col">Order Date </th>
+                  <th scope="col">Journey Date </th>
+                  <th scope="col">Total Seat</th>
+                  <th scope="col">Total Price</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php 
+                    $result=$mysqli->common_select_query("SELECT seat_book.*, schedule.couch_number,schedule.departure_time,
+                                                          schedule.arrival_time,
+                                                          (select route.name from route WHERE route.id=schedule.route_id) as route,
+                                                          (select counter.counter_name from counter WHERE counter.id=schedule.departure_counter) as departure_counter,
+                                                          (select counter.counter_name from counter WHERE counter.id=schedule.arrival_counter) as arrival_counter,
+                                                          vehicle.name as vehicle_name, vehicle.registration_no FROM `seat_book`
+                                                          JOIN schedule on schedule.id=seat_book.schedule_id
+                                                          JOIN vehicle on vehicle.id=seat_book.vehicle_id WHERE seat_book.customer_id='{$_SESSION['customer_id']}'"); 
+                    if($result){
+                      if($result['data']){
+                        foreach($result['data'] as $i=>$data){
+                  ?>
+                <tr>
+                  <td><?= ++$i ?></td>
+                  <td><?= $data->name ?></td>
+                  <td><?= $data->route ?></td>
+                  <td><?= date('d-m-Y h:iA',strtotime( $data->created_at)) ?></td>
+                  <td><?= date('d-m-Y h:iA',strtotime( $data->departure_time)) ?></td>
+                  <td><?= $data->total_seat?></td>
+                  <td><?= $data->total_amount?></td>
+                  <td><?= $data->status==1 ? "canceled" : "Paid" ?></td>
+                  <td>
+                    <a href="invoice.php?txnid=<?= $data->transaction_id ?? "" ?>" class="btn btn-success">Invoice</a>
+                      <?php
+                        $today = time();
+                        $dayinpass= strtotime($data->departure_time);
+                        $hourRemain=round(abs($today-$dayinpass)/60/60);
 
-<?php include_once('include/header.php'); ?>
-<?php require_once('include/connection.php'); ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
-    
-
-  <!-- start project list -->
-                    <table class="table table-striped projects">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Customer ID</th>
-                                                <th scope="col">Schedule</th>
-                                                <th scope="col">Order Date </th>
-                                                <th scope="col">Journey Date </th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col">Total Price</th>
-                                                <th scope="col">Action</th>
-                                            
-                                            </tr>
-                                        </thead>
-                                   <tbody>
-                                   <?php 
-  $result=$mysqli->common_select_query("SELECT ticket.*,schedule.departure_time as journey_date,seat_book.total_amount
-(select seat_book.name from seat_book WHERE seat_book.id=ticket.customer_id) as customer,
-(select seat_book.schedule_id from seat_book WHERE seat_book.id=ticket.schedule_id) as schedule,
-(select seat_book.created_at from seat_book WHERE seat_book.id=ticket.order_date) as order_date,
-(select seat_book.status from seat_book WHERE seat_book.id=ticket.status) as status,
-(select seat_book.total_amount from seat_book WHERE seat_book.id=ticket.total_price) as total_price
-FROM `ticket`
-JOIN schedule on schedule.id=ticket.schedule_id"); 
-  if($result){
-    if($result['data']){
-      $data=$result['data'][0];
-    }
-  }
-  
-?>
-                                          
-                                        <tr>
-                                            <td><?= $i++ ?></td>
-                                            <td><?= date('d-m-Y h:iA',strtotime( $data-> journey_date)) ?></td>
-                                            <td><?= $data-> customer?></td>
-                                            <td><?= $data-> schedule?></td>
-                                            <td><?= $data-> sub_total?></td>
-                                            <td><?= date('d-m-Y h:iA',strtotime($data-> order_date)) ?></td>
-                                            <td><?= $data-> status?></td>
-                                            <td><?= $data-> total_price?></td>
-                                            <td>
-                                            <button class="btn-warning">View</button>
-                                            <button class="btn-warning">Cencel</button>
-                                                    
-                                            </td>
-                                        </tr>
-                                        
-                      </tbody>
-                    </table>
+                        if($hourRemain > 12){
+                      ?>
+                        <a href="" class="btn btn-danger">Cencel</a>
+                    <?php }else{ ?>
+                      <button disable title="You cannot cancel your ticket as your journey time is less than 12 hours." class="btn btn-danger">Cencel</button>
+                    <?php } ?>
+                  </td>
+                </tr>
+                <?php }}} ?>
+              </tbody>
+            </table>
+          </div>
+      	</div>
+    </div>
+</div>
+<!-- Start Footer Section -->
+<?php include_once('include/footer.php')?>
