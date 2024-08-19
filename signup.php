@@ -44,7 +44,11 @@
                   $_POST['password']=sha1($_POST['password']);
                   $rs=$mysqli->common_create('customer',$_POST);
                   if($rs['data']){
-                    echo "<script>window.location='{$baseurl}login.php'</script>";
+                    if(isset($_GET['rurl'])){
+                      echo "<script>window.location='{$baseurl}login.php?rurl{$_GET['rurl']}'</script>";
+                    }else{
+                      echo "<script>window.location='{$baseurl}login.php'</script>";
+                    }
                   }else{
                     echo "Please check your user name and password again.";
                   }

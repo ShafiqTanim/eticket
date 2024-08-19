@@ -12,18 +12,18 @@
   $seatdata=[];
   $transaction_id=$_GET['txnid'];
   $result=$mysqli->common_select_query("SELECT seat_book.*, schedule.couch_number,schedule.departure_time,
-schedule.arrival_time,
-(select route.name from route WHERE route.id=schedule.route_id) as route,
-(select counter.counter_name from counter WHERE counter.id=schedule.departure_counter) as departure_counter,
-(select counter.counter_name from counter WHERE counter.id=schedule.arrival_counter) as arrival_counter,
-vehicle.name as vehicle_name, vehicle.registration_no FROM `seat_book`
-JOIN schedule on schedule.id=seat_book.schedule_id
-JOIN vehicle on vehicle.id=seat_book.vehicle_id WHERE seat_book.transaction_id='$transaction_id'"); 
-  if($result){
-    if($result['data']){
-      $seatdata=$result['data'][0];
-    }
-  }
+                                        schedule.arrival_time,
+                                        (select route.name from route WHERE route.id=schedule.route_id) as route,
+                                        (select counter.counter_name from counter WHERE counter.id=schedule.departure_counter) as departure_counter,
+                                        (select counter.counter_name from counter WHERE counter.id=schedule.arrival_counter) as arrival_counter,
+                                        vehicle.name as vehicle_name, vehicle.registration_no FROM `seat_book`
+                                        JOIN schedule on schedule.id=seat_book.schedule_id
+                                        JOIN vehicle on vehicle.id=seat_book.vehicle_id WHERE seat_book.transaction_id='$transaction_id'"); 
+                                          if($result){
+                                            if($result['data']){
+                                              $seatdata=$result['data'][0];
+                                            }
+                                          }
   
 ?>    
 <div class="container">
@@ -50,7 +50,7 @@ JOIN vehicle on vehicle.id=seat_book.vehicle_id WHERE seat_book.transaction_id='
             <li>Issue Counter:<span><?=$seatdata->departure_counter ?></span></li>
             <li>Issue Date:<span><?= date('d-m-Y h:iA',strtotime($seatdata->created_at)) ?></span></li>
             <li>Seat QTY:<span><?=$seatdata->total_seat?></span></li>
-            <li>Total price:<span><?=$seatdata->total_amount?></span></li>
+            <li>Total price:<span><?= $seatdata->total_amount ?></span></li>
           </ul>
         </div>
       </div>

@@ -1,4 +1,5 @@
 <?php include('include/header.php') ?>
+<?php include_once('include/auth_check.php') ?>
 <?php 
     $olddata=array();
     $con['id']=$_SESSION['customer_id'];
