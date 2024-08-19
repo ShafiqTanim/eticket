@@ -51,9 +51,9 @@
 
                         if($hourRemain > 12){
                       ?>
-                        <a href="" class="btn btn-danger">Cencel</a>
+                        <a  class="btn btn-danger" onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>cencel_request.php?id=<?= $data ->id ?>" class="btn btn-Warning btn-xs"> Cencel </a>
                     <?php }else{ ?>
-                      <button disable title="You cannot cancel your ticket as your journey time is less than 12 hours." class="btn btn-danger">Cencel</button>
+                      <button disable title="You cannot cancel your ticket as your journey time is less than 12 hours." class="btn btn-danger"></button>
                     <?php } ?>
                   </td>
                 </tr>
