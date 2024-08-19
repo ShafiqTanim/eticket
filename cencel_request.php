@@ -2,7 +2,7 @@
 <?php 
     $olddata=array();
     $con['id']=$_GET['id'];
-    $data['deleted_at']=date('Y-m-d H:i:s');
+    $data['request_cancel']=1;
     $data['updated_by']=1;
     $rs=$mysqli->common_update('seat_book',$data,$con);
     if($rs){

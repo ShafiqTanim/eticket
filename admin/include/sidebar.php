@@ -107,7 +107,6 @@
 
                   <li><a><i class="fa fa-list"></i>Ticket<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="ticket_add.php">Add New</a></li>
                       <li><a href="ticket_list.php">List</a></li>
                     </ul>
                   </li>
