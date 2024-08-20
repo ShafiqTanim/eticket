@@ -109,7 +109,12 @@
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6d0eb1', endColorstr='#080ab4', GradientType=1);
 }
-
+.swiper-slide{
+	min-height: 700px;
+}
+.invoice-color{
+	background-color: #ffa500;
+}
 a:focus,
 button:focus {
 	outline: none !important;

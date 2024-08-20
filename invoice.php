@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -133,12 +134,9 @@
                 </div>
             </div> 
         </div>
+        
         <div class="row bg-warning">
-        <p><i class="fa-fa-phone"></i></p>
-                    
-
-
-
+        <p><i class="bi bi-telephone-fill"></i></p>
         </div>
 </div>      
 </body>
