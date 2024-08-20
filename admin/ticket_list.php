@@ -74,7 +74,7 @@
                   <td><?= date('d-m-Y h:iA',strtotime( $data->created_at)) ?></td>
                   <td><?= date('d-m-Y h:iA',strtotime( $data->departure_time)) ?></td>
                   <td><?= $data->total_seat?></td>
-                  <td><?= $data->total_amount?></td>
+                  <td><?= $data->total_amount-$data->other_charge ?></td>
                   <td><?= $data->status==1 ? "canceled and refunded" : "Paid" ?></td>
                   <td><?= $data->request_cancel==1 ? "Refund request sent" : "" ?></td>
                   <td>
