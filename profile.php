@@ -23,18 +23,18 @@
                                 <div class="field item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3  label-align">Name<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" class='optional' name="name" value="<?= $olddata->name ?>" data-validate-length-range="5,15" type="text" /></div>
+                                        <input class="form-control" class='optional' name="name" value="<?= $olddata->name ?>" type="text" /></div>
                                 </div>
                                 <div class="field item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3  label-align">Contact No<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->contact_no ?>" name="contact_no" required="required" />
+                                        <input class="form-control" value="<?= $olddata->contact_no ?>" name="contact_no" required="required" />
                                     </div>
                                 </div>
                                 <div class="field item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3  label-align">Email<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input readonly class="form-control" data-validate-length-range="6" data-validate-words="2" value="<?= $olddata->email ?>" required="required" />
+                                        <input class="form-control" value="<?= $olddata->email ?>" name="email" disabled />
                                     </div>
                                 </div>
                                 
@@ -51,10 +51,10 @@
                                 if($_POST){
                                     $_POST['updated_at']=date('Y-m-d H:i:s');
                                     $_POST['updated_by']=1;
-                                    $rs=$mysqli->common_create('customer',$_POST);
+                                    $rs=$mysqli->common_update('customer',$_POST,$con);
                                     if($rs){
                                         if($rs['data']){
-                                            echo "<script>window.location='{$baseurl}customer_details.php'</script>";
+                                            echo "<script>window.location='{$baseurl}profile.php'</script>";
                                         }else{
                                             echo $rs['error'];
                                         }
