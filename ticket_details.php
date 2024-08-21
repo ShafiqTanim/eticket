@@ -9,7 +9,7 @@
 <?php }else{ ?>
 	<div class="row">
 		<div class="col-md-6 mb-5 mb-md-0">
-			<h2 class="h3 mb-3 text-black">Billing Details</h2>
+			<h2 class="h3 mb-3 text-black mx-4">passenger Details</h2>
 			<div class="p-3 p-lg-5 border bg-white">
 				<form action="checkout.php" method="post">
 				<div class="form-group row">
@@ -35,7 +35,7 @@
 				</div>
 				<div class="form-group row">
 					<div class="col-md-6">
-						<button class="btn btn-black btn-lg py-3 btn-block" type="submit">Place Order </button>
+						<button class=" btn mt-3 button button-sm button-secondary button-nina" type="submit">Place Order </button>
 					</div>
 				</div>
 
@@ -47,7 +47,7 @@
 		<div class="col-md-6">
 			<div class="row mb-5">
 				<div class="col-md-12">
-					<h2 class="h3 mb-3 text-black">Your Order</h2>
+					<h2 class="h3 mb-3 text-black mx-4">Fare Details </h2>
 					<div class="p-3 p-lg-5 border bg-white">
 						<table class="table site-block-order-table mb-5">
 							<thead>

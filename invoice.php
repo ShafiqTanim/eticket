@@ -134,10 +134,29 @@
                 </div>
             </div> 
         </div>
+
         
-        <div class="row bg-warning">
-        <p><i class="bi bi-telephone-fill"></i></p>
-        </div>
+                      <div class="row bg-warning" style="height:50px">
+                      <div class="invoice-contact clearfix mt-3 d-flex    justify-content-center">
+                            <div class="row g-0">
+                                <div class="col-sm-12">
+                                    <div class="contact-info clearfix">
+                                       <img src="asset/images/phone-receiver-silhouette.png" alt="" height="20px" width="20px"class="mx-4"> 01832779757
+
+                                       <img src="asset/images/2165061.png" alt="" height="20px" width="20px" class="mx-4">ticketfo@gmail.com
+
+                                       <img src="asset/images/location-sign.svg" alt="" height="20px" width="20px" class="mx-4">NVIT,2 No gate, chittagong.
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="d-flex justify-content-center">
+                    <button class="button-secondary button-nina mt-4"> <a href="javascript:window.print()" >Print Invoice</a></button> 
+                    </div>
+
 </div>      
 </body>
 </html>

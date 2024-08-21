@@ -11,7 +11,7 @@
                 <div class="d-flex bd-highlight">
                   <div class="p-2 flex-even">
                     <div class="form-wrap form-wrap-inline">
-                      <label class="form-label-outside">From</label>
+                      <label class="form-label-outside"><h6>From</h6></label>
                       <div class="form-wrap form-wrap-inline">
                         <select class="form-input select-filter" required name="area_from" id="area_from" data-placeholder="Choose One"  >
                           <option value=""></option>
@@ -28,7 +28,7 @@
                     </div>
                   </div>
                   <div class="p-2 flex-even">
-                    <label class="form-label-outside">To</label>
+                    <label class="form-label-outside text-md"><h6>To</h6></label>
                     <div class="form-wrap form-wrap-inline">
                       <select class="form-input select-filter" data-placeholder="Choose One" required name="area_to" id="area_to">
                         <option value=""></option>
@@ -44,14 +44,14 @@
                     </div>
                   </div>
                   <div class="p-2 flex-even">
-                    <label class="form-label-outside">Depart Date</label>
+                    <label class="form-label-outside"><h6>Depart Date</h6></label>
                     <div class="form-wrap form-wrap-validation">
                       <input class="form-input" id="dateForm" name="dep_date" type="text" value="<?= $_GET['dep_date'] ?>" data-time-picker="date">
                       <label class="form-label" for="dateForm">Choose the date</label>
                     </div>
                   </div>
                   <div class="p-2 flex-even">
-                    <button class="button button-block button-secondary mt-4" type="submit">search</button>
+                    <button class="button button-block button-secondary mt-4 " type="submit">search</button>
                   </div>
                 </div>
               </form>
@@ -107,7 +107,7 @@
                 <button type="button" onclick="show_seatplan(<?= $data->id ?>)" class="btn btn-link">
                   <?= $data->bus ?> #<?= $data->couch_number ?>
                 </button>
-                <button type="button" onclick="show_seatplan(<?= $data->id ?>)" class="btn btn-link btn-warning">View Seat-plan</button>
+                <button type="button" onclick="show_seatplan(<?= $data->id ?>)" class="btn btn-link button-secondary">View Seat-plan</button>
               </h3>
               <p>
                 Bus Type: <?= $data->vehicle_type ?><br>
@@ -132,7 +132,7 @@
                   </tr>
                   <tr>
                     <td colspan="2">
-                      <a class="button button-sm button-secondary button-nina" href="ticket_details.php" >BUY NOW</a>
+                      <a class="button button-sm button-secondary button-nina fw-bold text-black" href="ticket_details.php" >BUY NOW</a>
                     </td>
                   </tr>
                 </tfoot>
@@ -176,57 +176,13 @@
         </div>
       </section>
 
-      <!-- Small Features-->
-      <section class="section section-lg section-lg-alternative bg-gray-lighter novi-background bg-cover">
-        <div class="container container-wide">
-          <div class="row row-50 justify-content-sm-center text-gray-light">
-            <div class="col-sm-10 col-md-6 col-xl-3">
-              <article class="box-minimal">
-                <div class="box-minimal-header">
-                  <div class="box-minimal-icon box-minimal-icon-lg novi-icon mdi mdi mdi-airplane"></div>
-                  <h6 class="box-minimal-title">Air Tickets</h6>
-                </div>
-                <p>At our travel agency, you can book air tickets to any world destination. We also provide online ticket booking via our website in just a couple of steps.</p>
-              </article>
-            </div>
-            <div class="col-sm-10 col-md-6 col-xl-3">
-              <article class="box-minimal">
-                <div class="box-minimal-header">
-                  <div class="box-minimal-icon box-minimal-icon-lg novi-icon mdi mdi-map"></div>
-                  <h6 class="box-minimal-title">Voyages & Cruises</h6>
-                </div>
-                <p>Besides regular tours and excursions, we also offer a variety of cruises & sea voyages for different customers  looking for awesome experiences.</p>
-              </article>
-            </div>
-            <div class="col-sm-10 col-md-6 col-xl-3">
-              <article class="box-minimal">
-                <div class="box-minimal-header">
-                  <div class="box-minimal-icon box-minimal-icon-lg novi-icon mdi mdi-city"></div>
-                  <h6 class="box-minimal-title">Hotel Bookings</h6>
-                </div>
-                <p>We offer a wide selection of hotel ranging from 5-star ones to small properties located worldwide so that you could book a hotel you like.</p>
-              </article>
-            </div>
-            <div class="col-sm-10 col-md-6 col-xl-3">
-              <article class="box-minimal">
-                <div class="box-minimal-header">
-                  <div class="box-minimal-icon box-minimal-icon-lg novi-icon mdi mdi-beach"></div>
-                  <h6 class="box-minimal-title">Tailored Summer Tours</h6>
-                </div>
-                <p>Our agency provides varied tours including tailored summer tours for clients who are searching for an exclusive and memorable vacation.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
+      
 
       <!-- CTA Gradient-->
       <section class="section section-xs text-center bg-gray-700 novi-background bg-cover">
         <div class="container container-wide">
           <div class="box-cta-thin">
-            <p class="big"><strong>The most affordable prices!  </strong>&nbsp;<span>Choose your favorite destination!</span>&nbsp;<a class="link-bold" href="#">Order a tour! </a></p>
+            <p class="big"><strong>The most affordable prices!  </strong>&nbsp;<span>Choose your seat</span>&nbsp;<a class="link-bold" href="#">Book Your Ticket! </a></p>
           </div>
         </div>
       </section>
