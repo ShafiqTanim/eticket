@@ -19,7 +19,7 @@
                 <input type="password" name="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                <button class="btn btn-default submit" type="submit">Log in</button>
+                <button class=" btn mt-3 button button-sm button-secondary button-nina" type="submit">Log in</button><br>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 
